@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:max_stack_size": 16
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:rotten_tomato",
+            "register_to_create_menu": true
+        }
+    }
+}

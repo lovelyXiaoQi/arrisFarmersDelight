@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:shepherds_pie"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:shepherds_pie",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:pasta_with_meatballs"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:pasta_with_meatballs",
+            "register_to_create_menu": true
+        }
+    }
+}

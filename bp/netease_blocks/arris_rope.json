@@ -1,0 +1,118 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.5
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.5
+            },
+            "netease:aabb": {
+                "clip": [
+                    {
+                        "max": [
+                            0.5625,
+                            1.0,
+                            0.5625
+                        ],
+                        "min": [
+                            0.4375,
+                            0.0,
+                            0.4375
+                        ]
+                    },
+                    {
+                        "enable": "query.is_connect(2)",
+                        "max": [
+                            0.5625,
+                            1.0,
+                            0.5625
+                        ],
+                        "min": [
+                            0.4375,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    {
+                        "enable": "query.is_connect(3)",
+                        "max": [
+                            0.5625,
+                            1.0,
+                            1.0
+                        ],
+                        "min": [
+                            0.4375,
+                            0.0,
+                            0.4375
+                        ]
+                    },
+                    {
+                        "enable": "query.is_connect(4)",
+                        "max": [
+                            0.5625,
+                            1.0,
+                            0.5625
+                        ],
+                        "min": [
+                            0.0,
+                            0.0,
+                            0.4375
+                        ]
+                    },
+                    {
+                        "enable": "query.is_connect(5)",
+                        "max": [
+                            1.0,
+                            1.0,
+                            0.5625
+                        ],
+                        "min": [
+                            0.4375,
+                            0.0,
+                            0.4375
+                        ]
+                    }
+                ],
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:connection": {
+                "blocks": [
+                    "arris:rope"
+                ]
+            },
+            "netease:on_entity_inside": {
+                "send_python_event": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:rope",
+            "register_to_creative_menu": true
+        }
+    }
+}

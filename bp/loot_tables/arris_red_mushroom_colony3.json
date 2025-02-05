@@ -1,0 +1,22 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 5,
+                                "min": 5
+                            },
+                            "function": "set_count"
+                        }
+                    ],
+                    "name": "minecraft:red_mushroom",
+                    "type": "item"
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

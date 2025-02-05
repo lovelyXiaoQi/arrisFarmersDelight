@@ -1,0 +1,73 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:destroy_time": {
+                "value": 2.0
+            },
+            "minecraft:explosion_resistance": {
+                "value": 1.0
+            },
+            "netease:connection": {
+                "blocks": []
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.9375,
+                        0.0625,
+                        0.9375
+                    ],
+                    "min": [
+                        0.0625,
+                        0.0,
+                        0.0625
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.9375,
+                        0.0625,
+                        0.9375
+                    ],
+                    "min": [
+                        0.0625,
+                        0.0,
+                        0.0625
+                    ]
+                }
+            },
+            "netease:block_entity": {
+                "client_tick": false,
+                "movable": false,
+                "tick": false
+            },
+            "netease:face_directional": {
+                "type": "direction"
+            },
+            "netease:listen_block_remove": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:cutting_board",
+            "register_to_creative_menu": true
+        }
+    }
+}

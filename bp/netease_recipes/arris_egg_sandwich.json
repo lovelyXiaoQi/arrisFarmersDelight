@@ -1,0 +1,28 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:egg_sandwich"
+        },
+        "ingredients": [
+            {
+                "count": 2,
+                "data": 0,
+                "item": "arris:fried_egg"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:bread"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:egg_sandwich"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

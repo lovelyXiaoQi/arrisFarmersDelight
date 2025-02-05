@@ -1,0 +1,43 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.cooking_pot.shelf": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"shelf": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.cooking_pot.smoke": {
+			"loop": true,
+			"animation_length": 2,
+			"particle_effects": {
+				"0.0": {
+					"effect": "steam_0",
+					"locator": "steam"
+				}
+			}
+		},
+		"animation.cooking_pot.bubble": {
+			"loop": true,
+			"animation_length": 2,
+			"particle_effects": {
+				"0.0": {
+					"effect": "bubble",
+					"locator": "blister"
+				}
+			}
+		},
+		"animation.cooking_pot.boil": {
+			"loop": true,
+			"animation_length": 8,
+			"sound_effects": {
+				"0.0": {
+					"effect": "boil"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:sweet_berry_cookie"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:sweet_berry_cookie",
+            "register_to_create_menu": true
+        }
+    }
+}

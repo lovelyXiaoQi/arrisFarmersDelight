@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:cooked_chicken_cuts"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:cooked_chicken_cuts",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:milk_bottle"
+        },
+        "ingredients": [
+            {
+                "count": 4,
+                "data": 0,
+                "item": "minecraft:glass_bottle"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:milk_bucket"
+            }
+        ],
+        "result": {
+            "count": 4,
+            "data": 0,
+            "item": "arris:milk_bottle"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

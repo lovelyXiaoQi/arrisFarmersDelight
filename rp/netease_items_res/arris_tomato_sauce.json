@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:tomato_sauce"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:tomato_sauce",
+            "register_to_create_menu": true
+        }
+    }
+}

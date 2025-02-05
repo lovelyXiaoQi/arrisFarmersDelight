@@ -1,0 +1,70 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/immaturate_tomatoes.json"
+            },
+            "netease:connection": {
+                "blocks": []
+            },
+            "netease:on_entity_inside": {
+                "send_python_event": true
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.875,
+                        1.0,
+                        0.875
+                    ],
+                    "min": [
+                        0.125,
+                        0.0,
+                        0.125
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:block_entity": {
+                "client_tick": false,
+                "movable": false,
+                "tick": false
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:random_tick": {
+                "enable": true,
+                "tick_to_script": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "base_block": "custom_crop_block",
+            "identifier": "arris:tomatoes_vine_stage0"
+        }
+    }
+}

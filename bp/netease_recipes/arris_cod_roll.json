@@ -1,0 +1,28 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:cod_roll"
+        },
+        "ingredients": [
+            {
+                "count": 2,
+                "data": 0,
+                "item": "arris:cod_slice"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:cooked_rice"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:cod_roll"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

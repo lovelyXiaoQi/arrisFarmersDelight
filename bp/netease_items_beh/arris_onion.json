@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:food": {
+                "nutrition": 2,
+                "saturation_modifier": "poor"
+            },
+            "minecraft:seed": {
+                "crop_result": "arris:onions_stage0",
+                "plant_at": [
+                    "minecraft:farmland",
+                    "arris:rich_soil_farmland_moist",
+                    "arris:rich_soil_farmland"
+                ]
+            },
+            "minecraft:max_stack_size": 64,
+            "minecraft:use_duration": 20.0
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:onion",
+            "register_to_create_menu": true
+        }
+    }
+}

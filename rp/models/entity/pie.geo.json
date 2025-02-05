@@ -1,0 +1,145 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.arris_pie",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "pie",
+					"pivot": [-8, 2, 8]
+				},
+				{
+					"name": "pie_slice1",
+					"parent": "pie",
+					"pivot": [-8, 2, 8],
+					"cubes": [
+						{
+							"origin": [-8, 0, 2],
+							"size": [6, 4, 6],
+							"uv": {
+								"north": {"uv": [24, 28], "uv_size": [-6, 4]},
+								"east": {"uv": [8, 28], "uv_size": [6, 4]},
+								"south": {"uv": [2, 28], "uv_size": [6, 4]},
+								"west": {"uv": [18, 28], "uv_size": [6, 4]},
+								"up": {"uv": [8, 8], "uv_size": [-6, -6]},
+								"down": {"uv": [24, 14], "uv_size": [-6, -6]}
+							}
+						},
+						{
+							"origin": [-8, 4, 6],
+							"size": [2, 1, 2],
+							"uv": {
+								"north": {"uv": [8, 24], "uv_size": [2, 1]},
+								"east": {"uv": [8, 23], "uv_size": [2, 1]},
+								"south": {"uv": [8, 24], "uv_size": [2, 1]},
+								"west": {"uv": [8, 23], "uv_size": [2, 1]},
+								"up": {"uv": [10, 25], "uv_size": [-2, -2]},
+								"down": {"uv": [10, 25], "uv_size": [-2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "pie_slice2",
+					"parent": "pie",
+					"pivot": [-8, 2, 8],
+					"cubes": [
+						{
+							"origin": [-10, 4, 6],
+							"size": [2, 1, 2],
+							"uv": {
+								"north": {"uv": [8, 27], "uv_size": [2, 1]},
+								"east": {"uv": [8, 26], "uv_size": [2, 1]},
+								"south": {"uv": [8, 27], "uv_size": [2, 1]},
+								"west": {"uv": [8, 26], "uv_size": [2, 1]},
+								"up": {"uv": [10, 28], "uv_size": [-2, -2]},
+								"down": {"uv": [10, 28], "uv_size": [-2, -2]}
+							}
+						},
+						{
+							"origin": [-14, 0, 2],
+							"size": [6, 4, 6],
+							"uv": {
+								"north": {"uv": [30, 28], "uv_size": [-6, 4]},
+								"east": {"uv": [24, 28], "uv_size": [6, 4]},
+								"south": {"uv": [8, 28], "uv_size": [6, 4]},
+								"west": {"uv": [2, 28], "uv_size": [6, 4]},
+								"up": {"uv": [14, 8], "uv_size": [-6, -6]},
+								"down": {"uv": [30, 14], "uv_size": [-6, -6]}
+							}
+						}
+					]
+				},
+				{
+					"name": "pie_slice3",
+					"parent": "pie",
+					"pivot": [-3, 0, 3],
+					"cubes": [
+						{
+							"origin": [-14, 0, 8],
+							"size": [6, 4, 6],
+							"uv": {
+								"north": {"uv": [14, 28], "uv_size": [-6, 4]},
+								"east": {"uv": [24, 28], "uv_size": [6, 4]},
+								"south": {"uv": [24, 28], "uv_size": [6, 4]},
+								"west": {"uv": [8, 28], "uv_size": [6, 4]},
+								"up": {"uv": [14, 14], "uv_size": [-6, -6]},
+								"down": {"uv": [30, 14], "uv_size": [-6, -6]}
+							}
+						},
+						{
+							"origin": [-10, 4, 8],
+							"size": [2, 1, 2],
+							"uv": {
+								"north": {"uv": [6, 27], "uv_size": [2, 1]},
+								"east": {"uv": [6, 26], "uv_size": [2, 1]},
+								"south": {"uv": [6, 27], "uv_size": [2, 1]},
+								"west": {"uv": [6, 26], "uv_size": [2, 1]},
+								"up": {"uv": [8, 28], "uv_size": [-2, -2]},
+								"down": {"uv": [8, 28], "uv_size": [-2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "pie_slice4",
+					"parent": "pie",
+					"pivot": [-3, 0, 3],
+					"cubes": [
+						{
+							"origin": [-8, 4, 8],
+							"size": [2, 1, 2],
+							"uv": {
+								"north": {"uv": [6, 24], "uv_size": [2, 1]},
+								"east": {"uv": [6, 23], "uv_size": [2, 1]},
+								"south": {"uv": [6, 24], "uv_size": [2, 1]},
+								"west": {"uv": [6, 23], "uv_size": [2, 1]},
+								"up": {"uv": [8, 25], "uv_size": [-2, -2]},
+								"down": {"uv": [8, 25], "uv_size": [-2, -2]}
+							}
+						},
+						{
+							"origin": [-8, 0, 8],
+							"size": [6, 4, 6],
+							"uv": {
+								"north": {"uv": [8, 28], "uv_size": [-6, 4]},
+								"east": {"uv": [2, 28], "uv_size": [6, 4]},
+								"south": {"uv": [18, 28], "uv_size": [6, 4]},
+								"west": {"uv": [24, 28], "uv_size": [6, 4]},
+								"up": {"uv": [8, 14], "uv_size": [-6, -6]},
+								"down": {"uv": [24, 8], "uv_size": [-6, -6]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

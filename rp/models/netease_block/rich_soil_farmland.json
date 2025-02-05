@@ -1,0 +1,120 @@
+{
+    "format_version": "1.13.0",
+    "netease:block_geometry": {
+        "bones": [
+            {
+                "cubes": [
+                    {
+                        "origin": [
+                            -16,
+                            0,
+                            0
+                        ],
+                        "pivot": [
+                            -1,
+                            0,
+                            1
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            16,
+                            15,
+                            16
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    16
+                                ],
+                                "uv_size": [
+                                    16,
+                                    16
+                                ]
+                            },
+                            "east": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    17
+                                ],
+                                "uv_size": [
+                                    16,
+                                    15
+                                ]
+                            },
+                            "north": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    17
+                                ],
+                                "uv_size": [
+                                    16,
+                                    15
+                                ]
+                            },
+                            "south": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    17
+                                ],
+                                "uv_size": [
+                                    16,
+                                    15
+                                ]
+                            },
+                            "up": {
+                                "texture": 0,
+                                "uv": [
+                                    16,
+                                    16
+                                ],
+                                "uv_size": [
+                                    -16,
+                                    -16
+                                ]
+                            },
+                            "west": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    17
+                                ],
+                                "uv_size": [
+                                    16,
+                                    15
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "name": "unknown_bone",
+                "pivot": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        ],
+        "description": {
+            "identifier": "arris:rich_soil_farmland",
+            "textures": [
+                "arris:rich_soil_farmland"
+            ],
+            "textures_descriptions": [
+                {
+                    "length": 32,
+                    "width": 32
+                }
+            ],
+            "use_ao": true
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "arris:cooked_bacon"
+        },
+        "input": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:bacon"
+        },
+        "output": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:cooked_bacon"
+        },
+        "tags": [
+            "campfire",
+            "furnace",
+            "smoker"
+        ]
+    }
+}

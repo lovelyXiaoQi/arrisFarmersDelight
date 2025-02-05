@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:tomato_seeds"
+        },
+        "description": {
+            "category": "Construction",
+            "identifier": "arris:tomato_seeds",
+            "register_to_create_menu": true
+        }
+    }
+}

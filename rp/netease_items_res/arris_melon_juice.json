@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:use_animation": "drink",
+            "minecraft:icon": "arris:melon_juice"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:melon_juice",
+            "register_to_create_menu": true
+        }
+    }
+}

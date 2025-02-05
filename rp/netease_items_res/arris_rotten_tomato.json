@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:rotten_tomato"
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:rotten_tomato",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:netherite_knife"
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:netherite_knife",
+            "register_to_create_menu": true
+        }
+    }
+}

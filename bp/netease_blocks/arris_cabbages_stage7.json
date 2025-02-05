@@ -1,0 +1,58 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "netease:connection": {
+                "blocks": []
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        1.0,
+                        0.625,
+                        1.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/mature_cabbages.json"
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            }
+        },
+        "description": {
+            "base_block": "custom_crop_block",
+            "identifier": "arris:cabbages_stage7"
+        }
+    }
+}

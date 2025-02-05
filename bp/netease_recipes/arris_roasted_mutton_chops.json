@@ -1,0 +1,38 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:roasted_mutton_chops"
+        },
+        "ingredients": [
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:cooked_rice"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:cooked_mutton_chops"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:tomato"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:beetroot"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:roasted_mutton_chops"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

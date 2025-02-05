@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:pie_crust"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:pie_crust",
+            "register_to_create_menu": true
+        }
+    }
+}

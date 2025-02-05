@@ -1,0 +1,30 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:iron_knife"
+        },
+        "key": {
+            "A": {
+                "data": 0,
+                "item": "minecraft:iron_ingot"
+            },
+            "B": {
+                "data": 0,
+                "item": "minecraft:stick"
+            }
+        },
+        "pattern": [
+            "A",
+            "B"
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:iron_knife"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

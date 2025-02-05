@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:diamond_knife"
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:diamond_knife",
+            "register_to_create_menu": true
+        }
+    }
+}

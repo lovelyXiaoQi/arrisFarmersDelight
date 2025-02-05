@@ -1,0 +1,448 @@
+{
+   "buttonCheckedState" : {
+      "clip_direction" : "left",
+      "clip_ratio" : 0.0,
+      "controls" : [
+         {
+            "toggleText@guideBook.toggleText" : {}
+         }
+      ],
+      "layer" : 1,
+      "size" : [ "100.0%+0.0px", "100.0%+0.0px" ],
+      "texture" : "textures/ui/arrisGuideBook/click_btn",
+      "type" : "image"
+   },
+   "buttonUnCheckedState" : {
+      "clip_direction" : "left",
+      "clip_ratio" : 0.0,
+      "controls" : [
+         {
+            "toggleText@guideBook.toggleText" : {
+               "color" : [ 0.2784313725490196, 0.2784313725490196, 0.2784313725490196 ]
+            }
+         }
+      ],
+      "layer" : 1,
+      "size" : [ "100.0%+0.0px", "100.0%+0.0px" ],
+      "texture" : "textures/ui/arrisGuideBook/unclick_btn",
+      "type" : "image"
+   },
+   "content" : {
+      "controls" : [
+         {
+            "item_renderer" : {
+               "controls" : [
+                  {
+                     "namespace" : {
+                        "anchor_from" : "right_middle",
+                        "anchor_to" : "left_middle",
+                        "color" : [ 0.3647058823529412, 0.3647058823529412, 0.3647058823529412 ],
+                        "font_type" : "default",
+                        "layer" : 1,
+                        "offset" : [ 3.0, 2.0 ],
+                        "size" : [ 100, 14 ],
+                        "text" : "namespace",
+                        "type" : "label"
+                     }
+                  }
+               ],
+               "layer" : 1,
+               "property_bag" : {
+                  "#item_id_aux" : 131072
+               },
+               "renderer" : "inventory_item_renderer",
+               "size" : [ "0.0%+20.0px", "0.0%+20.0px" ],
+               "type" : "custom"
+            }
+         },
+         {
+            "padding" : {
+               "layer" : 3,
+               "size" : [ "100.0%+0.0px", 3.0 ],
+               "type" : "panel"
+            }
+         },
+         {
+            "label" : {
+               "color" : [ 0.0, 0.0, 0.0 ],
+               "font_type" : "default",
+               "layer" : 4,
+               "size" : [ "100.0%+0.0px", "100.0%+0.0px" ],
+               "text" : " 介绍 介绍 介绍 介绍\n 介绍 介绍 介绍 介绍\n 介绍 介绍 介绍 介绍\n 介绍\n 介绍\n 介绍\n 介绍",
+               "type" : "label"
+            }
+         }
+      ],
+      "layer" : 1,
+      "size" : [ "100.0%+-4.0px", "100.0%+-4.0px" ],
+      "type" : "stack_panel"
+   },
+   "guideBook" : {
+      "clip_direction" : "left",
+      "clip_ratio" : 0.0,
+      "controls" : [
+         {
+            "stack_panel" : {
+               "controls" : [
+                  {
+                     "scroll_view@common.scrolling_panel" : {
+                        "$background_nine_slice_buttom" : 0,
+                        "$background_nine_slice_left" : 0,
+                        "$background_nine_slice_right" : 0,
+                        "$background_nine_slice_top" : 0,
+                        "$background_nineslice_size" : [ 0, 0, 0, 0 ],
+                        "$box_nine_slice_buttom" : 0,
+                        "$box_nine_slice_left" : 0,
+                        "$box_nine_slice_right" : 0,
+                        "$box_nine_slice_top" : 0,
+                        "$box_nineslice_size" : [ 0, 0, 0, 0 ],
+                        "$is_background_nine_slice" : false,
+                        "$is_box_nine_slice" : false,
+                        "$is_track_nine_slice" : false,
+                        "$scroll_background_image_control" : "netease_editor_template_namespace.scroll_background_image",
+                        "$scroll_background_texture" : "",
+                        "$scroll_box_mouse_image_control" : "netease_editor_template_namespace.scroll_box_image",
+                        "$scroll_box_texture" : "",
+                        "$scroll_box_touch_image_control" : "netease_editor_template_namespace.scroll_box_image",
+                        "$scroll_track_image_control" : "netease_editor_template_namespace.scroll_track_image",
+                        "$scroll_track_texture" : "",
+                        "$scrolling_content" : "guideBook.selectorTogglePanel",
+                        "$show_background" : true,
+                        "$track_nine_slice_buttom" : 0,
+                        "$track_nine_slice_left" : 0,
+                        "$track_nine_slice_right" : 0,
+                        "$track_nine_slice_top" : 0,
+                        "$track_nineslice_size" : [ 0, 0, 0, 0 ],
+                        "anchor_from" : "top_left",
+                        "anchor_to" : "top_left",
+                        "layer" : 1,
+                        "size" : [ 62.0, 157.0 ]
+                     }
+                  },
+                  {
+                     "separate_grid" : {
+                        "collection_name" : "separate_grid",
+                        "grid_dimensions" : [ 1, 15 ],
+                        "grid_item_template" : "guideBook.separate",
+                        "layer" : 32,
+                        "offset" : [ -41.50, 8.0 ],
+                        "size" : [ 7, 160 ],
+                        "type" : "grid"
+                     }
+                  },
+                  {
+                     "content" : {
+                        "controls" : [
+                           {
+                              "padding" : {
+                                 "layer" : 1,
+                                 "size" : [ "100.0%+0.0px", 5.0 ],
+                                 "type" : "panel"
+                              }
+                           },
+                           {
+                              "title" : {
+                                 "anchor_from" : "top_middle",
+                                 "anchor_to" : "top_middle",
+                                 "controls" : [
+                                    {
+                                       "img" : {
+                                          "clip_direction" : "left",
+                                          "clip_ratio" : 0.0,
+                                          "layer" : 1,
+                                          "offset" : [ 6.0, 0.0 ],
+                                          "texture" : "textures/ui/arrisGuideBook/icon03",
+                                          "type" : "image"
+                                       }
+                                    },
+                                    {
+                                       "text" : {
+                                          "anchor_from" : "top_middle",
+                                          "color" : [ 0.5294117647058824, 0.2470588235294118, 0.0 ],
+                                          "font_type" : "default",
+                                          "layer" : 2,
+                                          "offset" : [ 7.0, 0.0 ],
+                                          "text" : "内容标题",
+                                          "text_alignment" : "center",
+                                          "type" : "label"
+                                       }
+                                    }
+                                 ],
+                                 "layer" : 2,
+                                 "offset" : [ 47.50, 16.0 ],
+                                 "size" : [ 134.0, 18.0 ],
+                                 "type" : "panel"
+                              }
+                           },
+                           {
+                              "scroll_view@common.scrolling_panel" : {
+                                 "$background_nine_slice_buttom" : 0,
+                                 "$background_nine_slice_left" : 0,
+                                 "$background_nine_slice_right" : 0,
+                                 "$background_nine_slice_top" : 0,
+                                 "$background_nineslice_size" : [ 0, 0, 0, 0 ],
+                                 "$box_nine_slice_buttom" : 0,
+                                 "$box_nine_slice_left" : 0,
+                                 "$box_nine_slice_right" : 0,
+                                 "$box_nine_slice_top" : 0,
+                                 "$box_nineslice_size" : [ 0, 0, 0, 0 ],
+                                 "$is_background_nine_slice" : false,
+                                 "$is_box_nine_slice" : false,
+                                 "$is_track_nine_slice" : false,
+                                 "$scroll_background_image_control" : "netease_editor_template_namespace.scroll_background_image",
+                                 "$scroll_background_texture" : "",
+                                 "$scroll_box_mouse_image_control" : "netease_editor_template_namespace.scroll_box_image",
+                                 "$scroll_box_texture" : "",
+                                 "$scroll_box_touch_image_control" : "netease_editor_template_namespace.scroll_box_image",
+                                 "$scroll_track_image_control" : "netease_editor_template_namespace.scroll_track_image",
+                                 "$scroll_track_texture" : "",
+                                 "$scrolling_content" : "guideBook.content",
+                                 "$show_background" : true,
+                                 "$track_nine_slice_buttom" : 0,
+                                 "$track_nine_slice_left" : 0,
+                                 "$track_nine_slice_right" : 0,
+                                 "$track_nine_slice_top" : 0,
+                                 "$track_nineslice_size" : [ 0, 0, 0, 0 ],
+                                 "layer" : 5,
+                                 "offset" : [ 20.0, 10.50 ],
+                                 "size" : [ 137, 101 ]
+                              }
+                           }
+                        ],
+                        "layer" : 33,
+                        "offset" : [ 19.0, 23.50 ],
+                        "size" : [ 138, 147 ],
+                        "type" : "stack_panel",
+                        "visible" : false
+                     }
+                  }
+               ],
+               "layer" : 1,
+               "offset" : [ -0.50, -1.50 ],
+               "orientation" : "horizontal",
+               "size" : [ 211, 157 ],
+               "type" : "stack_panel"
+            }
+         },
+         {
+            "gb_bg" : {
+               "anchor_from" : "right_middle",
+               "anchor_to" : "left_middle",
+               "clip_direction" : "left",
+               "clip_ratio" : 0.0,
+               "controls" : [
+                  {
+                     "close@common.button" : {
+                        "$control_alpha" : 1.0,
+                        "$default_texture" : "textures/ui/arrisGuideBook/icon01",
+                        "$hover_texture" : "textures/ui/close_button_default_light",
+                        "$is_new_nine_slice" : false,
+                        "$label_layer" : 3,
+                        "$nine_slice_buttom" : 0,
+                        "$nine_slice_left" : 0,
+                        "$nine_slice_right" : 0,
+                        "$nine_slice_top" : 0,
+                        "$nineslice_size" : [ 0, 0, 0, 0 ],
+                        "$pressed_button_name" : "%netease_editor_template_namespace.click",
+                        "$pressed_texture" : "textures/ui/close_button_default_light",
+                        "$texture_layer" : 2,
+                        "bindings" : [
+                           {
+                              "binding_collection_name" : "",
+                              "binding_condition" : "always_when_visible",
+                              "binding_type" : "collection_details"
+                           }
+                        ],
+                        "button_mappings" : [],
+                        "controls" : [
+                           {
+                              "default@netease_editor_template_namespace.default" : {}
+                           },
+                           {
+                              "hover@netease_editor_template_namespace.hover" : {}
+                           },
+                           {
+                              "pressed@netease_editor_template_namespace.pressed" : {}
+                           }
+                        ],
+                        "default_control" : "default",
+                        "hover_control" : "hover",
+                        "is_handle_button_move_event" : true,
+                        "offset" : [ -2.0, 0.0 ],
+                        "pressed_control" : "pressed",
+                        "size" : [ 20.0, 20.0 ],
+                        "type" : "button"
+                     }
+                  }
+               ],
+               "layer" : 62,
+               "offset" : [ 0.0, -58.50 ],
+               "size" : [ 24.0, 25 ],
+               "texture" : "textures/ui/arrisGuideBook/btn04",
+               "type" : "image"
+            }
+         },
+         {
+            "pag@guideBook.pagTogglePanel" : {
+               "layer" : 70,
+               "offset" : [ -153.0, 19.0 ],
+               "size" : [ "100.0%+-210.0px", "default" ]
+            }
+         }
+      ],
+      "is_new_nine_slice" : true,
+      "layer" : 1,
+      "size" : [ 275.0, 190.0 ],
+      "texture" : "textures/ui/arrisGuideBook/panel01",
+      "type" : "image"
+   },
+   "main@common.base_screen" : {
+      "$screen_content" : "guideBook.guideBook"
+   },
+   "namespace" : "guideBook",
+   "pagClickState" : {
+      "clip_direction" : "left",
+      "clip_ratio" : 0.0,
+      "controls" : [
+         {
+            "toggleText@guideBook.toggleText" : {}
+         }
+      ],
+      "layer" : 1,
+      "size" : [ 50.0, 25.0 ],
+      "texture" : "textures/ui/arrisGuideBook/click_paging",
+      "type" : "image"
+   },
+   "pagTogglePanel" : {
+      "anchor_from" : "top_middle",
+      "anchor_to" : "top_middle",
+      "bindings" : [
+         {
+            "binding_condition" : "always",
+            "binding_name" : "#pagToggleGrid.item_count",
+            "binding_name_override" : "#StackGridItemsCount"
+         }
+      ],
+      "collection_name" : "pagToggle",
+      "controls" : [
+         {
+            "pagToggle@common.toggle" : {
+               "$checked_control" : "guideBook.pagClickState",
+               "$checked_hover_control" : "guideBook.pagClickState",
+               "$checked_locked_control" : "guideBook.pagUnClickState",
+               "$checked_locked_hover_control" : "guideBook.pagUnClickState",
+               "$item_collection_name" : "pagToggle",
+               "$radio_toggle_group" : true,
+               "$toggle_grid_collection_name" : "pagToggle",
+               "$toggle_group_default_selected" : 9999,
+               "$toggle_name" : "#pagToggleGroup",
+               "$unchecked_control" : "guideBook.pagUnClickState",
+               "$unchecked_hover_control" : "guideBook.pagUnClickState",
+               "$unchecked_locked_control" : "guideBook.pagUnClickState",
+               "$unchecked_locked_hover_control" : "guideBook.pagUnClickState",
+               "anchor_from" : "top_left",
+               "anchor_to" : "top_left",
+               "size" : [ 50, "26px" ],
+               "sound_name" : "item.book.page_turn",
+               "sound_volume" : 0.50
+            }
+         }
+      ],
+      "item_count" : 0,
+      "layer" : 1,
+      "offset" : [ 0, 0 ],
+      "orientation" : "vertical",
+      "property_bag" : {
+         "#pagToggleGrid.item_count" : 0
+      },
+      "size" : [ "100.0%+0.0px", "default" ],
+      "type" : "stack_grid",
+      "visible" : true
+   },
+   "pagUnClickState" : {
+      "clip_direction" : "left",
+      "clip_ratio" : 0.0,
+      "controls" : [
+         {
+            "toggleText@guideBook.toggleText" : {
+               "color" : [ 1.0, 0.6352941176470588, 0.0 ]
+            }
+         }
+      ],
+      "layer" : 1,
+      "size" : [ 50.0, 25.0 ],
+      "texture" : "textures/ui/arrisGuideBook/unclick_paging",
+      "type" : "image"
+   },
+   "selectorTogglePanel" : {
+      "anchor_from" : "top_middle",
+      "anchor_to" : "top_middle",
+      "bindings" : [
+         {
+            "binding_condition" : "always",
+            "binding_name" : "#selectorToggleGrid.item_count",
+            "binding_name_override" : "#StackGridItemsCount"
+         }
+      ],
+      "collection_name" : "selectorToggle",
+      "controls" : [
+         {
+            "selectorToggle@common.toggle" : {
+               "$checked_control" : "guideBook.buttonCheckedState",
+               "$checked_hover_control" : "guideBook.buttonCheckedState",
+               "$checked_locked_control" : "guideBook.buttonUnCheckedState",
+               "$checked_locked_hover_control" : "guideBook.buttonUnCheckedState",
+               "$item_collection_name" : "selectorToggle",
+               "$radio_toggle_group" : true,
+               "$toggle_grid_collection_name" : "selectorToggle",
+               "$toggle_group_default_selected" : 9999,
+               "$toggle_name" : "#selectorToggleGroup",
+               "$unchecked_control" : "guideBook.buttonUnCheckedState",
+               "$unchecked_hover_control" : "guideBook.buttonUnCheckedState",
+               "$unchecked_locked_control" : "guideBook.buttonUnCheckedState",
+               "$unchecked_locked_hover_control" : "guideBook.buttonUnCheckedState",
+               "anchor_from" : "top_left",
+               "anchor_to" : "top_left",
+               "size" : [ "100%", "18px" ],
+               "sound_name" : "item.book.page_turn",
+               "sound_volume" : 0.50
+            }
+         }
+      ],
+      "item_count" : 0,
+      "layer" : 1,
+      "orientation" : "vertical",
+      "property_bag" : {
+         "#selectorToggleGrid.item_count" : 0
+      },
+      "size" : [ "100%", "default" ],
+      "type" : "stack_grid",
+      "visible" : false
+   },
+   "separate" : {
+      "clip_direction" : "left",
+      "clip_ratio" : 0.0,
+      "controls" : [],
+      "layer" : 1,
+      "size" : [ 8.0, 8.0 ],
+      "texture" : "textures/ui/arrisGuideBook/icon04",
+      "type" : "image"
+   },
+   "toggleText" : {
+      "bindings" : [
+         {
+            "binding_collection_name" : "$item_collection_name",
+            "binding_name" : "#toggleLabel.text",
+            "binding_type" : "collection"
+         }
+      ],
+      "font_type" : "default",
+      "layer" : 1,
+      "property_bag" : {
+         "#toggleLabel.text" : "开关文本"
+      },
+      "text" : "#toggleLabel.text",
+      "text_alignment" : "center",
+      "type" : "label"
+   }
+}

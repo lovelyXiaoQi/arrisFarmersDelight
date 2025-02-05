@@ -1,0 +1,23 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:potato_item"
+        },
+        "ingredients": [
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:potato_crate"
+            }
+        ],
+        "result": {
+            "count": 9,
+            "data": 0,
+            "item": "minecraft:potato"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

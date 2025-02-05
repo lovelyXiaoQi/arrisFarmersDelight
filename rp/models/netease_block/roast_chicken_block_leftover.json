@@ -1,0 +1,539 @@
+{
+    "format_version": "1.13.0",
+    "netease:block_geometry": {
+        "bones": [
+            {
+                "name": "roast_chicken",
+                "pivot": [
+                    -8,
+                    0,
+                    8
+                ],
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "cubes": [
+                    {
+                        "origin": [
+                            -15,
+                            0,
+                            1
+                        ],
+                        "pivot": [
+                            -8,
+                            0,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            14,
+                            2,
+                            14
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 1,
+                                "uv": [
+                                    1,
+                                    1
+                                ],
+                                "uv_size": [
+                                    14,
+                                    14
+                                ]
+                            },
+                            "east": {
+                                "texture": 1,
+                                "uv": [
+                                    1,
+                                    11
+                                ],
+                                "uv_size": [
+                                    14,
+                                    2
+                                ]
+                            },
+                            "north": {
+                                "texture": 1,
+                                "uv": [
+                                    1,
+                                    11
+                                ],
+                                "uv_size": [
+                                    14,
+                                    2
+                                ]
+                            },
+                            "south": {
+                                "texture": 1,
+                                "uv": [
+                                    1,
+                                    11
+                                ],
+                                "uv_size": [
+                                    14,
+                                    2
+                                ]
+                            },
+                            "up": {
+                                "texture": 2,
+                                "uv": [
+                                    15,
+                                    15
+                                ],
+                                "uv_size": [
+                                    -14,
+                                    -14
+                                ]
+                            },
+                            "west": {
+                                "texture": 1,
+                                "uv": [
+                                    1,
+                                    11
+                                ],
+                                "uv_size": [
+                                    14,
+                                    2
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "name": "plate",
+                "parent": "roast_chicken",
+                "pivot": [
+                    -8,
+                    8,
+                    8
+                ],
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "name": "chicken",
+                "parent": "roast_chicken",
+                "pivot": [
+                    -8,
+                    8,
+                    8
+                ],
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "cubes": [
+                    {
+                        "origin": [
+                            -11,
+                            7.1,
+                            5
+                        ],
+                        "pivot": [
+                            -8,
+                            0,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            6,
+                            0.0,
+                            6
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "east": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "north": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "south": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "up": {
+                                "texture": 0,
+                                "uv": [
+                                    7,
+                                    15
+                                ],
+                                "uv_size": [
+                                    -6,
+                                    -6
+                                ]
+                            },
+                            "west": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "origin": [
+                            -11,
+                            2.1,
+                            5
+                        ],
+                        "pivot": [
+                            -8,
+                            0,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            6,
+                            0.0,
+                            6
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "east": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "north": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "south": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "up": {
+                                "texture": 0,
+                                "uv": [
+                                    7,
+                                    7
+                                ],
+                                "uv_size": [
+                                    -6,
+                                    -6
+                                ]
+                            },
+                            "west": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "origin": [
+                            -5,
+                            2.1,
+                            5
+                        ],
+                        "pivot": [
+                            -8,
+                            0,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            0,
+                            5.0,
+                            6
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "east": {
+                                "texture": 0,
+                                "uv": [
+                                    15,
+                                    2
+                                ],
+                                "uv_size": [
+                                    -6,
+                                    5
+                                ]
+                            },
+                            "north": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "south": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "up": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "west": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "origin": [
+                            -11,
+                            2.1,
+                            5
+                        ],
+                        "pivot": [
+                            -8,
+                            0,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            0,
+                            5.0,
+                            6
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "east": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "north": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "south": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "up": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "west": {
+                                "texture": 0,
+                                "uv": [
+                                    9,
+                                    2
+                                ],
+                                "uv_size": [
+                                    6,
+                                    5
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "name": "bones",
+                "parent": "chicken",
+                "pivot": [
+                    -16,
+                    28,
+                    16
+                ],
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        ],
+        "description": {
+            "identifier": "arris:roast_chicken_block_leftover",
+            "textures": [
+                "arris:roast_chicken_gibs",
+                "arris:tray_bottom",
+                "arris:tray_top_leftover"
+            ],
+            "textures_descriptions": [
+                {
+                    "length": 16,
+                    "width": 16
+                },
+                {
+                    "length": 16,
+                    "width": 16
+                },
+                {
+                    "length": 16,
+                    "width": 16
+                }
+            ],
+            "use_ao": true
+        }
+    }
+}

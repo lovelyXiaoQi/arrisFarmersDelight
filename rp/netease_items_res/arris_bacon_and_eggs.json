@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:bacon_and_eggs"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:bacon_and_eggs",
+            "register_to_create_menu": true
+        }
+    }
+}

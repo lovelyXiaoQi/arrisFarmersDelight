@@ -1,0 +1,71 @@
+{
+    "format_version": "1.13.0",
+    "netease:block_geometry": {
+        "bones": [
+            {
+                "cubes": [
+                    {
+                        "origin": [
+                            -16,
+                            8,
+                            0
+                        ],
+                        "pivot": [
+                            -8,
+                            0,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            16,
+                            0,
+                            16
+                        ],
+                        "uv": {
+                            "up": {
+                                "texture": 0,
+                                "uv": [
+                                    16,
+                                    16
+                                ],
+                                "uv_size": [
+                                    -16,
+                                    -16
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "name": "bone",
+                "pivot": [
+                    -8,
+                    0,
+                    8
+                ],
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        ],
+        "description": {
+            "identifier": "arris:safety_net",
+            "item_texture": "arris:safety_net",
+            "textures": [
+                "arris:safety_net"
+            ],
+            "textures_descriptions": [
+                {
+                    "length": 16,
+                    "width": 16
+                }
+            ],
+            "use_ao": false
+        }
+    }
+}

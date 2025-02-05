@@ -1,0 +1,28 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "arris:toll_entity",
+            "is_spawnable": false,
+            "is_summonable": false,
+            "is_experimental": false,
+            "runtime_identifier": "minecraft:snowball"
+        },
+        "components": {
+            "minecraft:scale": {
+                "value": 0.3
+            },
+            "minecraft:projectile": {
+                "on_hit": {
+                    "impact_damage": {
+                        "damage": 0,
+                        "knockback": false,
+                        "destroy_on_hit": true
+                    },
+                    "remove_on_hit": {
+                    }
+                }
+            }
+        }
+    }
+}

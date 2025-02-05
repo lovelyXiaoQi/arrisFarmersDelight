@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.skillet.shelf": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"shelf": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.skillet.sizzle": {
+			"loop": true,
+			"animation_length": 15,
+			"sound_effects": {
+				"0.0": {
+					"effect": "sizzle"
+				}
+			} 
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "arris:wild_carrots_feature"
+    },
+    "places_block": {
+      "name": "arris:wild_carrots"
+    },
+    "enforce_survivability_rules": false,
+    "enforce_placement_rules": false,
+    "may_replace": [
+      "minecraft:air"
+    ],
+    "may_attach_to": {
+      "auto_rotate": false,
+      "min_sides_must_attach": 1,
+      "bottom": [
+        "minecraft:sand",
+        "minecraft:grass",
+        "minecraft:dirt",
+        "minecraft:dirt_with_roots",
+        "minecraft:farmland",
+        "minecraft:podzol",
+        "minecraft:mycelium"
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:safety_net"
+        },
+        "key": {
+            "D": {
+                "data": 0,
+                "item": "arris:rope"
+            }
+        },
+        "pattern": [
+            "DD",
+            "DD"
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:safety_net"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

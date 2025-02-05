@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:apple_pie_item"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:apple_pie_item",
+            "register_to_create_menu": true
+        }
+    }
+}

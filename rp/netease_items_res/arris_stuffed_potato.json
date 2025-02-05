@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:stuffed_potato"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:stuffed_potato",
+            "register_to_create_menu": true
+        }
+    }
+}

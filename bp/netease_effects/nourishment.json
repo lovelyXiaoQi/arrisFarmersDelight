@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10",
+  "minecraft:effect": {
+    "description": {
+      "identifier": "arris:nourishment"
+    },
+    "components": {
+      "minecraft:particle_color": [255, 255, 51],
+      "minecraft:icon": "nourishment"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "ui_defs": [
+        "ui/cooking_pot.json",
+        "ui/guideBook.json",
+        "ui/netease_editor_template_namespace.json"
+    ]
+}

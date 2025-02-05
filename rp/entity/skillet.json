@@ -1,0 +1,41 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "arris:skillet",
+            "geometry": {
+                "default": "geometry.skillet"
+            },
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "animations": {
+                "sizzle_sound": "animation.skillet.sizzle",
+                "shelf": "animation.skillet.shelf"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "sound_effects": {
+                "sizzle": "ambient.skillet.sizzle"
+            },
+            "textures": {
+                "default": "textures/entity/skillet_item"
+            },
+            "scripts":{
+                "initialize": [
+                  "variable.mod_heat = 0.0;",
+                  "variable.mod_shelf = 0.0;"
+                ],
+                "animate": [
+                  {
+                    "sizzle_sound": "variable.mod_heat == 1.0"
+                  },
+                  {
+                    "shelf": "variable.mod_shelf == 0.0"
+                  }
+                ]
+            }
+        }
+    }
+}

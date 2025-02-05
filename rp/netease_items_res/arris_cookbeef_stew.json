@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:cookbeef_stew"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:cookbeef_stew",
+            "register_to_create_menu": true
+        }
+    }
+}

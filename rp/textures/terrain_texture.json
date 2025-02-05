@@ -1,0 +1,567 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "red_mushroom_colony_stage3": {
+			"textures": "textures/blocks/red_mushroom_colony_stage3"
+		},
+		"red_mushroom_colony_stage2": {
+			"textures": "textures/blocks/red_mushroom_colony_stage2"
+		},
+		"red_mushroom_colony_stage1": {
+			"textures": "textures/blocks/red_mushroom_colony_stage1"
+		},
+		"red_mushroom_colony_stage0": {
+			"textures": "textures/blocks/red_mushroom_colony_stage0"
+		},
+        "brown_mushroom_colony_stage3": {
+			"textures": "textures/blocks/brown_mushroom_colony_stage3"
+		},
+		"brown_mushroom_colony_stage2": {
+			"textures": "textures/blocks/brown_mushroom_colony_stage2"
+		},
+		"brown_mushroom_colony_stage1": {
+			"textures": "textures/blocks/brown_mushroom_colony_stage1"
+		},
+		"brown_mushroom_colony_stage0": {
+			"textures": "textures/blocks/brown_mushroom_colony_stage0"
+		},
+        "arris:acacia_cabinet_front": {
+            "textures": "textures/blocks/acacia_cabinet_front"
+        },
+        "arris:acacia_cabinet_side": {
+            "textures": "textures/blocks/acacia_cabinet_side"
+        },
+        "arris:acacia_cabinet_top": {
+            "textures": "textures/blocks/acacia_cabinet_top"
+        },
+        "arris:apple_pie": {
+            "textures": "textures/blocks/apple_pie"
+        },
+        "arris:apple_pie_item": {
+            "textures": "textures/items/apple_pie"
+        },
+        "arris:bamboo_cabinet_front": {
+            "textures": "textures/blocks/bamboo_cabinet_front"
+        },
+        "arris:bamboo_cabinet_side": {
+            "textures": "textures/blocks/bamboo_cabinet_side"
+        },
+        "arris:bamboo_cabinet_top": {
+            "textures": "textures/blocks/bamboo_cabinet_top"
+        },
+        "arris:basket": {
+            "textures": "textures/blocks/basket"
+        },
+        "arris:beetroot_crate_side": {
+            "textures": "textures/blocks/beetroot_crate_side"
+        },
+        "arris:beetroot_crate_top": {
+            "textures": "textures/blocks/beetroot_crate_top"
+        },
+        "arris:beetroot_stage0": {
+            "textures": "textures/blocks/beetroots_stage_0"
+        },
+        "arris:beetroot_stage1": {
+            "textures": "textures/blocks/beetroots_stage_1"
+        },
+        "arris:beetroot_stage2": {
+            "textures": "textures/blocks/beetroots_stage_2"
+        },
+        "arris:beetroot_stage3": {
+            "textures": "textures/blocks/beetroots_stage_3"
+        },
+        "arris:birch_cabinet_front": {
+            "textures": "textures/blocks/birch_cabinet_front"
+        },
+        "arris:birch_cabinet_side": {
+            "textures": "textures/blocks/birch_cabinet_side"
+        },
+        "arris:birch_cabinet_top": {
+            "textures": "textures/blocks/birch_cabinet_top"
+        },
+        "arris:budding_tomatoes_stage0": {
+            "textures": "textures/blocks/budding_tomatoes_stage0"
+        },
+        "arris:budding_tomatoes_stage1": {
+            "textures": "textures/blocks/budding_tomatoes_stage1"
+        },
+        "arris:budding_tomatoes_stage2": {
+            "textures": "textures/blocks/budding_tomatoes_stage2"
+        },
+        "arris:budding_tomatoes_stage3": {
+            "textures": "textures/blocks/budding_tomatoes_stage3"
+        },
+        "arris:budding_tomatoes_stage4": {
+            "textures": "textures/blocks/budding_tomatoes_stage4"
+        },
+        "arris:budding_tomatoes_stage5": {
+            "textures": "textures/blocks/budding_tomatoes_stage5"
+        },
+        "arris:budding_tomatoes_stage6": {
+            "textures": "textures/blocks/budding_tomatoes_stage6"
+        },
+        "arris:cabbage_crate_side": {
+            "textures": "textures/blocks/cabbage_crate_side"
+        },
+        "arris:cabbage_crate_top": {
+            "textures": "textures/blocks/cabbage_crate_top"
+        },
+        "arris:cabbages_stage0": {
+            "textures": "textures/blocks/cabbages_stage0"
+        },
+        "arris:cabbages_stage1": {
+            "textures": "textures/blocks/cabbages_stage1"
+        },
+        "arris:cabbages_stage2": {
+            "textures": "textures/blocks/cabbages_stage2"
+        },
+        "arris:cabbages_stage3": {
+            "textures": "textures/blocks/cabbages_stage3"
+        },
+        "arris:cabbages_stage4": {
+            "textures": "textures/blocks/cabbages_stage4"
+        },
+        "arris:cabbages_stage5": {
+            "textures": "textures/blocks/cabbages_stage5"
+        },
+        "arris:cabbages_stage6": {
+            "textures": "textures/blocks/cabbages_stage6"
+        },
+        "arris:cabbages_stage7": {
+            "textures": "textures/blocks/cabbages_stage7"
+        },
+        "arris:canvas_rug": {
+            "textures": "textures/blocks/canvas_rug"
+        },
+        "arris:carrot_crate_side": {
+            "textures": "textures/blocks/carrot_crate_side"
+        },
+        "arris:carrot_crate_top": {
+            "textures": "textures/blocks/carrot_crate_top"
+        },
+        "arris:carrots_stage0": {
+            "textures": "textures/blocks/carrots_stage_0"
+        },
+        "arris:carrots_stage1": {
+            "textures": "textures/blocks/carrots_stage_1"
+        },
+        "arris:carrots_stage2": {
+            "textures": "textures/blocks/carrots_stage_2"
+        },
+        "arris:carrots_stage3": {
+            "textures": "textures/blocks/carrots_stage_3"
+        },
+        "arris:cherry_cabinet_front": {
+            "textures": "textures/blocks/cherry_cabinet_front"
+        },
+        "arris:cherry_cabinet_side": {
+            "textures": "textures/blocks/cherry_cabinet_side"
+        },
+        "arris:cherry_cabinet_top": {
+            "textures": "textures/blocks/cherry_cabinet_top"
+        },
+        "arris:chocolate_pie": {
+            "textures": "textures/blocks/chocolate_pie"
+        },
+        "arris:chocolate_pie_item": {
+            "textures": "textures/items/chocolate_pie"
+        },
+        "arris:cooking_pot_icon": {
+            "textures": "textures/items/cooking_pot_icon"
+        },
+        "arris:crate_bottom": {
+            "textures": "textures/blocks/crate_bottom"
+        },
+        "arris:crimson_cabinet_front": {
+            "textures": "textures/blocks/crimson_cabinet_front"
+        },
+        "arris:crimson_cabinet_side": {
+            "textures": "textures/blocks/crimson_cabinet_side"
+        },
+        "arris:crimson_cabinet_top": {
+            "textures": "textures/blocks/crimson_cabinet_top"
+        },
+        "arris:custom_dirt": {
+            "textures": "textures/blocks/custom_dirt"
+        },
+        "arris:cutting_board": {
+            "textures": "textures/blocks/cutting_board"
+        },
+        "arris:dark_oak_cabinet_front": {
+            "textures": "textures/blocks/dark_oak_cabinet_front"
+        },
+        "arris:dark_oak_cabinet_side": {
+            "textures": "textures/blocks/dark_oak_cabinet_side"
+        },
+        "arris:dark_oak_cabinet_top": {
+            "textures": "textures/blocks/dark_oak_cabinet_top"
+        },
+        "arris:honey_glazed_ham_body": {
+            "textures": "textures/blocks/honey_glazed_ham_body"
+        },
+        "arris:honey_glazed_ham_bone": {
+            "textures": "textures/blocks/honey_glazed_ham_bone"
+        },
+        "arris:honey_glazed_ham_icon": {
+            "textures": "textures/blocks/honey_glazed_ham_block"
+        },
+        "arris:jungle_cabinet_front": {
+            "textures": "textures/blocks/jungle_cabinet_front"
+        },
+        "arris:jungle_cabinet_side": {
+            "textures": "textures/blocks/jungle_cabinet_side"
+        },
+        "arris:jungle_cabinet_top": {
+            "textures": "textures/blocks/jungle_cabinet_top"
+        },
+        "arris:mangrove_cabinet_front": {
+            "textures": "textures/blocks/mangrove_cabinet_front"
+        },
+        "arris:mangrove_cabinet_side": {
+            "textures": "textures/blocks/mangrove_cabinet_side"
+        },
+        "arris:mangrove_cabinet_top": {
+            "textures": "textures/blocks/mangrove_cabinet_top"
+        },
+        "arris:oak_cabinet_front": {
+            "textures": "textures/blocks/oak_cabinet_front"
+        },
+        "arris:oak_cabinet_side": {
+            "textures": "textures/blocks/oak_cabinet_side"
+        },
+        "arris:oak_cabinet_top": {
+            "textures": "textures/blocks/oak_cabinet_top"
+        },
+        "arris:onion_crate_side": {
+            "textures": "textures/blocks/onion_crate_side"
+        },
+        "arris:onion_crate_top": {
+            "textures": "textures/blocks/onion_crate_top"
+        },
+        "arris:onions_crop_1": {
+            "textures": "textures/blocks/onions_stage0"
+        },
+        "arris:onions_stage0": {
+            "textures": "textures/blocks/onions_stage0"
+        },
+        "arris:onions_stage1": {
+            "textures": "textures/blocks/onions_stage1"
+        },
+        "arris:onions_stage2": {
+            "textures": "textures/blocks/onions_stage2"
+        },
+        "arris:onions_stage3": {
+            "textures": "textures/blocks/onions_stage3"
+        },
+        "arris:organic_compost_stage0": {
+            "textures": "textures/blocks/organic_compost_stage0"
+        },
+        "arris:organic_compost_stage1": {
+            "textures": "textures/blocks/organic_compost_stage1"
+        },
+        "arris:organic_compost_stage2": {
+            "textures": "textures/blocks/organic_compost_stage2"
+        },
+        "arris:organic_compost_stage3": {
+            "textures": "textures/blocks/organic_compost_stage3"
+        },
+        "arris:potato_crate_side": {
+            "textures": "textures/blocks/potato_crate_side"
+        },
+        "arris:potato_crate_top": {
+            "textures": "textures/blocks/potato_crate_top"
+        },
+        "arris:potatoes_stage0": {
+            "textures": "textures/blocks/potatoes_stage_0"
+        },
+        "arris:potatoes_stage1": {
+            "textures": "textures/blocks/potatoes_stage_1"
+        },
+        "arris:potatoes_stage2": {
+            "textures": "textures/blocks/potatoes_stage_2"
+        },
+        "arris:potatoes_stage3": {
+            "textures": "textures/blocks/potatoes_stage_3"
+        },
+        "arris:rice_bag_bottom": {
+            "textures": "textures/blocks/rice_bag_bottom"
+        },
+        "arris:rice_bag_side": {
+            "textures": "textures/blocks/rice_bag_side"
+        },
+        "arris:rice_bag_side_tied": {
+            "textures": "textures/blocks/rice_bag_side_tied"
+        },
+        "arris:rice_bag_top": {
+            "textures": "textures/blocks/rice_bag_top"
+        },
+        "arris:rice_bale_bottom": {
+            "textures": "textures/blocks/rice_bale_bottom"
+        },
+        "arris:rice_bale_side": {
+            "textures": "textures/blocks/rice_bale_side"
+        },
+        "arris:rice_bale_top": {
+            "textures": "textures/blocks/rice_bale_top"
+        },
+        "arris:rice_roll_medley": {
+            "textures": "textures/blocks/rice_roll_medley"
+        },
+        "arris:rice_roll_medley_block_icon": {
+            "textures": "textures/blocks/rice_roll_medley_block"
+        },
+        "arris:rice_stage0": {
+            "textures": "textures/blocks/rice_stage0"
+        },
+        "arris:rice_stage1": {
+            "textures": "textures/blocks/rice_stage1"
+        },
+        "arris:rice_stage2": {
+            "textures": "textures/blocks/rice_stage2"
+        },
+        "arris:rice_stage3": {
+            "textures": "textures/blocks/rice_stage3"
+        },
+        "arris:rice_supporting": {
+            "textures": "textures/blocks/rice_supporting"
+        },
+        "arris:rice_upper_crop_stage0": {
+            "textures": "textures/blocks/rice_upper_crop_stage0"
+        },
+        "arris:rice_upper_crop_stage1": {
+            "textures": "textures/blocks/rice_upper_crop_stage1"
+        },
+        "arris:rice_upper_crop_stage2": {
+            "textures": "textures/blocks/rice_upper_crop_stage2"
+        },
+        "arris:rice_upper_crop_stage3": {
+            "textures": "textures/blocks/rice_upper_crop_stage3"
+        },
+        "arris:rich_soil": {
+            "textures": "textures/blocks/rich_soil"
+        },
+        "arris:rich_soil_farmland": {
+            "textures": "textures/blocks/rich_soil_farmland"
+        },
+        "arris:rich_soil_farmland_moist": {
+            "textures": "textures/blocks/rich_soil_farmland_moist"
+        },
+        "arris:roast_chicken_block_icon": {
+            "textures": "textures/blocks/roast_chicken_block"
+        },
+        "arris:roast_chicken_body": {
+            "textures": "textures/blocks/roast_chicken_body"
+        },
+        "arris:roast_chicken_eaten": {
+            "textures": "textures/blocks/roast_chicken_eaten"
+        },
+        "arris:roast_chicken_gibs": {
+            "textures": "textures/blocks/roast_chicken_gibs"
+        },
+        "arris:rope": {
+            "textures": "textures/blocks/rope"
+        },
+        "arris:rope_item": {
+            "textures": "textures/items/rope"
+        },
+        "arris:safety_net": {
+            "textures": "textures/blocks/safety_net"
+        },
+        "arris:sandy_shrub": {
+            "textures": "textures/blocks/sandy_shrub"
+        },
+        "arris:shepherds_pie_block_icon": {
+            "textures": "textures/blocks/shepherds_pie_block"
+        },
+        "arris:shepherds_pie_inner": {
+            "textures": "textures/blocks/shepherds_pie_inner"
+        },
+        "arris:shepherds_pie_side": {
+            "textures": "textures/blocks/shepherds_pie_side"
+        },
+        "arris:shepherds_pie_top": {
+            "textures": "textures/blocks/shepherds_pie_top"
+        },
+        "arris:skillet_icon": {
+            "textures": "textures/items/skillet_icon"
+        },
+        "arris:spruce_cabinet_front": {
+            "textures": "textures/blocks/spruce_cabinet_front"
+        },
+        "arris:spruce_cabinet_side": {
+            "textures": "textures/blocks/spruce_cabinet_side"
+        },
+        "arris:spruce_cabinet_top": {
+            "textures": "textures/blocks/spruce_cabinet_top"
+        },
+        "arris:stove_bottom": {
+            "textures": "textures/blocks/stove_bottom"
+        },
+        "arris:stove_front": {
+            "textures": "textures/blocks/stove_front"
+        },
+        "arris:stove_front_on": {
+            "textures": "textures/blocks/stove_front_on"
+        },
+        "arris:stove_side": {
+            "textures": "textures/blocks/stove_side"
+        },
+        "arris:stove_top": {
+            "textures": "textures/blocks/stove_top"
+        },
+        "arris:stove_top_on": {
+            "textures": "textures/blocks/stove_top_on"
+        },
+        "arris:straw_bale_end": {
+            "textures": "textures/blocks/straw_bale_end"
+        },
+        "arris:straw_bale_side": {
+            "textures": "textures/blocks/straw_bale_side"
+        },
+        "arris:stuffed_pumpkin_block_icon": {
+            "textures": "textures/blocks/stuffed_pumpkin_block"
+        },
+        "arris:stuffed_pumpkin_bottom": {
+            "textures": "textures/blocks/stuffed_pumpkin_bottom"
+        },
+        "arris:stuffed_pumpkin_details": {
+            "textures": "textures/blocks/stuffed_pumpkin_details"
+        },
+        "arris:stuffed_pumpkin_side": {
+            "textures": "textures/blocks/stuffed_pumpkin_side"
+        },
+        "arris:stuffed_pumpkin_top": {
+            "textures": "textures/blocks/stuffed_pumpkin_top"
+        },
+        "arris:stuffed_pumpkin_top_eaten": {
+            "textures": "textures/blocks/stuffed_pumpkin_top_eaten"
+        },
+        "arris:sweet_berry_cheesecake": {
+            "textures": "textures/blocks/sweet_berry_cheesecake"
+        },
+        "arris:sweet_berry_cheesecake_item": {
+            "textures": "textures/items/sweet_berry_cheesecake"
+        },
+        "arris:tatami_half_mat_icon": {
+            "textures": "textures/blocks/half_tatami_mat"
+        },
+        "arris:tatami_mat_half": {
+            "textures": "textures/blocks/tatami_mat_half"
+        },
+        "arris:tatami_mat_side": {
+            "textures": "textures/blocks/tatami_mat_side"
+        },
+        "arris:tomato_crate_side": {
+            "textures": "textures/blocks/tomato_crate_side"
+        },
+        "arris:tomato_crate_top": {
+            "textures": "textures/blocks/tomato_crate_top"
+        },
+        "arris:tomatoes_vine_stage0": {
+            "textures": "textures/blocks/tomatoes_vine_stage0"
+        },
+        "arris:tomatoes_vine_stage1": {
+            "textures": "textures/blocks/tomatoes_vine_stage1"
+        },
+        "arris:tomatoes_vine_stage2": {
+            "textures": "textures/blocks/tomatoes_vine_stage2"
+        },
+        "arris:tomatoes_vine_stage3": {
+            "textures": "textures/blocks/tomatoes_vine_stage3"
+        },
+        "arris:torchflower_crop_stage0": {
+            "textures": "textures/blocks/torchflower_crop_stage_0"
+        },
+        "arris:torchflower_crop_stage1": {
+            "textures": "textures/blocks/torchflower_crop_stage_1"
+        },
+        "arris:tray_bottom": {
+            "textures": "textures/blocks/tray_bottom"
+        },
+        "arris:tray_pie_leftover": {
+            "textures": "textures/blocks/tray_pie_leftover"
+        },
+        "arris:tray_rice_berry_garnish": {
+            "textures": "textures/blocks/tray_rice_berry_garnish"
+        },
+        "arris:tray_rice_berry_leftover": {
+            "textures": "textures/blocks/tray_rice_berry_leftover"
+        },
+        "arris:tray_top": {
+            "textures": "textures/blocks/tray_top"
+        },
+        "arris:tray_top_leftover": {
+            "textures": "textures/blocks/tray_top_leftover"
+        },
+        "arris:tray_top_veggies": {
+            "textures": "textures/blocks/tray_top_veggies"
+        },
+        "arris:warped_cabinet_front": {
+            "textures": "textures/blocks/warped_cabinet_front"
+        },
+        "arris:warped_cabinet_side": {
+            "textures": "textures/blocks/warped_cabinet_side"
+        },
+        "arris:warped_cabinet_top": {
+            "textures": "textures/blocks/warped_cabinet_top"
+        },
+        "arris:wheat_stage0": {
+            "textures": "textures/blocks/wheat_stage_0"
+        },
+        "arris:wheat_stage1": {
+            "textures": "textures/blocks/wheat_stage_1"
+        },
+        "arris:wheat_stage2": {
+            "textures": "textures/blocks/wheat_stage_2"
+        },
+        "arris:wheat_stage3": {
+            "textures": "textures/blocks/wheat_stage_3"
+        },
+        "arris:wheat_stage4": {
+            "textures": "textures/blocks/wheat_stage_4"
+        },
+        "arris:wheat_stage5": {
+            "textures": "textures/blocks/wheat_stage_5"
+        },
+        "arris:wheat_stage6": {
+            "textures": "textures/blocks/wheat_stage_6"
+        },
+        "arris:wheat_stage7": {
+            "textures": "textures/blocks/wheat_stage_7"
+        },
+        "arris:wild_beetroots": {
+            "textures": "textures/blocks/wild_beetroots"
+        },
+        "arris:wild_cabbages": {
+            "textures": "textures/blocks/wild_cabbages"
+        },
+        "arris:wild_carrots": {
+            "textures": "textures/blocks/wild_carrots"
+        },
+        "arris:wild_onions": {
+            "textures": "textures/blocks/wild_onions"
+        },
+        "arris:wild_potatoes": {
+            "textures": "textures/blocks/wild_potatoes"
+        },
+        "arris:wild_rice": {
+            "textures": "textures/blocks/wild_rice"
+        },
+        "arris:wild_rice_icon": {
+            "textures": "textures/items/wild_rice_icon"
+        },
+        "arris:wild_tomatoes": {
+            "textures": "textures/blocks/wild_tomatoes"
+        },
+        "oak_cabinet_destroy": {
+            "textures": "textures/entity/oak_cabinet_close"
+        },
+        "skillet_destroy": {
+            "textures": "textures/blocks/skillet"
+        },
+        "skillet_item": {
+            "textures": "textures/entity/skillet_item"
+        }
+    },
+    "texture_name": "atlas.terrain"
+}

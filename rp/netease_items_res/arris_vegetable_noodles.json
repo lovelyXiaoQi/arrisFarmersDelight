@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:vegetable_noodles"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:vegetable_noodles",
+            "register_to_create_menu": true
+        }
+    }
+}

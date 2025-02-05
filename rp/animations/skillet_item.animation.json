@@ -1,0 +1,22 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.skillet_item.first_hold": {
+			"loop": true,
+			"bones": {
+				"skillet": {
+					"rotation": [88, 62, -33],
+					"position": [2, -5, 13]
+				}
+			}
+		},
+		"animation.skillet_item.not_first_scale": {
+			"loop": true,
+			"bones": {
+				"skillet": {
+					"scale": 0.7
+				}
+			}
+		}
+	}
+}

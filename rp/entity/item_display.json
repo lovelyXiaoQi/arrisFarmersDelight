@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "enable_attachables": true,
+            "animations": {
+                "armor": "animation.item_display.armor",
+                "block": "animation.item_display.block",
+                "item": "animation.item_display.item"
+            },
+            "geometry": {
+                "default": "geometry.item_display"
+            },
+            "identifier": "arris:item_display",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "textures": {
+                "default": "textures/entity/toum"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "item": "query.mod.item_display_mode == 0.0"
+                    },
+                    {
+                        "block": "query.mod.item_display_mode == 1.0"
+                    },
+                    {
+                        "armor": "query.mod.item_display_mode == 2.0"
+                    }
+                ]
+            }
+        }
+    }
+}

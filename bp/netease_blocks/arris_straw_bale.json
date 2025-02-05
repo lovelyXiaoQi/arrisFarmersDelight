@@ -1,0 +1,41 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.5
+            },
+            "minecraft:explosion_resistance": {
+                "value": 0.5
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/straw_bale.json"
+            },
+            "netease:connection": {
+                "blocks": [
+
+                ]
+            },
+            "netease:face_directional": {
+                "type": "direction"
+            },
+            "netease:render_layer": {
+                "value": "opaque"
+            },
+            "netease:solid": {
+                "value": true
+            }
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:straw_bale",
+            "register_to_creative_menu": true
+        }
+    }
+}

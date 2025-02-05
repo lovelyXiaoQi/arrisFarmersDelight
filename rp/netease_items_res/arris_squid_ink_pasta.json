@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:squid_ink_pasta"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:squid_ink_pasta",
+            "register_to_create_menu": true
+        }
+    }
+}

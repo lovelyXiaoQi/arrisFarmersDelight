@@ -1,0 +1,38 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:organic_compost2"
+        },
+        "ingredients": [
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:dirt"
+            },
+            {
+                "count": 2,
+                "data": 0,
+                "item": "minecraft:rotten_flesh"
+            },
+            {
+                "count": 4,
+                "data": 0,
+                "item": "minecraft:bone_meal"
+            },
+            {
+                "count": 2,
+                "data": 0,
+                "item": "arris:straw"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:organic_compost_stage0"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

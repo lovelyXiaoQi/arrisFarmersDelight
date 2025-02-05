@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:wheat_dough"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:wheat_dough",
+            "register_to_create_menu": true
+        }
+    }
+}

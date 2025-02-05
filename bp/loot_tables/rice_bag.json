@@ -1,0 +1,27 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "functions": [
+                        {
+                            "count": {
+                                "max": 9,
+                                "min": 9
+                            },
+                            "function": "set_count"
+                        },
+                        {
+                            "data": 0,
+                            "function": "set_data"
+                        }
+                    ],
+                    "name": "arris:rice",
+                    "type": "item",
+                    "weight": 1
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

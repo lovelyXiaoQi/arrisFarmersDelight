@@ -1,0 +1,320 @@
+{
+    "format_version": "1.13.0",
+    "netease:block_geometry": {
+        "bones": [
+            {
+                "cubes": [
+                    {
+                        "origin": [
+                            -10,
+                            5,
+                            7
+                        ],
+                        "pivot": [
+                            -9,
+                            6,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            -22.5
+                        ],
+                        "size": [
+                            2,
+                            10,
+                            2
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 1,
+                                "uv": [
+                                    2,
+                                    1
+                                ],
+                                "uv_size": [
+                                    2,
+                                    2
+                                ]
+                            },
+                            "east": {
+                                "texture": 1,
+                                "uv": [
+                                    2,
+                                    3
+                                ],
+                                "uv_size": [
+                                    2,
+                                    10
+                                ]
+                            },
+                            "north": {
+                                "texture": 1,
+                                "uv": [
+                                    2,
+                                    3
+                                ],
+                                "uv_size": [
+                                    2,
+                                    10
+                                ]
+                            },
+                            "south": {
+                                "texture": 1,
+                                "uv": [
+                                    2,
+                                    3
+                                ],
+                                "uv_size": [
+                                    2,
+                                    10
+                                ]
+                            },
+                            "up": {
+                                "texture": 1,
+                                "uv": [
+                                    4,
+                                    3
+                                ],
+                                "uv_size": [
+                                    -2,
+                                    -2
+                                ]
+                            },
+                            "west": {
+                                "texture": 1,
+                                "uv": [
+                                    2,
+                                    3
+                                ],
+                                "uv_size": [
+                                    2,
+                                    10
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "origin": [
+                            -12,
+                            7,
+                            4
+                        ],
+                        "pivot": [
+                            -8,
+                            0,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            8,
+                            2,
+                            8
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 1,
+                                "uv": [
+                                    6,
+                                    4
+                                ],
+                                "uv_size": [
+                                    8,
+                                    8
+                                ]
+                            },
+                            "east": {
+                                "texture": 1,
+                                "uv": [
+                                    6,
+                                    7
+                                ],
+                                "uv_size": [
+                                    8,
+                                    2
+                                ]
+                            },
+                            "north": {
+                                "texture": 1,
+                                "uv": [
+                                    6,
+                                    4
+                                ],
+                                "uv_size": [
+                                    8,
+                                    2
+                                ]
+                            },
+                            "south": {
+                                "texture": 1,
+                                "uv": [
+                                    6,
+                                    10
+                                ],
+                                "uv_size": [
+                                    8,
+                                    2
+                                ]
+                            },
+                            "up": {
+                                "texture": 1,
+                                "uv": [
+                                    14,
+                                    12
+                                ],
+                                "uv_size": [
+                                    -8,
+                                    -8
+                                ]
+                            },
+                            "west": {
+                                "texture": 1,
+                                "uv": [
+                                    14,
+                                    8
+                                ],
+                                "uv_size": [
+                                    -8,
+                                    2
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "origin": [
+                            -14,
+                            0,
+                            2
+                        ],
+                        "pivot": [
+                            -8,
+                            0,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            12,
+                            8,
+                            12
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 0,
+                                "uv": [
+                                    2,
+                                    2
+                                ],
+                                "uv_size": [
+                                    12,
+                                    12
+                                ]
+                            },
+                            "east": {
+                                "texture": 2,
+                                "uv": [
+                                    2,
+                                    8
+                                ],
+                                "uv_size": [
+                                    12,
+                                    8
+                                ]
+                            },
+                            "north": {
+                                "texture": 2,
+                                "uv": [
+                                    2,
+                                    8
+                                ],
+                                "uv_size": [
+                                    12,
+                                    8
+                                ]
+                            },
+                            "south": {
+                                "texture": 2,
+                                "uv": [
+                                    2,
+                                    8
+                                ],
+                                "uv_size": [
+                                    12,
+                                    8
+                                ]
+                            },
+                            "up": {
+                                "texture": 3,
+                                "uv": [
+                                    14,
+                                    14
+                                ],
+                                "uv_size": [
+                                    -12,
+                                    -12
+                                ]
+                            },
+                            "west": {
+                                "texture": 2,
+                                "uv": [
+                                    2,
+                                    8
+                                ],
+                                "uv_size": [
+                                    12,
+                                    8
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "name": "bone",
+                "pivot": [
+                    0,
+                    0,
+                    0
+                ],
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        ],
+        "description": {
+            "identifier": "arris:stuffed_pumpkin_block_stage1",
+            "textures": [
+                "arris:stuffed_pumpkin_bottom",
+                "arris:stuffed_pumpkin_details",
+                "arris:stuffed_pumpkin_side",
+                "arris:stuffed_pumpkin_top_eaten"
+            ],
+            "textures_descriptions": [
+                {
+                    "length": 16,
+                    "width": 16
+                },
+                {
+                    "length": 16,
+                    "width": 16
+                },
+                {
+                    "length": 16,
+                    "width": 16
+                },
+                {
+                    "length": 16,
+                    "width": 16
+                }
+            ],
+            "use_ao": true
+        }
+    }
+}

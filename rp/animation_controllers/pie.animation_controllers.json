@@ -1,0 +1,66 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.pie.slice" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "default" ],
+					"transitions" : [
+						{
+							"slice1" : "variable.mod_pie == 1.0"
+						},
+						{
+							"slice2" : "variable.mod_pie == 2.0"
+						},
+						{
+							"slice3" : "variable.mod_pie == 3.0"
+						}
+					]
+				},
+				"slice1" : {
+					"animations" : [ "slice1" ],
+					"transitions" : [
+						{
+							"default" : "variable.mod_pie == 0.0"
+						},
+						{
+							"slice2" : "variable.mod_pie == 2.0"
+						},
+						{
+							"slice3" : "variable.mod_pie == 3.0"
+						}
+					]
+				},
+				"slice2" : {
+					"animations" : [ "slice2" ],
+					"transitions" : [
+						{
+							"default" : "variable.mod_pie == 0.0"
+						},
+						{
+							"slice1" : "variable.mod_pie == 1.0"
+						},
+						{
+							"slice3" : "variable.mod_pie == 3.0"
+						}
+					]
+				},
+				"slice3" : {
+					"animations" : [ "slice3" ],
+					"transitions" : [
+						{
+							"default" : "variable.mod_pie == 0.0"
+						},
+						{
+							"slice1" : "variable.mod_pie == 1.0"
+						},
+						{
+							"slice2" : "variable.mod_pie == 2.0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

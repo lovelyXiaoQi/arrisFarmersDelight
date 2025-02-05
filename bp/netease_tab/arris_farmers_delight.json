@@ -1,0 +1,10 @@
+{
+    "category": [
+        {
+            "icon": "textures/ui/farmers_delight",
+            "labelText": "itemCategory.name.arris_farmers_delight",
+            "name": "arris_farmers_delight",
+            "sort_by_identifier": false
+        }
+    ]
+}

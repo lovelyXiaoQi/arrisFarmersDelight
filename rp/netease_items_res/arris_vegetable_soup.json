@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:vegetable_soup"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:vegetable_soup",
+            "register_to_create_menu": true
+        }
+    }
+}

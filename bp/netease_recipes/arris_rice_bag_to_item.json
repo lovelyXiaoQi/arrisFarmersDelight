@@ -1,0 +1,23 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:rice_bag_to_item"
+        },
+        "ingredients": [
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:rice_bag"
+            }
+        ],
+        "result": {
+            "count": 9,
+            "data": 0,
+            "item": "arris:rice"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

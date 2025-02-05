@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:food": {
+                "effects": [
+                    {
+                        "amplifier": 1,
+                        "chance": 0.2,
+                        "duration": 10,
+                        "name": "hunger"
+                    },
+                    {
+                        "amplifier": 1,
+                        "chance": 0.2,
+                        "duration": 10,
+                        "name": "nausea"
+                    }
+                ],
+                "nutrition": 5,
+                "saturation_modifier": "low",
+                "using_converts_to": "minecraft:bowl"
+            },
+            "minecraft:max_stack_size": 16,
+            "minecraft:use_duration": 30.0
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:nether_salad",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:salmon_roll"
+        },
+        "ingredients": [
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:cooked_rice"
+            },
+            {
+                "count": 2,
+                "data": 0,
+                "item": "arris:salmon_slice"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:salmon_roll"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

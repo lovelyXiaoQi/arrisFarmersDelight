@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:use_animation": "drink",
+            "minecraft:icon": "arris:apple_cider"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:apple_cider",
+            "register_to_create_menu": true
+        }
+    }
+}

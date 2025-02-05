@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:pasta_with_mutton_chop"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:pasta_with_mutton_chop",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:steak_and_potatoes"
+        },
+        "ingredients": [
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:cooked_rice"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:cooked_beef"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:baked_potato"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:onion"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:steak_and_potatoes"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

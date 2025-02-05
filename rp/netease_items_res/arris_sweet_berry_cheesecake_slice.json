@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:sweet_berry_cheesecake_slice"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:sweet_berry_cheesecake_slice",
+            "register_to_create_menu": true
+        }
+    }
+}

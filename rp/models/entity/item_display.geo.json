@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.item_display",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "rightarm",
+					"pivot": [0, 1, 0]
+				},
+				{
+					"name": "rightitem",
+					"parent": "rightarm",
+					"pivot": [0, 1, 0],
+					"locators": {
+						"smoke": [0, 3, 0]
+					}
+				}
+			]
+		}
+	]
+}

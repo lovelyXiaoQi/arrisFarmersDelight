@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:steak_and_potatoes"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:steak_and_potatoes",
+            "register_to_create_menu": true
+        }
+    }
+}

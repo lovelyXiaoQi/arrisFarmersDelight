@@ -1,0 +1,66 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "arris:small_item": {
+                "minecraft:scale": {
+                    "value": 0.55
+                }
+            }
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 2,
+                "max": 2
+            },
+            "minecraft:collision_box": {
+                "height": 0,
+                "width": 0
+            },
+            "minecraft:physics": {
+                "has_collision": false,
+                "has_gravity": false
+            },
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/air_loot.json"
+            },
+            "minecraft:mark_variant": {
+                "value": 0
+            },
+            "minecraft:persistent": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "arris"
+                ]
+            }
+        },
+        "description": {
+            "identifier": "arris:item_display",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": false
+        },
+        "events": {
+            "arris:set_small": {
+                "add": {
+                    "component_groups": [
+                        "arris:small_item"
+                    ]
+                },
+                "remove": {
+                }
+            }
+        }
+    }
+}

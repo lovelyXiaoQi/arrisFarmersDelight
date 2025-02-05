@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:food": {
+                "effects": [
+                    {
+                        "amplifier": 1,
+                        "chance": 1.0,
+                        "duration": 20,
+                        "name": "speed"
+                    }
+                ],
+                "nutrition": 2,
+                "saturation_modifier": "poor"
+            },
+            "minecraft:max_stack_size": 64,
+            "minecraft:use_duration": 20.0
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:cake_slice",
+            "register_to_create_menu": true
+        }
+    }
+}

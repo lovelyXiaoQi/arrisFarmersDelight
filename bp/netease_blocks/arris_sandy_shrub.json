@@ -1,0 +1,73 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/sandy_shrub.json"
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "netease:connection": {
+                "blocks": []
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.8125,
+                        0.5625,
+                        0.8125
+                    ],
+                    "min": [
+                        0.1875,
+                        0.0,
+                        0.1875
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:block_entity": {
+                "client_tick": false,
+                "movable": false,
+                "tick": true
+            },
+            "netease:can_built_over": {
+                "value": true
+            },
+            "netease:snow_recover_able": {
+                "value": true
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "identifier": "arris:sandy_shrub",
+            "register_to_creative_menu": true,
+            "category": "arris_farmers_delight"
+        }
+    }
+}

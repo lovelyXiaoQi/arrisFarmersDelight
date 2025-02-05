@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:beef_patty"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:beef_patty",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "netease:connection": {
+                "blocks": []
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/wild_rice.json"
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.8125,
+                        0.625,
+                        0.8125
+                    ],
+                    "min": [
+                        0.1875,
+                        0.0,
+                        0.1875
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:random_tick": {
+                "enable": true,
+                "tick_to_script": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:water_only": {
+                "value": true
+            },
+            "netease:water_source": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "identifier": "arris:rice_stage1"
+        }
+    }
+}

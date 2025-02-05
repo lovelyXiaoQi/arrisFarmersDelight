@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:horse_feed"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:horse_feed",
+            "register_to_create_menu": true
+        }
+    }
+}

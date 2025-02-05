@@ -1,0 +1,43 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:destroy_time": {
+                "value": 2.0
+            },
+            "minecraft:explosion_resistance": {
+                "value": 3.0
+            },
+            "netease:connection": {
+                "blocks": []
+            },
+            "netease:block_chest": {
+                "chest_capacity": 3,
+                "custom_description": "橱柜",
+                "mute": true
+            },
+            "netease:render_layer": {
+                "value": "opaque"
+            },
+            "netease:solid": {
+                "value": true
+            },
+            "netease:tier": {
+                "destroy_special": false,
+                "digger": "hatchet",
+                "level": 0
+            }
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:dark_oak_cabinet",
+            "register_to_creative_menu": true
+        }
+    }
+}

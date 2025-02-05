@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:cabbage_rolls"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:cabbage_rolls",
+            "register_to_create_menu": true
+        }
+    }
+}

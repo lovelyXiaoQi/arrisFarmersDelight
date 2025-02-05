@@ -1,0 +1,33 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:bacon_and_eggs"
+        },
+        "ingredients": [
+            {
+                "count": 2,
+                "data": 0,
+                "item": "arris:cooked_bacon"
+            },
+            {
+                "count": 2,
+                "data": 0,
+                "item": "arris:fried_egg"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:bowl"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:bacon_and_eggs"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

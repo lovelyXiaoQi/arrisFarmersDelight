@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:hover_text_color": "light_purple",
+            "minecraft:icon": "arris:item_display_destroy"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:item_display_destroy",
+            "register_to_create_menu": true
+        }
+    }
+}

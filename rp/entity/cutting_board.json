@@ -1,0 +1,21 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "arris:cutting_board",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/blocks/cutting_board"
+      },
+      "geometry": {
+        "default": "geometry.cutting_board"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "enable_attachables": false
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+    "format_version": "1.13.0",
+    "netease:block_geometry": {
+        "bones": [
+            {
+                "cubes": [
+                    {
+                        "origin": [
+                            -16,
+                            -1,
+                            8
+                        ],
+                        "pivot": [
+                            -8,
+                            7,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            -45,
+                            0
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            0
+                        ],
+                        "uv": {
+                            "north": {
+                                "texture": 0,
+                                "uv": [
+                                    16,
+                                    0
+                                ],
+                                "uv_size": [
+                                    -16,
+                                    16
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "origin": [
+                            -8,
+                            -1,
+                            0
+                        ],
+                        "pivot": [
+                            -8,
+                            7,
+                            8
+                        ],
+                        "rotation": [
+                            0,
+                            -45,
+                            0
+                        ],
+                        "size": [
+                            0,
+                            16,
+                            16
+                        ],
+                        "uv": {
+                            "east": {
+                                "texture": 0,
+                                "uv": [
+                                    16,
+                                    0
+                                ],
+                                "uv_size": [
+                                    -16,
+                                    16
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "name": "bone",
+                "pivot": [
+                    -8,
+                    -1,
+                    8
+                ],
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        ],
+        "description": {
+            "identifier": "arris:rice_crop",
+            "textures_descriptions": [
+                {
+                    "length": 16,
+                    "width": 16
+                }
+            ],
+            "use_ao": false
+        }
+    }
+}

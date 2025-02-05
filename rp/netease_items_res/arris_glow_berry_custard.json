@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:glow_berry_custard"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:glow_berry_custard",
+            "register_to_create_menu": true
+        }
+    }
+}

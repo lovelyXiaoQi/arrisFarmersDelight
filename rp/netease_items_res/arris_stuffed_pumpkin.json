@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:stuffed_pumpkin"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:stuffed_pumpkin",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:bacon"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:bacon",
+            "register_to_create_menu": true
+        }
+    }
+}

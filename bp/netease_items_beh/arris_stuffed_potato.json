@@ -1,0 +1,18 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:food": {
+                "nutrition": 10,
+                "saturation_modifier": "high"
+            },
+            "minecraft:max_stack_size": 64,
+            "minecraft:use_duration": 30.0
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:stuffed_potato",
+            "register_to_create_menu": true
+        }
+    }
+}

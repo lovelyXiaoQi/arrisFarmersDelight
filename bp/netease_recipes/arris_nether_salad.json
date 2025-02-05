@@ -1,0 +1,33 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arris:nether_salad"
+        },
+        "ingredients": [
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:crimson_fungus"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:warped_fungus"
+            },
+            {
+                "count": 1,
+                "data": 0,
+                "item": "minecraft:bowl"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:nether_salad"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

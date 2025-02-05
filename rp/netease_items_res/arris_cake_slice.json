@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:cake_slice"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:cake_slice",
+            "register_to_create_menu": true
+        }
+    }
+}

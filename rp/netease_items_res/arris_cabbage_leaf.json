@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:cabbage_leaf"
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:cabbage_leaf",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.item_display.item": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [10, 30, -12.5],
+					"position": [0, 2, 5]
+				}
+			}
+		},
+		"animation.item_display.block": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [-20, 45, 0],
+					"position": [4, 4, 4]
+				}
+			}
+		},
+		"animation.item_display.armor": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [-90, -85, 135],
+					"position": [-2.75, 7, -0.5],
+					"scale": 0.8
+				}
+			}
+		}
+	}
+}

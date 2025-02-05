@@ -1,0 +1,929 @@
+{
+    "arris:acacia_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:acacia_cabinet_top",
+            "east": "arris:acacia_cabinet_side",
+            "north": "arris:acacia_cabinet_front",
+            "south": "arris:acacia_cabinet_side",
+            "up": "arris:acacia_cabinet_top",
+            "west": "arris:acacia_cabinet_side"
+        }
+    },
+    "arris:apple_pie": {
+        "client_entity": {
+            "block_icon": "arris:apple_pie_item",
+            "destoryed_textures": "arris:apple_pie",
+            "hand_model_use_client_entity": true,
+            "identifier": "arris:apple_pie"
+        },
+        "sound": "cloth",
+        "textures": "arris:apple_pie"
+    },
+    "arris:bamboo_cabinet": {
+        "sound": "bamboo",
+        "textures": {
+            "down": "arris:bamboo_cabinet_top",
+            "east": "arris:bamboo_cabinet_side",
+            "north": "arris:bamboo_cabinet_front",
+            "south": "arris:bamboo_cabinet_side",
+            "up": "arris:bamboo_cabinet_top",
+            "west": "arris:bamboo_cabinet_side"
+        }
+    },
+    "arris:basket": {
+        "netease_model": "arris:basket",
+        "sound": "scaffolding",
+        "textures": "arris:basket"
+    },
+    "arris:beetroot_crate": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:crate_bottom",
+            "side": "arris:beetroot_crate_side",
+            "up": "arris:beetroot_crate_top"
+        }
+    },
+    "arris:birch_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:birch_cabinet_top",
+            "east": "arris:birch_cabinet_side",
+            "north": "arris:birch_cabinet_front",
+            "south": "arris:birch_cabinet_side",
+            "up": "arris:birch_cabinet_top",
+            "west": "arris:birch_cabinet_side"
+        }
+    },
+    "arris:budding_tomatoes_stage0": {
+        "model_item_texture": "arris:budding_tomatoes_stage0",
+        "model_textures": [
+            "arris:budding_tomatoes_stage0"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:budding_tomatoes_stage1": {
+        "model_item_texture": "arris:budding_tomatoes_stage1",
+        "model_textures": [
+            "arris:budding_tomatoes_stage1"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:budding_tomatoes_stage2": {
+        "model_item_texture": "arris:budding_tomatoes_stage2",
+        "model_textures": [
+            "arris:budding_tomatoes_stage2"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:budding_tomatoes_stage3": {
+        "model_item_texture": "arris:budding_tomatoes_stage3",
+        "model_textures": [
+            "arris:budding_tomatoes_stage3"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:budding_tomatoes_stage4": {
+        "model_item_texture": "arris:budding_tomatoes_stage4",
+        "model_textures": [
+            "arris:budding_tomatoes_stage4"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:budding_tomatoes_stage5": {
+        "model_item_texture": "arris:budding_tomatoes_stage5",
+        "model_textures": [
+            "arris:budding_tomatoes_stage5"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:budding_tomatoes_stage6": {
+        "model_item_texture": "arris:budding_tomatoes_stage6",
+        "model_textures": [
+            "arris:budding_tomatoes_stage6"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:cabbage_crate": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:crate_bottom",
+            "side": "arris:cabbage_crate_side",
+            "up": "arris:cabbage_crate_top"
+        }
+    },
+    "arris:cabbages_stage0": {
+        "model_item_texture": "arris:cabbages_stage0",
+        "model_textures": [
+            "arris:cabbages_stage0"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:cabbages_stage1": {
+        "model_item_texture": "arris:cabbages_stage1",
+        "model_textures": [
+            "arris:cabbages_stage1"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:cabbages_stage2": {
+        "model_item_texture": "arris:cabbages_stage2",
+        "model_textures": [
+            "arris:cabbages_stage2"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:cabbages_stage3": {
+        "model_item_texture": "arris:cabbages_stage3",
+        "model_textures": [
+            "arris:cabbages_stage3"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:cabbages_stage4": {
+        "model_item_texture": "arris:cabbages_stage4",
+        "model_textures": [
+            "arris:cabbages_stage4"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:cabbages_stage5": {
+        "model_item_texture": "arris:cabbages_stage5",
+        "model_textures": [
+            "arris:cabbages_stage5"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:cabbages_stage6": {
+        "model_item_texture": "arris:cabbages_stage6",
+        "model_textures": [
+            "arris:cabbages_stage6"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:cabbages_stage7": {
+        "model_item_texture": "arris:cabbages_stage7",
+        "model_textures": [
+            "arris:cabbages_stage7"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:canvas_rug": {
+        "netease_model": "arris:canvas_rug",
+        "sound": "grass",
+        "textures": "arris:custom_dirt"
+    },
+    "arris:carrot_crate": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:crate_bottom",
+            "side": "arris:carrot_crate_side",
+            "up": "arris:carrot_crate_top"
+        }
+    },
+    "arris:cherry_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:cherry_cabinet_top",
+            "east": "arris:cherry_cabinet_side",
+            "north": "arris:cherry_cabinet_front",
+            "south": "arris:cherry_cabinet_side",
+            "up": "arris:cherry_cabinet_top",
+            "west": "arris:cherry_cabinet_side"
+        }
+    },
+    "arris:chocolate_pie": {
+        "client_entity": {
+            "block_icon": "arris:chocolate_pie_item",
+            "destoryed_textures": "arris:chocolate_pie",
+            "hand_model_use_client_entity": true,
+            "identifier": "arris:chocolate_pie"
+        },
+        "sound": "cloth",
+        "textures": "arris:chocolate_pie"
+    },
+    "arris:cooking_pot": {
+        "client_entity": {
+            "block_icon": "arris:cooking_pot_icon",
+            "destoryed_textures": "arris:cooking_pot_icon",
+            "hand_model_use_client_entity": true,
+            "identifier": "arris:cooking_pot"
+        },
+        "sound": "metal"
+    },
+    "arris:crimson_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:crimson_cabinet_top",
+            "east": "arris:crimson_cabinet_side",
+            "north": "arris:crimson_cabinet_front",
+            "south": "arris:crimson_cabinet_side",
+            "up": "arris:crimson_cabinet_top",
+            "west": "arris:crimson_cabinet_side"
+        }
+    },
+    "arris:cutting_board": {
+        "client_entity": {
+            "block_icon": true,
+            "destroyed_textures": "arris:cutting_board",
+            "hand_model_use_client_entity": true,
+            "identifier": "arris:cutting_board"
+        },
+        "sound": "wood",
+        "textures": "arris:cutting_board"
+    },
+    "arris:dark_oak_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:dark_oak_cabinet_top",
+            "east": "arris:dark_oak_cabinet_side",
+            "north": "arris:dark_oak_cabinet_front",
+            "south": "arris:dark_oak_cabinet_side",
+            "up": "arris:dark_oak_cabinet_top",
+            "west": "arris:dark_oak_cabinet_side"
+        }
+    },
+    "arris:honey_glazed_ham_block_leftover": {
+        "netease_model": "arris:honey_glazed_ham_block_leftover",
+        "sound": "cloth"
+    },
+    "arris:honey_glazed_ham_block_stage0": {
+        "netease_model": "arris:honey_glazed_ham_block_stage0",
+        "sound": "cloth"
+    },
+    "arris:honey_glazed_ham_block_stage1": {
+        "netease_model": "arris:honey_glazed_ham_block_stage1",
+        "sound": "cloth"
+    },
+    "arris:honey_glazed_ham_block_stage2": {
+        "netease_model": "arris:honey_glazed_ham_block_stage2",
+        "sound": "cloth"
+    },
+    "arris:honey_glazed_ham_block_stage3": {
+        "netease_model": "arris:honey_glazed_ham_block_stage3",
+        "sound": "cloth"
+    },
+    "arris:jungle_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:jungle_cabinet_top",
+            "east": "arris:jungle_cabinet_side",
+            "north": "arris:jungle_cabinet_front",
+            "south": "arris:jungle_cabinet_side",
+            "up": "arris:jungle_cabinet_top",
+            "west": "arris:jungle_cabinet_side"
+        }
+    },
+    "arris:mangrove_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:mangrove_cabinet_top",
+            "east": "arris:mangrove_cabinet_side",
+            "north": "arris:mangrove_cabinet_front",
+            "south": "arris:mangrove_cabinet_side",
+            "up": "arris:mangrove_cabinet_top",
+            "west": "arris:mangrove_cabinet_side"
+        }
+    },
+    "arris:oak_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:oak_cabinet_top",
+            "east": "arris:oak_cabinet_side",
+            "north": "arris:oak_cabinet_front",
+            "south": "arris:oak_cabinet_side",
+            "up": "arris:oak_cabinet_top",
+            "west": "arris:oak_cabinet_side"
+        }
+    },
+    "arris:onion_crate": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:crate_bottom",
+            "side": "arris:onion_crate_side",
+            "up": "arris:onion_crate_top"
+        }
+    },
+    "arris:onions_stage0": {
+        "model_item_texture": "arris:onions_stage0",
+        "model_textures": [
+            "arris:onions_stage0"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:onions_stage1": {
+        "model_item_texture": "arris:onions_stage1",
+        "model_textures": [
+            "arris:onions_stage1"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:onions_stage2": {
+        "model_item_texture": "arris:onions_stage2",
+        "model_textures": [
+            "arris:onions_stage2"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:onions_stage3": {
+        "model_item_texture": "arris:onions_stage3",
+        "model_textures": [
+            "arris:onions_stage3"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:organic_compost_stage0": {
+        "sound": "gravel",
+        "textures": "arris:organic_compost_stage0"
+    },
+    "arris:organic_compost_stage1": {
+        "sound": "gravel",
+        "textures": "arris:organic_compost_stage1"
+    },
+    "arris:organic_compost_stage2": {
+        "sound": "gravel",
+        "textures": "arris:organic_compost_stage2"
+    },
+    "arris:organic_compost_stage3": {
+        "sound": "gravel",
+        "textures": "arris:organic_compost_stage3"
+    },
+    "arris:potato_crate": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:crate_bottom",
+            "side": "arris:potato_crate_side",
+            "up": "arris:potato_crate_top"
+        }
+    },
+    "arris:rice_bag": {
+        "sound": "cloth",
+        "textures": {
+            "down": "arris:rice_bag_bottom",
+            "east": "arris:rice_bag_side_tied",
+            "north": "arris:rice_bag_side",
+            "south": "arris:rice_bag_side",
+            "up": "arris:rice_bag_top",
+            "west": "arris:rice_bag_side_tied"
+        }
+    },
+    "arris:rice_bale": {
+        "sound": "grass",
+        "textures": {
+            "down": "arris:rice_bale_bottom",
+            "side": "arris:rice_bale_side",
+            "up": "arris:rice_bale_top"
+        }
+    },
+    "arris:rice_roll_medley_block_leftover": {
+        "netease_model": "arris:rice_roll_medley_block_leftover",
+        "sound": "cloth"
+    },
+    "arris:rice_roll_medley_block_stage0": {
+        "netease_model": "arris:rice_roll_medley_block_stage0",
+        "sound": "cloth"
+    },
+    "arris:rice_roll_medley_block_stage1": {
+        "netease_model": "arris:rice_roll_medley_block_stage1",
+        "sound": "cloth"
+    },
+    "arris:rice_roll_medley_block_stage2": {
+        "netease_model": "arris:rice_roll_medley_block_stage2",
+        "sound": "cloth"
+    },
+    "arris:rice_roll_medley_block_stage3": {
+        "netease_model": "arris:rice_roll_medley_block_stage3",
+        "sound": "cloth"
+    },
+    "arris:rice_roll_medley_block_stage4": {
+        "netease_model": "arris:rice_roll_medley_block_stage4",
+        "sound": "cloth"
+    },
+    "arris:rice_roll_medley_block_stage5": {
+        "netease_model": "arris:rice_roll_medley_block_stage5",
+        "sound": "cloth"
+    },
+    "arris:rice_roll_medley_block_stage6": {
+        "netease_model": "arris:rice_roll_medley_block_stage6",
+        "sound": "cloth"
+    },
+    "arris:rice_roll_medley_block_stage7": {
+        "netease_model": "arris:rice_roll_medley_block_stage7",
+        "sound": "cloth"
+    },
+    "arris:rice_stage0": {
+        "model_item_texture": "arris:rice_stage0",
+        "model_textures": [
+            "arris:rice_stage0"
+        ],
+        "netease_model": "arris:rice_crop",
+        "sound": "grass"
+    },
+    "arris:rice_stage1": {
+        "model_item_texture": "arris:rice_stage1",
+        "model_textures": [
+            "arris:rice_stage1"
+        ],
+        "netease_model": "arris:rice_crop",
+        "sound": "grass"
+    },
+    "arris:rice_stage2": {
+        "model_item_texture": "arris:rice_stage2",
+        "model_textures": [
+            "arris:rice_stage2"
+        ],
+        "netease_model": "arris:rice_crop",
+        "sound": "grass"
+    },
+    "arris:rice_stage3": {
+        "model_item_texture": "arris:rice_stage3",
+        "model_textures": [
+            "arris:rice_stage3"
+        ],
+        "netease_model": "arris:rice_crop",
+        "sound": "grass"
+    },
+    "arris:rice_supporting": {
+        "model_item_texture": "arris:rice_supporting",
+        "model_textures": [
+            "arris:rice_supporting"
+        ],
+        "netease_model": "arris:rice_crop",
+        "sound": "grass"
+    },
+    "arris:rice_upper_crop_stage0": {
+        "model_item_texture": "arris:rice_upper_crop_stage0",
+        "model_textures": [
+            "arris:rice_upper_crop_stage0"
+        ],
+        "netease_model": "arris:rice_crop",
+        "sound": "grass"
+    },
+    "arris:rice_upper_crop_stage1": {
+        "model_item_texture": "arris:rice_upper_crop_stage1",
+        "model_textures": [
+            "arris:rice_upper_crop_stage1"
+        ],
+        "netease_model": "arris:rice_crop",
+        "sound": "grass"
+    },
+    "arris:rice_upper_crop_stage2": {
+        "model_item_texture": "arris:rice_upper_crop_stage2",
+        "model_textures": [
+            "arris:rice_upper_crop_stage2"
+        ],
+        "netease_model": "arris:rice_crop",
+        "sound": "grass"
+    },
+    "arris:rice_upper_crop_stage3": {
+        "model_item_texture": "arris:rice_upper_crop_stage3",
+        "model_textures": [
+            "arris:rice_upper_crop_stage3"
+        ],
+        "netease_model": "arris:rice_crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil": {
+        "sound": "gravel",
+        "textures": "arris:rich_soil"
+    },
+    "arris:rich_soil_beetroot0": {
+        "model_item_texture": "arris:beetroot_stage0",
+        "model_textures": [
+            "arris:beetroot_stage0"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_beetroot1": {
+        "model_item_texture": "arris:beetroot_stage1",
+        "model_textures": [
+            "arris:beetroot_stage1"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_beetroot2": {
+        "model_item_texture": "arris:beetroot_stage2",
+        "model_textures": [
+            "arris:beetroot_stage2"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_beetroot3": {
+        "model_item_texture": "arris:beetroot_stage3",
+        "model_textures": [
+            "arris:beetroot_stage3"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_carrots0": {
+        "model_item_texture": "arris:carrots_stage0",
+        "model_textures": [
+            "arris:carrots_stage0"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_carrots1": {
+        "model_item_texture": "arris:carrots_stage1",
+        "model_textures": [
+            "arris:carrots_stage1"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_carrots2": {
+        "model_item_texture": "arris:carrots_stage2",
+        "model_textures": [
+            "arris:carrots_stage2"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_carrots3": {
+        "model_item_texture": "arris:carrots_stage3",
+        "model_textures": [
+            "arris:carrots_stage3"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_farmland": {
+        "netease_model": "arris:rich_soil_farmland",
+        "sound": "gravel",
+        "textures": "arris:rich_soil_farmland"
+    },
+    "arris:rich_soil_farmland_moist": {
+        "netease_model": "arris:rich_soil_farmland_moist",
+        "sound": "gravel",
+        "textures": "arris:rich_soil_farmland_moist"
+    },
+    "arris:rich_soil_potatoes0": {
+        "model_item_texture": "arris:potatoes_stage0",
+        "model_textures": [
+            "arris:potatoes_stage0"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_potatoes1": {
+        "model_item_texture": "arris:potatoes_stage1",
+        "model_textures": [
+            "arris:potatoes_stage1"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_potatoes2": {
+        "model_item_texture": "arris:potatoes_stage2",
+        "model_textures": [
+            "arris:potatoes_stage2"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_potatoes3": {
+        "model_item_texture": "arris:potatoes_stage3",
+        "model_textures": [
+            "arris:potatoes_stage3"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_torchflower0": {
+        "model_item_texture": "arris:torchflower_crop_stage0",
+        "model_textures": [
+            "arris:torchflower_crop_stage0"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:rich_soil_torchflower1": {
+        "model_item_texture": "arris:torchflower_crop_stage1",
+        "model_textures": [
+            "arris:torchflower_crop_stage1"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:rich_soil_torchflower2": {
+        "model_item_texture": "torchflower",
+        "model_textures": [
+            "torchflower"
+        ],
+        "netease_model": "arris:web_preset",
+        "sound": "grass"
+    },
+    "arris:rich_soil_wheat0": {
+        "model_item_texture": "arris:wheat_stage0",
+        "model_textures": [
+            "arris:wheat_stage0"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_wheat1": {
+        "model_item_texture": "arris:wheat_stage1",
+        "model_textures": [
+            "arris:wheat_stage1"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_wheat2": {
+        "model_item_texture": "arris:wheat_stage2",
+        "model_textures": [
+            "arris:wheat_stage2"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_wheat3": {
+        "model_item_texture": "arris:wheat_stage3",
+        "model_textures": [
+            "arris:wheat_stage3"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_wheat4": {
+        "model_item_texture": "arris:wheat_stage4",
+        "model_textures": [
+            "arris:wheat_stage4"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_wheat5": {
+        "model_item_texture": "arris:wheat_stage5",
+        "model_textures": [
+            "arris:wheat_stage5"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_wheat6": {
+        "model_item_texture": "arris:wheat_stage6",
+        "model_textures": [
+            "arris:wheat_stage6"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:rich_soil_wheat7": {
+        "model_item_texture": "arris:wheat_stage7",
+        "model_textures": [
+            "arris:wheat_stage7"
+        ],
+        "netease_model": "arris:crop",
+        "sound": "grass"
+    },
+    "arris:roast_chicken_block_leftover": {
+        "netease_model": "arris:roast_chicken_block_leftover",
+        "sound": "cloth"
+    },
+    "arris:roast_chicken_block_stage0": {
+        "netease_model": "arris:roast_chicken_block_stage0",
+        "sound": "cloth"
+    },
+    "arris:roast_chicken_block_stage1": {
+        "netease_model": "arris:roast_chicken_block_stage1",
+        "sound": "cloth"
+    },
+    "arris:roast_chicken_block_stage2": {
+        "netease_model": "arris:roast_chicken_block_stage2",
+        "sound": "cloth"
+    },
+    "arris:roast_chicken_block_stage3": {
+        "netease_model": "arris:roast_chicken_block_stage3",
+        "sound": "cloth"
+    },
+    "arris:rope": {
+        "netease_model": "arris:rope",
+        "sound": "cloth"
+    },
+    "arris:safety_net": {
+        "netease_model": "arris:safety_net",
+        "sound": "cloth",
+        "textures": "arris:custom_dirt"
+    },
+    "arris:sandy_shrub": {
+        "netease_model": "arris:sandy_shrub",
+        "sound": "grass"
+    },
+    "arris:shepherds_pie_block_leftover": {
+        "netease_model": "arris:shepherds_pie_block_leftover",
+        "sound": "cloth"
+    },
+    "arris:shepherds_pie_block_stage0": {
+        "netease_model": "arris:shepherds_pie_block_stage0",
+        "sound": "cloth"
+    },
+    "arris:shepherds_pie_block_stage1": {
+        "netease_model": "arris:shepherds_pie_block_stage1",
+        "sound": "cloth"
+    },
+    "arris:shepherds_pie_block_stage2": {
+        "netease_model": "arris:shepherds_pie_block_stage2",
+        "sound": "cloth"
+    },
+    "arris:shepherds_pie_block_stage3": {
+        "netease_model": "arris:shepherds_pie_block_stage3",
+        "sound": "cloth"
+    },
+    "arris:skillet": {
+        "client_entity": {
+            "block_icon": true,
+            "destroyed_textures": "arris:skillet_icon",
+            "hand_model_use_client_entity": true,
+            "identifier": "arris:skillet"
+        },
+        "sound": "metal",
+        "textures": "arris:skillet_icon"
+    },
+    "arris:spruce_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:spruce_cabinet_top",
+            "east": "arris:spruce_cabinet_side",
+            "north": "arris:spruce_cabinet_front",
+            "south": "arris:spruce_cabinet_side",
+            "up": "arris:spruce_cabinet_top",
+            "west": "arris:spruce_cabinet_side"
+        }
+    },
+    "arris:stove": {
+        "textures": {
+            "down": "arris:stove_bottom",
+            "east": "arris:stove_side",
+            "north": "arris:stove_front_on",
+            "south": "arris:stove_side",
+            "up": "arris:stove_top_on",
+            "west": "arris:stove_side"
+        }
+    },
+    "arris:stove_extinguish": {
+        "textures": {
+            "down": "arris:stove_bottom",
+            "east": "arris:stove_side",
+            "north": "arris:stove_front",
+            "south": "arris:stove_side",
+            "up": "arris:stove_top",
+            "west": "arris:stove_side"
+        }
+    },
+    "arris:straw_bale": {
+        "sound": "grass",
+        "textures": {
+            "down": "arris:straw_bale_end",
+            "side": "arris:straw_bale_side",
+            "up": "arris:straw_bale_end"
+        }
+    },
+    "arris:stuffed_pumpkin_block_stage0": {
+        "netease_model": "arris:stuffed_pumpkin_block_stage0",
+        "sound": "wood"
+    },
+    "arris:stuffed_pumpkin_block_stage1": {
+        "netease_model": "arris:stuffed_pumpkin_block_stage1",
+        "sound": "wood"
+    },
+    "arris:stuffed_pumpkin_block_stage2": {
+        "netease_model": "arris:stuffed_pumpkin_block_stage2",
+        "sound": "wood"
+    },
+    "arris:stuffed_pumpkin_block_stage3": {
+        "netease_model": "arris:stuffed_pumpkin_block_stage3",
+        "sound": "wood"
+    },
+    "arris:sweet_berry_cheesecake": {
+        "client_entity": {
+            "block_icon": "arris:sweet_berry_cheesecake_item",
+            "destoryed_textures": "arris:sweet_berry_cheesecake",
+            "hand_model_use_client_entity": true,
+            "identifier": "arris:sweet_berry_cheesecake"
+        },
+        "sound": "cloth",
+        "textures": "arris:sweet_berry_cheesecake"
+    },
+    "arris:tatami": {
+        "sound": "cloth",
+        "textures": "arris:tatami_mat_half"
+    },
+    "arris:tatami_half_mat": {
+        "netease_model": "arris:tatami_half_mat",
+        "sound": "cloth"
+    },
+    "arris:tomato_crate": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:crate_bottom",
+            "side": "arris:tomato_crate_side",
+            "up": "arris:tomato_crate_top"
+        }
+    },
+    "arris:tomatoes_vine_stage0": {
+        "model_item_texture": "arris:tomatoes_vine_stage0",
+        "model_textures": [
+            "arris:tomatoes_vine_stage0"
+        ],
+        "netease_model": "arris:crop_with_rope",
+        "sound": "grass"
+    },
+    "arris:tomatoes_vine_stage1": {
+        "model_item_texture": "arris:tomatoes_vine_stage1",
+        "model_textures": [
+            "arris:tomatoes_vine_stage1"
+        ],
+        "netease_model": "arris:crop_with_rope",
+        "sound": "grass"
+    },
+    "arris:tomatoes_vine_stage2": {
+        "model_item_texture": "arris:tomatoes_vine_stage2",
+        "model_textures": [
+            "arris:tomatoes_vine_stage2"
+        ],
+        "netease_model": "arris:crop_with_rope",
+        "sound": "grass"
+    },
+    "arris:tomatoes_vine_stage3": {
+        "model_item_texture": "arris:tomatoes_vine_stage3",
+        "model_textures": [
+            "arris:tomatoes_vine_stage3"
+        ],
+        "netease_model": "arris:crop_with_rope",
+        "sound": "grass"
+    },
+    "arris:warped_cabinet": {
+        "sound": "wood",
+        "textures": {
+            "down": "arris:warped_cabinet_top",
+            "east": "arris:warped_cabinet_side",
+            "north": "arris:warped_cabinet_front",
+            "south": "arris:warped_cabinet_side",
+            "up": "arris:warped_cabinet_top",
+            "west": "arris:warped_cabinet_side"
+        }
+    },
+    "arris:wild_beetroots": {
+        "netease_model": "arris:wild_beetroots",
+        "sound": "grass"
+    },
+    "arris:wild_cabbages": {
+        "netease_model": "arris:wild_cabbages",
+        "sound": "grass"
+    },
+    "arris:wild_carrots": {
+        "netease_model": "arris:wild_carrots",
+        "sound": "grass"
+    },
+    "arris:wild_onions": {
+        "netease_model": "arris:wild_onions",
+        "sound": "grass"
+    },
+    "arris:wild_potatoes": {
+        "netease_model": "arris:wild_potatoes",
+        "sound": "grass"
+    },
+    "arris:wild_rice": {
+        "netease_model": "arris:wild_rice",
+        "sound": "grass"
+    },
+    "arris:wild_tomatoes": {
+        "netease_model": "arris:wild_tomatoes",
+        "sound": "grass"
+    },
+    "arris:brown_mushroom_colony": {
+        "sound": "grass"
+    },
+    "arris:red_mushroom_colony": {
+        "sound": "grass"
+    },
+    "format_version": [
+        1,
+        1,
+        0
+    ]
+}

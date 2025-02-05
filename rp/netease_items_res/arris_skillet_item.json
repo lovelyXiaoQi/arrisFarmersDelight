@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:skillet_item"
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:skillet_item",
+            "register_to_create_menu": true
+        }
+    }
+}

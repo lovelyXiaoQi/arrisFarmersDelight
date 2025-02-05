@@ -1,0 +1,54 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "arris:cooking_pot",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/cooking_pot"
+      },
+      "geometry": {
+        "default": "geometry.cooking_pot"
+      },
+      "animations": {
+        "smoke": "animation.cooking_pot.smoke",
+        "bubble": "animation.cooking_pot.bubble",
+        "shelf": "animation.cooking_pot.shelf",
+        "boil": "animation.cooking_pot.boil"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "particle_effects": { 
+        "steam_0":  "arris:steam_0",
+        "bubble":  "arris:bubble"
+      },
+      "sound_effects": {
+        "boil": "ambient.cooking_pot.boil"
+      },
+      "scripts":{
+        "initialize": [
+          "variable.mod_heat = 0.0;",
+          "variable.mod_shelf = 0.0;"
+        ],
+        "animate": [
+          {
+            "boil": "variable.mod_heat == 1.0"
+          },
+          {
+            "smoke": "variable.mod_heat == 1.0"
+          },
+          {
+            "bubble": "variable.mod_heat == 1.0"
+          },
+          {
+            "shelf": "variable.mod_shelf == 0.0"
+          }
+        ]
+      },
+      "enable_attachables": false
+    }
+  }
+}

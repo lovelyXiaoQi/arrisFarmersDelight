@@ -1,0 +1,31 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:basket"
+        },
+        "key": {
+            "F": {
+                "data": 0,
+                "item": "arris:canvas"
+            },
+            "G": {
+                "data": 0,
+                "item": "minecraft:bamboo"
+            }
+        },
+        "pattern": [
+            "G G",
+            "F F",
+            "GFG"
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:basket"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/wild_tomatoes.json"
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "netease:connection": {
+                "blocks": []
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.75,
+                        1.0,
+                        0.75
+                    ],
+                    "min": [
+                        0.25,
+                        0.0,
+                        0.25
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:snow_recover_able": {
+                "value": true
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "base_block": "custom_crop_block",
+            "category": "arris_farmers_delight",
+            "identifier": "arris:wild_tomatoes",
+            "register_to_creative_menu": true
+        }
+    }
+}

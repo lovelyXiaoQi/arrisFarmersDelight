@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:mutton_wrap"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:mutton_wrap",
+            "register_to_create_menu": true
+        }
+    }
+}

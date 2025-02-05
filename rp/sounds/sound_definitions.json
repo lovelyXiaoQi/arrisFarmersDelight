@@ -1,0 +1,108 @@
+{
+   "format_version" : "1.14.0",
+   "sound_definitions": {
+      "ambient.skillet.addfood" : {
+         "category" : "ambient",
+         "sounds" : [
+            {
+               "is3D" : true,
+               "name" : "sounds/skillet/add_food1",
+               "volume" : 2.0,
+               "weight" : 10
+            },
+            {
+               "is3D" : true,
+               "name" : "sounds/skillet/add_food2",
+               "volume" : 2.0,
+               "weight" : 10
+            }
+         ]
+      },
+      "ambient.skillet.attack_strong" : {
+         "category" : "ambient",
+         "sounds" : [
+            {
+               "is3D" : true,
+               "name" : "sounds/skillet/attack_strong",
+               "volume" : 2.0,
+               "weight" : 10
+            }
+         ]
+      },
+      "ambient.skillet.sizzle" : {
+         "category" : "ambient",
+         "sounds" : [
+            {
+               "is3D" : true,
+               "name" : "sounds/skillet/sizzle1",
+               "volume" : 20,
+               "weight" : 10
+            },
+            {
+               "is3D" : true,
+               "name" : "sounds/skillet/sizzle2",
+               "volume" : 20,
+               "weight" : 10
+            },
+            {
+               "is3D" : true,
+               "name" : "sounds/skillet/sizzle3",
+               "volume" : 20,
+               "weight" : 10
+            }
+         ]
+      },
+      "ambient.cutting_board.knife" : {
+         "category" : "ambient",
+         "sounds" : [
+            {
+               "is3D" : true,
+               "name" : "sounds/cutting_board/knife1",
+               "volume" : 1.5,
+               "weight" : 10
+            },
+            {
+               "is3D" : true,
+               "name" : "sounds/cutting_board/knife2",
+               "volume" : 1.5,
+               "weight" : 10
+            }
+         ]
+      },
+      "ambient.cooking_pot.boil" : {
+         "category" : "ambient",
+         "sounds" : [
+            {
+               "is3D" : true,
+               "name" : "sounds/cooking_pot/boil_soup1",
+               "volume" : 20,
+               "weight" : 10
+            },
+            {
+               "is3D" : true,
+               "name" : "sounds/cooking_pot/boil_soup2",
+               "volume" : 20,
+               "weight" : 10
+            },
+            {
+               "is3D" : true,
+               "name" : "sounds/cooking_pot/boil_soup3",
+               "volume" : 20,
+               "weight" : 10
+            },
+            {
+               "is3D" : true,
+               "name" : "sounds/cooking_pot/boil_water1",
+               "volume" : 20,
+               "weight" : 10
+            },
+            {
+               "is3D" : true,
+               "name" : "sounds/cooking_pot/boil_water2",
+               "volume" : 20,
+               "weight" : 10
+            }
+         ]
+      }
+   }
+}

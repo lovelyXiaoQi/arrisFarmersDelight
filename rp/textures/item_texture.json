@@ -1,0 +1,300 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "arris:apple_cider": {
+            "textures": "textures/items/apple_cider"
+        },
+        "arris:apple_pie_item": {
+            "textures": "textures/items/apple_pie"
+        },
+        "arris:apple_pie_slice": {
+            "textures": "textures/items/apple_pie_slice"
+        },
+        "arris:bacon": {
+            "textures": "textures/items/bacon"
+        },
+        "arris:bacon_and_eggs": {
+            "textures": "textures/items/bacon_and_eggs"
+        },
+        "arris:bacon_sandwich": {
+            "textures": "textures/items/bacon_sandwich"
+        },
+        "arris:baked_cod_stew": {
+            "textures": "textures/items/baked_cod_stew"
+        },
+        "arris:barbecue_stick": {
+            "textures": "textures/items/barbecue_stick"
+        },
+        "arris:beef_patty": {
+            "textures": "textures/items/beef_patty"
+        },
+        "arris:bone_broth": {
+            "textures": "textures/items/bone_broth"
+        },
+        "arris:cabbage": {
+            "textures": "textures/items/cabbage"
+        },
+        "arris:cabbage_leaf": {
+            "textures": "textures/items/cabbage_leaf"
+        },
+        "arris:cabbage_rolls": {
+            "textures": "textures/items/cabbage_rolls"
+        },
+        "arris:cabbage_seeds": {
+            "textures": "textures/items/cabbage_seeds"
+        },
+        "arris:cake_slice": {
+            "textures": "textures/items/cake_slice"
+        },
+        "arris:canvas": {
+            "textures": "textures/items/canvas"
+        },
+        "arris:chicken_cuts": {
+            "textures": "textures/items/chicken_cuts"
+        },
+        "arris:chicken_sandwich": {
+            "textures": "textures/items/chicken_sandwich"
+        },
+        "arris:chicken_soup": {
+            "textures": "textures/items/chicken_soup"
+        },
+        "arris:chocolate_pie_item": {
+            "textures": "textures/items/chocolate_pie"
+        },
+        "arris:chocolate_pie_slice": {
+            "textures": "textures/items/chocolate_pie_slice"
+        },
+        "arris:cod_roll": {
+            "textures": "textures/items/cod_roll"
+        },
+        "arris:cod_slice": {
+            "textures": "textures/items/cod_slice"
+        },
+        "arris:cookbeef_stew": {
+            "textures": "textures/items/cookbeef_stew"
+        },
+        "arris:cooked_bacon": {
+            "textures": "textures/items/cooked_bacon"
+        },
+        "arris:cooked_chicken_cuts": {
+            "textures": "textures/items/cooked_chicken_cuts"
+        },
+        "arris:cooked_cod_slice": {
+            "textures": "textures/items/cooked_cod_slice"
+        },
+        "arris:cooked_mutton_chops": {
+            "textures": "textures/items/cooked_mutton_chops"
+        },
+        "arris:cooked_rice": {
+            "textures": "textures/items/cooked_rice"
+        },
+        "arris:cooked_salmon_slice": {
+            "textures": "textures/items/cooked_salmon_slice"
+        },
+        "arris:diamond_knife": {
+            "textures": "textures/items/diamond_knife"
+        },
+        "arris:dog_food": {
+            "textures": "textures/items/dog_food"
+        },
+        "arris:dumplings": {
+            "textures": "textures/items/dumplings"
+        },
+        "arris:egg_sandwich": {
+            "textures": "textures/items/egg_sandwich"
+        },
+        "arris:farmer_delight_guide_book": {
+            "textures": "textures/items/farmer_delight_guide_book"
+        },
+        "arris:fish_stew": {
+            "textures": "textures/items/fish_stew"
+        },
+        "arris:flint_knife": {
+            "textures": "textures/items/flint_knife"
+        },
+        "arris:fried_egg": {
+            "textures": "textures/items/fried_egg"
+        },
+        "arris:fried_rice": {
+            "textures": "textures/items/fried_rice"
+        },
+        "arris:fruit_salad": {
+            "textures": "textures/items/fruit_salad"
+        },
+        "arris:glow_berry_custard": {
+            "textures": "textures/items/glow_berry_custard"
+        },
+        "arris:golden_knife": {
+            "textures": "textures/items/golden_knife"
+        },
+        "arris:grilled_salmon": {
+            "textures": "textures/items/grilled_salmon"
+        },
+        "arris:ham": {
+            "textures": "textures/items/ham"
+        },
+        "arris:hamburger": {
+            "textures": "textures/items/hamburger"
+        },
+        "arris:honey_cookie": {
+            "textures": "textures/items/honey_cookie"
+        },
+        "arris:honey_glazed_ham": {
+            "textures": "textures/items/honey_glazed_ham"
+        },
+        "arris:horse_feed": {
+            "textures": "textures/items/horse_feed"
+        },
+        "arris:hot_cocoa": {
+            "textures": "textures/items/hot_cocoa"
+        },
+        "arris:iron_knife": {
+            "textures": "textures/items/iron_knife"
+        },
+        "arris:item_display_destroy": {
+            "textures": "textures/items/item_display_destroy"
+        },
+        "arris:kelp_roll": {
+            "textures": "textures/items/kelp_roll"
+        },
+        "arris:kelp_roll_slice": {
+            "textures": "textures/items/kelp_roll_slice"
+        },
+        "arris:melon_juice": {
+            "textures": "textures/items/melon_juice"
+        },
+        "arris:melon_popsicle": {
+            "textures": "textures/items/melon_popsicle"
+        },
+        "arris:milk_bottle": {
+            "textures": "textures/items/milk_bottle"
+        },
+        "arris:minced_beef": {
+            "textures": "textures/items/minced_beef"
+        },
+        "arris:mixed_salad": {
+            "textures": "textures/items/mixed_salad"
+        },
+        "arris:mushroom_rice": {
+            "textures": "textures/items/mushroom_rice"
+        },
+        "arris:mutton_chops": {
+            "textures": "textures/items/mutton_chops"
+        },
+        "arris:mutton_wrap": {
+            "textures": "textures/items/mutton_wrap"
+        },
+        "arris:nether_salad": {
+            "textures": "textures/items/nether_salad"
+        },
+        "arris:netherite_knife": {
+            "textures": "textures/items/netherite_knife"
+        },
+        "arris:noodle_soup": {
+            "textures": "textures/items/noodle_soup"
+        },
+        "arris:onion": {
+            "textures": "textures/items/onion"
+        },
+        "arris:pasta_with_meatballs": {
+            "textures": "textures/items/pasta_with_meatballs"
+        },
+        "arris:pasta_with_mutton_chop": {
+            "textures": "textures/items/pasta_with_mutton_chop"
+        },
+        "arris:pie_crust": {
+            "textures": "textures/items/pie_crust"
+        },
+        "arris:pumpkin_slice": {
+            "textures": "textures/items/pumpkin_slice"
+        },
+        "arris:pumpkin_soup": {
+            "textures": "textures/items/pumpkin_soup"
+        },
+        "arris:ratatouille": {
+            "textures": "textures/items/ratatouille"
+        },
+        "arris:raw_pasta": {
+            "textures": "textures/items/raw_pasta"
+        },
+        "arris:rice": {
+            "textures": "textures/items/rice"
+        },
+        "arris:rice_panicle": {
+            "textures": "textures/items/rice_panicle"
+        },
+        "arris:roast_chicken": {
+            "textures": "textures/items/roast_chicken"
+        },
+        "arris:roasted_mutton_chops": {
+            "textures": "textures/items/roasted_mutton_chops"
+        },
+        "arris:rotten_tomato": {
+            "textures": "textures/items/rotten_tomato"
+        },
+        "arris:salmon_roll": {
+            "textures": "textures/items/salmon_roll"
+        },
+        "arris:salmon_slice": {
+            "textures": "textures/items/salmon_slice"
+        },
+        "arris:shepherds_pie": {
+            "textures": "textures/items/shepherds_pie"
+        },
+        "arris:skillet_item": {
+            "textures": "textures/items/skillet_icon"
+        },
+        "arris:smoked_ham": {
+            "textures": "textures/items/smoked_ham"
+        },
+        "arris:spatula": {
+            "textures": "textures/items/spatula"
+        },
+        "arris:squid_ink_pasta": {
+            "textures": "textures/items/squid_ink_pasta"
+        },
+        "arris:steak_and_potatoes": {
+            "textures": "textures/items/steak_and_potatoes"
+        },
+        "arris:straw": {
+            "textures": "textures/items/straw"
+        },
+        "arris:stuffed_potato": {
+            "textures": "textures/items/stuffed_potato"
+        },
+        "arris:stuffed_pumpkin": {
+            "textures": "textures/items/stuffed_pumpkin"
+        },
+        "arris:sweet_berry_cheesecake_item": {
+            "textures": "textures/items/sweet_berry_cheesecake"
+        },
+        "arris:sweet_berry_cheesecake_slice": {
+            "textures": "textures/items/sweet_berry_cheesecake_slice"
+        },
+        "arris:sweet_berry_cookie": {
+            "textures": "textures/items/sweet_berry_cookie"
+        },
+        "arris:tomato": {
+            "textures": "textures/items/tomato"
+        },
+        "arris:tomato_sauce": {
+            "textures": "textures/items/tomato_sauce"
+        },
+        "arris:tomato_seeds": {
+            "textures": "textures/items/tomato_seeds"
+        },
+        "arris:tree_bark": {
+            "textures": "textures/items/tree_bark"
+        },
+        "arris:vegetable_noodles": {
+            "textures": "textures/items/vegetable_noodles"
+        },
+        "arris:vegetable_soup": {
+            "textures": "textures/items/vegetable_soup"
+        },
+        "arris:wheat_dough": {
+            "textures": "textures/items/wheat_dough"
+        }
+    },
+    "texture_name": "atlas.items"
+}

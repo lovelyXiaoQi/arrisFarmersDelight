@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:mutton_chops"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:mutton_chops",
+            "register_to_create_menu": true
+        }
+    }
+}

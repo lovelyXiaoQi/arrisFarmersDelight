@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:straw"
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:straw",
+            "register_to_create_menu": true
+        }
+    }
+}

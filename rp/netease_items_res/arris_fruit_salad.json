@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:fruit_salad"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:fruit_salad",
+            "register_to_create_menu": true
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:foil": true,
+            "minecraft:max_damage": 1,
+            "minecraft:max_stack_size": 1,
+            "netease:customtips": {
+                "value": "§7仅用于bug修复\n消除浮空展示实体\n请勿滥用,否则后果自负\n§8棱花Arris"
+            }
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:item_display_destroy"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:mushroom_rice"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:mushroom_rice",
+            "register_to_create_menu": true
+        }
+    }
+}

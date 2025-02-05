@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:barbecue_stick"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:barbecue_stick",
+            "register_to_create_menu": true
+        }
+    }
+}

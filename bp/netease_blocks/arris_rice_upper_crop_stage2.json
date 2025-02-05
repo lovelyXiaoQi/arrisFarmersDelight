@@ -1,0 +1,65 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "netease:connection": {
+                "blocks": []
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/air_loot.json"
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.8125,
+                        0.8125,
+                        0.8125
+                    ],
+                    "min": [
+                        0.25,
+                        0.0,
+                        0.25
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:random_tick": {
+                "enable": true,
+                "tick_to_script": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "base_block": "custom_crop_block",
+            "identifier": "arris:rice_upper_crop_stage2"
+        }
+    }
+}

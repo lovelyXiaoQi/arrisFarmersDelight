@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.arris_pie.slice1": {
+			"loop": true,
+			"bones": {
+				"pie_slice1": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.arris_pie.slice2": {
+			"loop": true,
+			"bones": {
+				"pie_slice1": {
+					"scale": 0
+				},
+				"pie_slice2": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.arris_pie.slice3": {
+			"loop": true,
+			"bones": {
+				"pie_slice1": {
+					"scale": 0
+				},
+				"pie_slice2": {
+					"scale": 0
+				},
+				"pie_slice3": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.arris_pie.default": {
+			"loop": true
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:roast_chicken"
+        },
+        "description": {
+            "category": "Construction",
+            "identifier": "arris:roast_chicken",
+            "register_to_create_menu": true
+        }
+    }
+}

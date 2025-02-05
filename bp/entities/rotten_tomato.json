@@ -1,0 +1,35 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "arris:rotten_tomato",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "minecraft:snowball"
+        },
+        "components": {
+            "minecraft:scale": {
+                "value": 0.8
+            },
+            "minecraft:projectile": {
+                "on_hit": {
+                    "impact_damage": {
+                        "damage": 0,
+                        "knockback": true,
+                        "destroy_on_hit": true
+                    },
+                    "remove_on_hit": {
+                    },
+                    "particle_on_hit": {
+                        "particle_type": "iconcrack",
+                        "num_particles": 6,
+                        "on_entity_hit": true,
+                        "on_other_hit": true
+                    }
+                },
+                "power": 1.7
+            }
+        }
+    }
+}

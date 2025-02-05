@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:fried_egg"
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:fried_egg",
+            "register_to_create_menu": true
+        }
+    }
+}

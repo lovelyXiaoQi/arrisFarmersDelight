@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:rice_panicle"
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:rice_panicle",
+            "register_to_create_menu": true
+        }
+    }
+}

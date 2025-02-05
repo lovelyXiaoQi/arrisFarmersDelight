@@ -1,0 +1,21 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:max_stack_size": 64,
+            "minecraft:seed": {
+                "crop_result": "arris:cabbages_stage0",
+                "plant_at": [
+                    "minecraft:farmland",
+                    "arris:rich_soil_farmland_moist",
+                    "arris:rich_soil_farmland"
+                ]
+            }
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:cabbage_seeds",
+            "register_to_create_menu": true
+        }
+    }
+}

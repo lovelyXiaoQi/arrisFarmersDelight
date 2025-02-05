@@ -1,0 +1,139 @@
+{
+    "format_version": "1.13.0",
+    "netease:block_geometry": {
+        "bones": [
+            {
+                "cubes": [
+                    {
+                        "origin": [
+                            -16,
+                            0,
+                            8
+                        ],
+                        "pivot": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            16,
+                            32,
+                            0
+                        ],
+                        "uv": {
+                            "north": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    32
+                                ]
+                            },
+                            "south": {
+                                "texture": 0,
+                                "uv": [
+                                    8,
+                                    0
+                                ],
+                                "uv_size": [
+                                    16,
+                                    32
+                                ]
+                            },
+                            "west": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    32
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "origin": [
+                            -8,
+                            0,
+                            0
+                        ],
+                        "pivot": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            0,
+                            32,
+                            16
+                        ],
+                        "uv": {
+                            "east": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    0,
+                                    32
+                                ]
+                            },
+                            "west": {
+                                "texture": 0,
+                                "uv": [
+                                    8,
+                                    0
+                                ],
+                                "uv_size": [
+                                    16,
+                                    32
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "name": "bone",
+                "pivot": [
+                    -8,
+                    0,
+                    8
+                ],
+                "rotation": [
+                    0,
+                    45,
+                    0
+                ]
+            }
+        ],
+        "description": {
+            "identifier": "arris:wild_rice",
+            "item_texture": "arris:wild_rice_icon",
+            "textures": [
+                "arris:wild_rice"
+            ],
+            "textures_descriptions": [
+                {
+                    "length": 32,
+                    "width": 32
+                }
+            ],
+            "use_ao": false
+        }
+    }
+}

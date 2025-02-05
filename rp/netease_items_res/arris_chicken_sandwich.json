@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "arris:chicken_sandwich"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "arris:chicken_sandwich",
+            "register_to_create_menu": true
+        }
+    }
+}

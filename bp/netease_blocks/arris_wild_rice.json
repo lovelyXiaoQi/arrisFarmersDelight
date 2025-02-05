@@ -1,0 +1,71 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:block_light_emission": {
+                "emission": 0
+            },
+            "minecraft:destroy_time": {
+                "value": 0.0
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/wild_rice.json"
+            },
+            "netease:connection": {
+                "blocks": []
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        0.8125,
+                        1.875,
+                        0.8125
+                    ],
+                    "min": [
+                        0.125,
+                        0.0,
+                        0.125
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:water_flow_source": {
+                "value": true
+            },
+            "netease:water_only": {
+                "value": true
+            },
+            "netease:water_source": {
+                "value": true
+            }
+        },
+        "description": {
+            "category": "arris_farmers_delight",
+            "identifier": "arris:wild_rice",
+            "register_to_creative_menu": true
+        }
+    }
+}
