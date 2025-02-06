@@ -10,7 +10,7 @@
             }
         },
         "description": {
-            "category": "arris_farmers_delight",
+            "category": "commands",
             "identifier": "arris:item_display_destroy"
         }
     }

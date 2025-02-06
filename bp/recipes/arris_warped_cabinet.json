@@ -1,0 +1,41 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:warped_cabinet"
+        },
+        "key": {
+            "B": {
+                "data": 0,
+                "item": "minecraft:warped_trapdoor"
+            },
+            "C": {
+                "data": 0,
+                "item": "minecraft:warped_slab"
+            }
+        },
+        "pattern": [
+            "CCC",
+            "B B",
+            "CCC"
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:warped_cabinet"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "data": 0,
+                "item": "minecraft:warped_trapdoor"
+            },
+            {
+                "data": 0,
+                "item": "minecraft:warped_slab"
+            }
+        ]
+    }
+}

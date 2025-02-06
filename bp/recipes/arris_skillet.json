@@ -1,0 +1,41 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:skillet"
+        },
+        "key": {
+            "D": {
+                "data": 0,
+                "item": "minecraft:iron_ingot"
+            },
+            "E": {
+                "data": 0,
+                "item": "minecraft:brick"
+            }
+        },
+        "pattern": [
+            " DD",
+            " DD",
+            "E  "
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:skillet_item"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "data": 0,
+                "item": "minecraft:iron_ingot"
+            },
+            {
+                "data": 0,
+                "item": "minecraft:brick"
+            }
+        ]
+    }
+}

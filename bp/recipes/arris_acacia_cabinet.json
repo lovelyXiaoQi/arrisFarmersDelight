@@ -1,0 +1,41 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:acacia_cabinet"
+        },
+        "key": {
+            "E": {
+                "data": 0,
+                "item": "minecraft:acacia_trapdoor"
+            },
+            "H": {
+                "data": 4,
+                "item": "minecraft:wooden_slab"
+            }
+        },
+        "pattern": [
+            "HHH",
+            "E E",
+            "HHH"
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:acacia_cabinet"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "data": 0,
+                "item": "minecraft:acacia_trapdoor"
+            },
+            {
+                "data": 4,
+                "item": "minecraft:wooden_slab"
+            }
+        ]
+    }
+}

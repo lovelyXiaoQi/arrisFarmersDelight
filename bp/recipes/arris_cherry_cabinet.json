@@ -1,0 +1,41 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:cherry_cabinet"
+        },
+        "key": {
+            "E": {
+                "data": 0,
+                "item": "minecraft:cherry_trapdoor"
+            },
+            "H": {
+                "data": 0,
+                "item": "minecraft:cherry_slab"
+            }
+        },
+        "pattern": [
+            "HHH",
+            "E E",
+            "HHH"
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:cherry_cabinet"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "data": 0,
+                "item": "minecraft:cherry_trapdoor"
+            },
+            {
+                "data": 0,
+                "item": "minecraft:cherry_slab"
+            }
+        ]
+    }
+}

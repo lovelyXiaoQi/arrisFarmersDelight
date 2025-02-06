@@ -1,0 +1,57 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:cooking_pot"
+        },
+        "key": {
+            "B": {
+                "data": 0,
+                "item": "minecraft:wooden_shovel"
+            },
+            "C": {
+                "data": 0,
+                "item": "minecraft:brick"
+            },
+            "E": {
+                "data": 0,
+                "item": "minecraft:water_bucket"
+            },
+            "I": {
+                "data": 0,
+                "item": "minecraft:iron_ingot"
+            }
+        },
+        "pattern": [
+            "CBC",
+            "IEI",
+            "III"
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:cooking_pot"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "data": 0,
+                "item": "minecraft:wooden_shovel"
+            },
+            {
+                "data": 0,
+                "item": "minecraft:brick"
+            },
+            {
+                "data": 0,
+                "item": "minecraft:water_bucket"
+            },
+            {
+                "data": 0,
+                "item": "minecraft:iron_ingot"
+            }
+        ]
+    }
+}

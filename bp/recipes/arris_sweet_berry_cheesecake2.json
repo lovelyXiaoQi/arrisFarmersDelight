@@ -1,0 +1,56 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:sweet_berry_cheesecake2"
+        },
+        "key": {
+            "F": {
+                "data": 0,
+                "item": "minecraft:sweet_berries"
+            },
+            "H": {
+                "data": 0,
+                "item": "arris:pie_crust"
+            },
+            "I": {
+                "data": 0,
+                "item": "arris:milk_bottle"
+            }
+        },
+        "pattern": [
+            "FFF",
+            "FFF",
+            "IHI"
+        ],
+        "result": [
+            {
+                "count": 1,
+                "data": 0,
+                "item": "arris:sweet_berry_cheesecake_item"
+            },
+            {
+                "count": 2,
+                "data": 0,
+                "item": "minecraft:glass_bottle"
+            }
+        ],
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "data": 0,
+                "item": "minecraft:sweet_berries"
+            },
+            {
+                "data": 0,
+                "item": "arris:pie_crust"
+            },
+            {
+                "data": 0,
+                "item": "arris:milk_bottle"
+            }
+        ]
+    }
+}

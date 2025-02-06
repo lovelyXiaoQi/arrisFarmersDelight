@@ -1,0 +1,32 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arris:canvas"
+        },
+        "key": {
+            "D": {
+                "data": 0,
+                "item": "arris:straw"
+            }
+        },
+        "pattern": [
+            "DD",
+            "DD"
+        ],
+        "result": {
+            "count": 1,
+            "data": 0,
+            "item": "arris:canvas"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "data": 0,
+                "item": "arris:straw"
+            }
+        ]
+    }
+}
