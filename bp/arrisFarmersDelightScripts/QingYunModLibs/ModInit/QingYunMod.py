@@ -14,17 +14,11 @@ _PluginsClient = []
 ClientEvents = []
 ServerEvents = []
 
-def CreateGameTick(BindTickName):
-    try:
-        clientApi.GetEngineCompFactory().CreateModAttr(clientApi.GetLevelId()).SetAttr("TickName", BindTickName)
-    except:
-        print "UnClient"
-
-
 class QingYunMod(object):
-    """
+    '''
     通过实例化此类来注册Mod
-    """
+
+    '''
     def __init__(self):
         self.ModName = None
         global ModObject
@@ -89,7 +83,10 @@ def _InitServer():
             print "\n[ERROR] Can not import " + server + "\n" + "[ERROR] Module is " + str(ServerModule) + "\n"
         Config = ImportServerModule(ModObject.ModName + ".QingYunModLibs.Config")
         Config.ServerUser = True
-        Config.ServerUserPlayerId = clientApi.GetLocalPlayerId()
+        try:
+            Config.ServerUserPlayerId = clientApi.GetLocalPlayerId()
+        except:
+            Config.ServerUserPlayerId = "-1"
 
 
 def _InitClient():

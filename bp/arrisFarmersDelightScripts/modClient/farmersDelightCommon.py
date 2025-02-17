@@ -108,12 +108,22 @@ def ClientJumpButtonRelease(args):
 @ListenClient("ModBlockEntityLoadedClientEvent")
 def OnBlockEntityLoaded(args):
     blockPos = (args["posX"], args["posY"], args["posZ"])
-    dimensionId = args["dimensionId"]
     blockName = args["blockName"]
+    comp = ClientComp.CreateBlockInfo(levelId)
+    blockEntityData = comp.GetBlockEntityData(blockPos)
+    if not blockEntityData:
+        return
     if blockName in ["arris:skillet", "arris:cooking_pot"]:
-        data = {"blockPos": blockPos, "dimensionId": dimensionId, "blockName": blockName}
-        CallServer("GetBlockHeat", data)
-        CallServer("ClientGetBlockEntityData", data)
+        comp.SetEnableBlockEntityAnimations(blockPos, True)
+        heatParticleEnableData = blockEntityData["exData"].get("heatParticleEnable")
+        if heatParticleEnableData:
+            blockHeatValue = heatParticleEnableData["__value__"]
+            comp.SetBlockEntityMolangValue(blockPos, "variable.mod_heat", blockHeatValue)
+        shelfEnableData = blockEntityData["exData"].get("shelfEnable")
+        if shelfEnableData:
+            blockShelfEnable = shelfEnableData["__value__"]
+            comp.SetBlockEntityMolangValue(blockPos, "variable.mod_shelf", blockShelfEnable)
     elif blockName in ["arris:apple_pie", "arris:chocolate_pie", "arris:sweet_berry_cheesecake"]:
-        data = {"blockPos": blockPos, "dimensionId": dimensionId, "blockName": blockName}
-        CallServer("ClientGetBlockEntityData", data)
+        blockPieStatus = blockEntityData["exData"]["blockStatus"]["__value__"]
+        comp.SetEnableBlockEntityAnimations(blockPos, True)
+        comp.SetBlockEntityMolangValue(blockPos, "variable.mod_pie", blockPieStatus)

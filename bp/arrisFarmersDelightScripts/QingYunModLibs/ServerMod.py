@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+import copy
+
 from SystemApi import *
 import time
-
 _TimerData = list()
 _ComponentMap = dict()
 

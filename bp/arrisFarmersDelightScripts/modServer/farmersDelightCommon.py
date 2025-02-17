@@ -266,15 +266,6 @@ def PlayerShapedRecipe(args):
     ServerObj.CreateEngineItemEntity(itemDict, dimensionId, playerPos)
 
 @Call()
-def GetBlockHeat(args):
-    blockPos = args["blockPos"]
-    dimensionId = args["dimensionId"]
-    blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
-    if blockEntityData:
-        data = {"molang": blockEntityData["heatParticleEnable"], "blockPos": blockPos, "name": "variable.mod_heat"}
-        CallAllClient("SetEntityBlockMolang", data)
-
-@Call()
 def GetEntityCarriedItem(entityId):
     itemDict = ServerComp.CreateItem(entityId).GetEntityItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, 0)
     if itemDict:
@@ -289,17 +280,3 @@ def GetEntityCarriedItem(entityId):
             CallAllClient("SetItemDisplayMolang", {"itemType": itemType, "entityId": entityId})
     else:
         CallAllClient("SetItemDisplayMolang", {"itemType": None, "entityId": entityId})
-
-@Call()
-def ClientGetBlockEntityData(args):
-    blockPos = args["blockPos"]
-    dimensionId = args["dimensionId"]
-    blockName = args["blockName"]
-    blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
-    if blockEntityData:
-        if blockName in ["arris:skillet", "arris:cooking_pot"]:
-            data = {"molang": blockEntityData["shelfEnable"], "blockPos": blockPos, "name": "variable.mod_shelf"}
-            CallAllClient("SetEntityBlockMolang", data)
-        elif blockName in ["arris:apple_pie", "arris:chocolate_pie", "arris:sweet_berry_cheesecake"]:
-            data = {"molang": blockEntityData["blockStatus"], "blockPos": blockPos, "name": "variable.mod_pie"}
-            CallAllClient("SetEntityBlockMolang", data)

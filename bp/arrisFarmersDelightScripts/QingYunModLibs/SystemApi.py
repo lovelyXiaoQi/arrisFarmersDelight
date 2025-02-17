@@ -12,13 +12,14 @@ _ServerEventDataName = QingYunMod.ModObject.ModName + "ServerEventData"
 _ClientEventDataName = QingYunMod.ModObject.ModName + "ClientEventData"
 if ServerComp.CreateModAttr(levelId):
     ServerComp.CreateModAttr(levelId).SetAttr(_ServerEventDataName, [])
-if ClientComp.CreateModAttr(levelId):
+if not serverApi.IsInServer() and ClientComp.CreateModAttr(levelId):
     ClientComp.CreateModAttr(levelId).SetAttr(_ClientEventDataName, [])
 _BackFuncDict = dict()
 _CallBackFuncDictClient = dict()
 _CallBackFuncDictServer = dict()
 _PackageDataList = list()
 _tickNum = 0
+
 
 class Universal(object):
     """
@@ -27,10 +28,13 @@ class Universal(object):
     def __init__(self):
         print "Create Universal"
 
+
 def GetClientModAttr(entityId, AttrName):
     """
     安全获取客户端ModAttr数据
     """
+    if serverApi.IsInServer():
+        return []
     AttrComp = ClientComp.CreateModAttr(entityId)
     if not AttrComp:
         return []
@@ -63,10 +67,20 @@ class Bcolors(object):
     RESET = '\033[0m'  # RESET COLOR
 
 
-ServerObj = serverApi.GetSystem(QingYunMod.ModObject.ModName, "Server")
-ClientObj = clientApi.GetSystem(QingYunMod.ModObject.ModName, "Client")
-AllServer = serverApi.GetSystem("QingYunMod", "Server")
-AllClient = clientApi.GetSystem("QingYunMod", "Client")
+try:
+    ServerObj = serverApi.GetSystem(QingYunMod.ModObject.ModName, "Server")
+    AllServer = serverApi.GetSystem("QingYunMod", "Server")
+except:
+    ServerObj = None
+    AllServer = None
+
+try:
+    ClientObj = clientApi.GetSystem(QingYunMod.ModObject.ModName, "Client")
+    AllClient = clientApi.GetSystem("QingYunMod", "Client")
+except:
+    ClientObj = None
+    AllClient = None
+
 
 def CallBack(BackFunc, TargetId="-1", ForAllMod=False):
     """
@@ -166,7 +180,7 @@ def CallServer(FuncName, EventData, BackFunc=None, ForAllMod=False, PackageData=
     if PackageData and not ForAllMod:
         _PackageDataList.append([DataId, args])
         return
-    if ForAllMod:
+    if ForAllMod and AllClient:
         AllClient.NotifyToServer(DataId, args)
     else:
         if ClientObj:
@@ -441,6 +455,7 @@ def Call(TargetId="-1", ForAllMod=False):
 def ListenServer(EventName):
     """
     监听服务端游戏原生事件
+
     :param EventName: 事件名称
     """
     def Listen(BackFunc):
@@ -453,6 +468,7 @@ def ListenServer(EventName):
 def ListenClient(EventName):
     """
     监听客户端游戏原生事件
+
     :param EventName: 事件名称
     """
     def Listen(BackFunc):
@@ -465,6 +481,7 @@ def ListenClient(EventName):
 def UnListenServer(EventName, BackFunc):
     """
     注销监听服务端游戏原生事件
+
     :param EventName: 事件名称
     :param BackFunc: 用于触发事件逻辑的回调函数
     """
