@@ -11,9 +11,6 @@
             "minecraft:destroy_time": {
                 "value": 0.0
             },
-            "netease:connection": {
-                "blocks": []
-            },
             "minecraft:loot": {
                 "table": "loot_tables/rice_upper_riped.json"
             },
@@ -43,6 +40,11 @@
                     ]
                 }
             },
+            "netease:connection": {
+                "blocks": [
+
+                ]
+            },
             "netease:neighborchanged_sendto_script": {
                 "value": true
             },
@@ -59,6 +61,7 @@
         },
         "description": {
             "base_block": "custom_crop_block",
+            "category": "none",
             "identifier": "arris:rice_upper_crop_stage3"
         }
     }

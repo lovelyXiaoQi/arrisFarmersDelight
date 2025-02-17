@@ -1,7 +1,30 @@
 {
     "format_version": "1.20.10",
     "minecraft:block": {
+        "components": {
+            "minecraft:collision_box": false,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.0
+            },
+            "minecraft:flammable": {
+                "catch_chance_modifier": 30,
+                "destroy_chance_modifier": 30
+            },
+            "minecraft:geometry": "geometry.wild_crop",
+            "minecraft:light_dampening": 0,
+            "netease:neighborchanged_sendto_script": {
+                "value": true
+            },
+            "netease:random_tick": {
+                "enable": true,
+                "tick_to_script": true
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
         "description": {
+            "category": "none",
             "identifier": "arris:brown_mushroom_colony",
             "properties": {
                 "arris:growth": [
@@ -18,15 +41,14 @@
         },
         "permutations": [
             {
-                "condition": "query.block_property('arris:growth') == 0",
                 "components": {
                     "minecraft:loot": "loot_tables/arris_brown_mushroom_colony0.json",
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "mushroom_brown",
                             "ambient_occlusion": false,
                             "face_dimming": false,
-                            "render_method": "alpha_test"
+                            "render_method": "alpha_test",
+                            "texture": "mushroom_brown"
                         }
                     },
                     "minecraft:selection_box": {
@@ -41,18 +63,18 @@
                             6
                         ]
                     }
-                }
+                },
+                "condition": "query.block_property('arris:growth') == 0"
             },
             {
-                "condition": "query.block_property('arris:growth') == 1",
                 "components": {
                     "minecraft:loot": "loot_tables/arris_brown_mushroom_colony0.json",
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "mushroom_brown",
                             "ambient_occlusion": false,
                             "face_dimming": false,
-                            "render_method": "alpha_test"
+                            "render_method": "alpha_test",
+                            "texture": "mushroom_brown"
                         }
                     },
                     "minecraft:selection_box": {
@@ -67,18 +89,18 @@
                             6
                         ]
                     }
-                }
+                },
+                "condition": "query.block_property('arris:growth') == 1"
             },
             {
-                "condition": "query.block_property('arris:growth') == 2",
                 "components": {
                     "minecraft:loot": "loot_tables/arris_brown_mushroom_colony0.json",
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "brown_mushroom_colony_stage0",
                             "ambient_occlusion": false,
                             "face_dimming": false,
-                            "render_method": "alpha_test"
+                            "render_method": "alpha_test",
+                            "texture": "brown_mushroom_colony_stage0"
                         }
                     },
                     "minecraft:selection_box": {
@@ -93,18 +115,18 @@
                             8
                         ]
                     }
-                }
+                },
+                "condition": "query.block_property('arris:growth') == 2"
             },
             {
-                "condition": "query.block_property('arris:growth') == 3",
                 "components": {
                     "minecraft:loot": "loot_tables/arris_brown_mushroom_colony0.json",
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "brown_mushroom_colony_stage0",
                             "ambient_occlusion": false,
                             "face_dimming": false,
-                            "render_method": "alpha_test"
+                            "render_method": "alpha_test",
+                            "texture": "brown_mushroom_colony_stage0"
                         }
                     },
                     "minecraft:selection_box": {
@@ -119,18 +141,18 @@
                             8
                         ]
                     }
-                }
+                },
+                "condition": "query.block_property('arris:growth') == 3"
             },
             {
-                "condition": "query.block_property('arris:growth') == 4",
                 "components": {
                     "minecraft:loot": "loot_tables/arris_brown_mushroom_colony1.json",
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "brown_mushroom_colony_stage1",
                             "ambient_occlusion": false,
                             "face_dimming": false,
-                            "render_method": "alpha_test"
+                            "render_method": "alpha_test",
+                            "texture": "brown_mushroom_colony_stage1"
                         }
                     },
                     "minecraft:selection_box": {
@@ -145,18 +167,18 @@
                             10
                         ]
                     }
-                }
+                },
+                "condition": "query.block_property('arris:growth') == 4"
             },
             {
-                "condition": "query.block_property('arris:growth') == 5",
                 "components": {
                     "minecraft:loot": "loot_tables/arris_brown_mushroom_colony1.json",
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "brown_mushroom_colony_stage1",
                             "ambient_occlusion": false,
                             "face_dimming": false,
-                            "render_method": "alpha_test"
+                            "render_method": "alpha_test",
+                            "texture": "brown_mushroom_colony_stage1"
                         }
                     },
                     "minecraft:selection_box": {
@@ -171,18 +193,18 @@
                             10
                         ]
                     }
-                }
+                },
+                "condition": "query.block_property('arris:growth') == 5"
             },
             {
-                "condition": "query.block_property('arris:growth') == 6",
                 "components": {
                     "minecraft:loot": "loot_tables/arris_brown_mushroom_colony2.json",
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "brown_mushroom_colony_stage2",
                             "ambient_occlusion": false,
                             "face_dimming": false,
-                            "render_method": "alpha_test"
+                            "render_method": "alpha_test",
+                            "texture": "brown_mushroom_colony_stage2"
                         }
                     },
                     "minecraft:selection_box": {
@@ -197,18 +219,18 @@
                             10
                         ]
                     }
-                }
+                },
+                "condition": "query.block_property('arris:growth') == 6"
             },
             {
-                "condition": "query.block_property('arris:growth') == 7",
                 "components": {
                     "minecraft:loot": "loot_tables/arris_brown_mushroom_colony3.json",
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "brown_mushroom_colony_stage3",
                             "ambient_occlusion": false,
                             "face_dimming": false,
-                            "render_method": "alpha_test"
+                            "render_method": "alpha_test",
+                            "texture": "brown_mushroom_colony_stage3"
                         }
                     },
                     "minecraft:selection_box": {
@@ -223,30 +245,9 @@
                             12
                         ]
                     }
-                }
+                },
+                "condition": "query.block_property('arris:growth') == 7"
             }
-        ],
-        "components": {
-            "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 0.0
-            },
-            "minecraft:flammable": {
-                "catch_chance_modifier": 30,
-                "destroy_chance_modifier": 30
-            },
-            "minecraft:light_dampening": 0,
-            "minecraft:geometry": "geometry.wild_crop",
-            "netease:solid": {
-                "value": false
-            },
-            "netease:neighborchanged_sendto_script": {
-                "value": true
-            },
-            "minecraft:collision_box": false,
-            "netease:random_tick": {
-                "enable": true,
-                "tick_to_script": true
-            }
-        }
+        ]
     }
 }

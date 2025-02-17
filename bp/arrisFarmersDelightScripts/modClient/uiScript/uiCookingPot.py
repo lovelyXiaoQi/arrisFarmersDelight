@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
+import mod.client.extraClientApi as clientApi
 from ...QingYunModLibs.SystemApi import *
 from ...modCommon.itemInfo import *
 from ...modCommon.modConfig import *
+import copy
+import random
 
 ScreenNode = clientApi.GetScreenNodeCls()
 playerId = clientApi.GetLocalPlayerId()
@@ -96,8 +99,7 @@ class uiCookingPot(ScreenNode):
                 Pos_Y -= Y
         return Pos_X, Pos_Y
 
-    @staticmethod
-    def intermediates(p1, p2, nb_points=7):
+    def intermediates(self, p1, p2, nb_points=7):
         """
         获取两点之间的坐标
         :param p1: 坐标1
@@ -108,8 +110,21 @@ class uiCookingPot(ScreenNode):
         y_spacing = (p2[1] - p1[1]) / (nb_points + 1)
         return [(p1[0] + i * x_spacing, p1[1] + i * y_spacing) for i in range(1, nb_points + 1)]
 
-    @staticmethod
-    def GetItemLocked(itemDict, slot):
+    def GetItemDict(self, collection, index):
+        self.allItemList = compFactory.CreateItem(playerId).GetPlayerAllItems(clientApi.GetMinecraftEnum().ItemPosType.INVENTORY, True)
+        if collection == "hotbarButton" or collection == "inventoryButton":
+            itemDict = self.allItemList[index]
+        elif collection == "inputItemButton":
+            itemDict = self.inputItemSlot[index]
+        elif collection == "vesselButton":
+            itemDict = self.vesselItemSlot[index]
+        elif collection == "resultButton":
+            itemDict = self.resultItemSlot[index]
+        else:
+            itemDict = None
+        return itemDict
+
+    def GetItemLocked(self, itemDict, slot):
         itemLock = slot.GetChildByName("item_lock_overlay")
         if itemDict:
             userData = itemDict.get("userData")
@@ -126,20 +141,6 @@ class uiCookingPot(ScreenNode):
             else:
                 itemLock.GetChildByName("cell_lock").SetVisible(False)
                 itemLock.GetChildByName("item_lock_yellow").SetVisible(False)
-
-    def GetItemDict(self, collection, index):
-        self.allItemList = compFactory.CreateItem(playerId).GetPlayerAllItems(clientApi.GetMinecraftEnum().ItemPosType.INVENTORY, True)
-        if collection == "hotbarButton" or collection == "inventoryButton":
-            itemDict = self.allItemList[index]
-        elif collection == "inputItemButton":
-            itemDict = self.inputItemSlot[index]
-        elif collection == "vesselButton":
-            itemDict = self.vesselItemSlot[index]
-        elif collection == "resultButton":
-            itemDict = self.resultItemSlot[index]
-        else:
-            itemDict = None
-        return itemDict
 
     def RenderGridSlotItem(self, itemList, interval, maxCount, path, gridName):
         for index in range(1, maxCount):

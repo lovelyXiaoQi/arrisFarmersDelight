@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from serverUtils.serverUtils import *
-from ..modCommon.modConfig import *
 import copy
 
 def CheckScreen(args):
@@ -65,7 +64,7 @@ def CookingPotAddFood(args):
     if not blockEntityData:
         return
     inputItemSlot = blockEntityData["inputItemSlot"]
-    itemList = ServerComp.CreateItem(playerId).GetPlayerAllItems(serverApi.GetMinecraftEnum().ItemPosType.INVENTORY)
+    itemList = ServerComp.CreateItem(playerId).GetPlayerAllItems(serverApi.GetMinecraftEnum().ItemPosType.INVENTORY, True)
     for index in range(len(inputList)):
         if not inputItemSlot[index]:
             itemDict = copy.deepcopy(itemList[indexList[index]])

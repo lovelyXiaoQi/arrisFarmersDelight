@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from ...QingYunModLibs.SystemApi import *
 from ...modCommon.guideBookConfig import config
+import copy
 
 ScreenNode = clientApi.GetScreenNodeCls()
 playerId = clientApi.GetLocalPlayerId()

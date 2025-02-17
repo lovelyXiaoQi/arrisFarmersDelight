@@ -1,55 +1,76 @@
 from ...ClientMod import *
-__KeyBoardFuncDict = {}
-__GamePadFuncDict = {}
+class KeyBoardData:
+    KeyBoardFuncMap = dict()
+    GamePadFuncMap = dict()
 
 
-def __OnKeyPress(args):
-    KeyValue = args['key']
-    for KeyValue in [KeyValue+"1", KeyValue+"0"]:
-        if KeyValue in __KeyBoardFuncDict:
-            for KeyBoardData in __KeyBoardFuncDict[KeyValue]:
-                if KeyBoardData["State"] == args["isDown"]:
-                    Func = KeyBoardData["Func"]
-                    Param = KeyBoardData.get("Param", KeyValue)
-                    Func(Param)
+@LoadingComponent
+class KeyBoardPlugins(BaseComponent):
+    def __init__(self):
+        BaseComponent.__init__(self)
+
+    @BaseComponent.ComponentListenEvent("OnKeyPressInGame")
+    def OnKeyPress(self, args):
+        KeyValue = args['key']
+        isDown = args["isDown"]
+        for keyBind in KeyBoardData.KeyBoardFuncMap:
+            keyValue, state, funcName = keyBind.split("_")
+            if KeyValue == keyValue and isDown == state:
+                BindData = KeyBoardData.KeyBoardFuncMap[keyBind]
+                func = BindData["func"]
+                param = BindData["param"]
+                func(param)
+
+    @BaseComponent.ComponentListenEvent("OnGamepadKeyPressClientEvent")
+    def OnGamePadPress(self, args):
+        KeyValue = str(args['key'])
+        isDown = args["isDown"]
+        for keyBind in KeyBoardData.GamePadFuncMap:
+            keyValue, state, funcName = keyBind.split("_")
+            if KeyValue == keyValue and isDown == state:
+                BindData = KeyBoardData.GamePadFuncMap[keyBind]
+                func = BindData["func"]
+                param = BindData["param"]
+                func(param)
+
+    def AddKeyFuncBind(self, keyValue, func, param=None, state="1"):
+        BindData = {
+            "func": func,
+            "param": param
+        }
+        KeyBoardData.KeyBoardFuncMap["%s_%s_%s" % (keyValue, state, func.__name__)] = BindData
+
+    def RemoveKeyFuncBind(self, keyValue, func, state="1"):
+        if "%s_%s_%s" % (keyValue, state, func.__name__) in KeyBoardData.KeyBoardFuncMap:
+            KeyBoardData.KeyBoardFuncMap.pop("%s_%s_%s" % (keyValue, state, func.__name__))
+
+    def AddGamePadFuncBind(self, keyValue, func, param=None, state="1"):
+        BindData = {
+            "func": func,
+            "param": param
+        }
+        KeyBoardData.GamePadFuncMap["%s_%s_%s" % (keyValue, state, func.__name__)] = BindData
+
+    def RemoveGamePadFuncBind(self, keyValue, func, state="1"):
+        if "%s_%s_%s" % (keyValue, state, func.__name__) in KeyBoardData.GamePadFuncMap:
+            KeyBoardData.GamePadFuncMap.pop("%s_%s_%s" % (keyValue, state, func.__name__))
 
 
-def __OnGamePadPress(args):
-    KeyValue = args['key']
-    for KeyValue in [KeyValue + "1", KeyValue + "0"]:
-        if KeyValue in __GamePadFuncDict:
-            for KeyBoardData in __GamePadFuncDict[KeyValue]:
-                if KeyBoardData["State"] == args["isDown"]:
-                    Func = KeyBoardData["Func"]
-                    Param = KeyBoardData.get("Param", KeyValue)
-                    Func(Param)
+def AddKeyFuncBind(keyValue, func, param=None, state="1"):
+    KeyBoardPlugins = GetComponent("KeyBoardPlugins") #type:KeyBoardPlugins
+    KeyBoardPlugins.AddKeyFuncBind(keyValue, func, param, state)
 
 
-def AddKeyFuncBind(KeyValue, Func, Param=None, State="1"):
-    if not __KeyBoardFuncDict.get(str(KeyValue)+State, None):
-        __KeyBoardFuncDict[str(KeyValue) + State] = []
-    KeyData = {
-        "Func": Func,
-        "Param": Param,
-        "State": State
-    }
-    if KeyData in __KeyBoardFuncDict[str(KeyValue) + State]:
-        __KeyBoardFuncDict[str(KeyValue) + State].remove(KeyData)
-    __KeyBoardFuncDict[str(KeyValue) + State].append(KeyData)
+def RemoveKeyFuncBind(keyValue, func, state="1"):
+    KeyBoardPlugins = GetComponent("KeyBoardPlugins") #type:KeyBoardPlugins
+    KeyBoardPlugins.RemoveKeyFuncBind(keyValue, func, state)
 
 
-def AddGamePadFuncBind(KeyValue, Func, Param=None, State="1"):
-    if not __GamePadFuncDict.get(str(KeyValue)+State):
-        __GamePadFuncDict[str(KeyValue) + State] = []
-    keyData = {
-        "Func": Func,
-        "Param": Param,
-        "State": State
-    }
-    if keyData in __GamePadFuncDict[str(KeyValue) + State]:
-        __GamePadFuncDict[str(KeyValue) + State].remove(keyData)
-    __GamePadFuncDict[str(KeyValue) + State].append(keyData)
+def AddGamePadFuncBind(keyValue, func, param=None, state="1"):
+    KeyBoardPlugins = GetComponent("KeyBoardPlugins") #type:KeyBoardPlugins
+    KeyBoardPlugins.AddGamePadFuncBind(keyValue, func, param, state)
 
 
-ListenClientEvents(ClientEvents.ControlEvents.OnKeyPressInGame, __OnKeyPress)
-ListenClientEvents(ClientEvents.ControlEvents.OnGamepadKeyPressClientEvent, __OnGamePadPress)
+def RemoveGamePadFuncBind(keyValue, func, state="1"):
+    KeyBoardPlugins = GetComponent("KeyBoardPlugins") #type:KeyBoardPlugins
+    KeyBoardPlugins.RemoveGamePadFuncBind(keyValue, func, state)

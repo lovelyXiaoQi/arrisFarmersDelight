@@ -8,8 +8,8 @@
             "minecraft:block_light_emission": {
                 "emission": 0
             },
-            "netease:connection": {
-                "blocks": []
+            "minecraft:loot": {
+                "table": "loot_tables/mature_cabbages.json"
             },
             "netease:aabb": {
                 "clip": {
@@ -37,21 +37,24 @@
                     ]
                 }
             },
-            "netease:render_layer": {
-                "value": "alpha"
-            },
-            "minecraft:loot": {
-                "table": "loot_tables/mature_cabbages.json"
-            },
-            "netease:solid": {
-                "value": false
+            "netease:connection": {
+                "blocks": [
+
+                ]
             },
             "netease:neighborchanged_sendto_script": {
                 "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
             }
         },
         "description": {
             "base_block": "custom_crop_block",
+            "category": "none",
             "identifier": "arris:cabbages_stage7"
         }
     }

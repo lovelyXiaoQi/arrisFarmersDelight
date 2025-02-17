@@ -11,9 +11,6 @@
             "minecraft:destroy_time": {
                 "value": 0.0
             },
-            "netease:connection": {
-                "blocks": []
-            },
             "minecraft:loot": {
                 "table": "loot_tables/wild_rice.json"
             },
@@ -43,6 +40,11 @@
                     ]
                 }
             },
+            "netease:connection": {
+                "blocks": [
+
+                ]
+            },
             "netease:neighborchanged_sendto_script": {
                 "value": true
             },
@@ -64,6 +66,7 @@
             }
         },
         "description": {
+            "category": "none",
             "identifier": "arris:rice_supporting"
         }
     }

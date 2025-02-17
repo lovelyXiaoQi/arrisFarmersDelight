@@ -11,9 +11,6 @@
             "minecraft:loot": {
                 "table": "loot_tables/crops/wheat.json"
             },
-            "netease:connection": {
-                "blocks": []
-            },
             "netease:aabb": {
                 "clip": {
                     "max": [
@@ -40,6 +37,11 @@
                     ]
                 }
             },
+            "netease:connection": {
+                "blocks": [
+
+                ]
+            },
             "netease:neighborchanged_sendto_script": {
                 "value": true
             },
@@ -55,6 +57,8 @@
             }
         },
         "description": {
+            "base_block": "custom_crop_block",
+            "category": "none",
             "identifier": "arris:rich_soil_wheat0"
         }
     }

@@ -11,9 +11,6 @@
             "minecraft:loot": {
                 "table": "loot_tables/immaturate_onions.json"
             },
-            "netease:connection": {
-                "blocks": []
-            },
             "netease:aabb": {
                 "clip": {
                     "max": [
@@ -45,6 +42,11 @@
                 "movable": false,
                 "tick": false
             },
+            "netease:connection": {
+                "blocks": [
+
+                ]
+            },
             "netease:neighborchanged_sendto_script": {
                 "value": true
             },
@@ -61,6 +63,7 @@
         },
         "description": {
             "base_block": "custom_crop_block",
+            "category": "none",
             "identifier": "arris:onions_stage0"
         }
     }

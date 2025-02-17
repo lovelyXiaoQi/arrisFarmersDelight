@@ -3,7 +3,6 @@ import mod.server.extraServerApi as serverApi
 import mod.client.extraClientApi as clientApi
 import ModInit.QingYunMod as QingYunMod
 
-
 levelId = serverApi.GetLevelId()
 _ServerSys = serverApi.GetServerSystemCls()
 _ClientSys = clientApi.GetClientSystemCls()
@@ -16,23 +15,17 @@ if ServerComp.CreateModAttr(levelId):
 if ClientComp.CreateModAttr(levelId):
     ClientComp.CreateModAttr(levelId).SetAttr(_ClientEventDataName, [])
 _BackFuncDict = dict()
-_CallBackFuncDict = dict()
-
+_CallBackFuncDictClient = dict()
+_CallBackFuncDictServer = dict()
+_PackageDataList = list()
+_tickNum = 0
 
 class Universal(object):
     """
     通用类，可做存储数据使用
     """
-    def __init__(self, ClassName):
-        self.ClassName = ClassName
+    def __init__(self):
         print "Create Universal"
-
-    def __setattr__(self, key, value):
-        print "%s Set Value {%s:%s}" % (self.ClassName, str(key), str(value))
-
-    def __delattr__(self, item):
-        print "%s Remove Value %s" % (self.ClassName, item)
-
 
 def GetClientModAttr(entityId, AttrName):
     """
@@ -75,7 +68,6 @@ ClientObj = clientApi.GetSystem(QingYunMod.ModObject.ModName, "Client")
 AllServer = serverApi.GetSystem("QingYunMod", "Server")
 AllClient = clientApi.GetSystem("QingYunMod", "Client")
 
-
 def CallBack(BackFunc, TargetId="-1", ForAllMod=False):
     """
     通信绑定函数，用于绑定目标函数，发信端发信时该接口绑定的函数会被调用，可返回某值
@@ -97,6 +89,7 @@ def CallBack(BackFunc, TargetId="-1", ForAllMod=False):
             if ForAllMod:
                 if AllClient:
                     AllClient.ListenAllCall.__call__(BackFunc)
+    _CallBackFuncDictClient[BackFunc.__name__] = BackFunc
 
 
 def CallClient(FuncName, TargetId, EventData, BackFunc=None, ForAllMod=False):
@@ -154,7 +147,7 @@ def CallAllClient(FuncName, EventData, BackFunc=None, ForAllMod=False):
     _BackFuncDict[DataId] = BackFunc
 
 
-def CallServer(FuncName, EventData, BackFunc=None, ForAllMod=False):
+def CallServer(FuncName, EventData, BackFunc=None, ForAllMod=False, PackageData=False):
     """
     发起通信请求函数，客户端接口，从客户端向服务端发起单向请求，可调用被通信端指定函数
 
@@ -162,6 +155,7 @@ def CallServer(FuncName, EventData, BackFunc=None, ForAllMod=False):
     :param EventData: 需要一并传入指定函数的参数数据(仅支持基本数据类型)
     :param BackFunc: 目标函数运行结束以后将用于获取返回值的回调函数
     :param ForAllMod: 是否为框架全局通信
+    :param PackageData: 合批发包，开启后将以30tick/s的速度检测并合批发包，可优化高频发包性能，但不支持全局通信
     """
     args = {
         'args': EventData,
@@ -169,11 +163,14 @@ def CallServer(FuncName, EventData, BackFunc=None, ForAllMod=False):
         'playerId': clientApi.GetLocalPlayerId()
     }
     DataId = FuncName
+    if PackageData and not ForAllMod:
+        _PackageDataList.append([DataId, args])
+        return
     if ForAllMod:
-        AllClient.NotifyToServer(FuncName, args)
+        AllClient.NotifyToServer(DataId, args)
     else:
         if ClientObj:
-            ClientObj.NotifyToServer(FuncName, args)
+            ClientObj.NotifyToServer(DataId, args)
     _BackFuncDict[DataId] = BackFunc
 
 
@@ -194,15 +191,48 @@ def MappingCall(FuncName, EventData):
     """
     args = {
         "FuncName": FuncName,
-        "EventData": EventData
+        "EventData": EventData,
+        "playerId": clientApi.GetLocalPlayerId()
     }
-    CallServer("__Mapping", args, )
+    if ClientObj.CallBackFuncDict.get(FuncName, None):
+        ClientObj.CallBackFuncDict[FuncName](EventData)
+    CallServer("__Mapping", args, PackageData=True)
 
 
 def __Mapping(args):
     FuncName = args['FuncName']
     EventData = args['EventData']
-    CallAllClient(FuncName, EventData)
+    LocalPlayerId = args['playerId']
+    TargetList = serverApi.GetPlayerList()
+    TargetList.remove(LocalPlayerId)
+    for PlayerId in TargetList:
+        CallClient(FuncName, PlayerId, EventData)
+
+
+def TickPackageData():
+    global _PackageDataList, _tickNum
+    _tickNum += 1
+    if _tickNum <= 3:
+        return
+    _tickNum = 0
+    if not _PackageDataList:
+        return
+    CallServer("__PackageDataFunc", _PackageDataList)
+    _PackageDataList = []
+
+
+def __PackageDataFunc(args):
+    for event in args:
+        DataId = event[0]
+        eventData = event[1]
+        Args = eventData["args"]
+        TargetId = eventData["playerId"]
+        result = ServerObj.CallBackFuncDict[DataId](Args)
+        BackData = {
+            "DataId": DataId,
+            "Result": result
+        }
+        ServerObj.NotifyToClient(TargetId, "__GetServerResultResult", BackData)
 
 
 def ListenServerEvents(EventName, BackFunc):
@@ -319,10 +349,13 @@ def GetClientModule(ModuleName):
 
     :param ModuleName: 将要获取的模块名称(无后缀)
     """
-    if ModuleName in ClientComp.CreateModAttr(clientApi.GetLocalPlayerId()).GetAttr("ClientModules"):
-        return ClientComp.CreateModAttr(clientApi.GetLocalPlayerId()).GetAttr("ClientModules")[ModuleName]
-    else:
-        print Bcolors.ERROR + ModuleName + " not in package"
+    try:
+        if ModuleName in ClientComp.CreateModAttr(clientApi.GetLocalPlayerId()).GetAttr("ClientModules"):
+            return ClientComp.CreateModAttr(clientApi.GetLocalPlayerId()).GetAttr("ClientModules")[ModuleName]
+        else:
+            print Bcolors.ERROR + ModuleName + " not in package"
+    except:
+        return clientApi.ImportModule(ModuleName)
 
 
 def GetServerModule(ModuleName):
@@ -331,10 +364,13 @@ def GetServerModule(ModuleName):
 
     :param ModuleName: 将要获取的模块名称
     """
-    if ModuleName in ServerComp.CreateModAttr("qingyun").GetAttr("ServerModules"):
-        return ServerComp.CreateModAttr("qingyun").GetAttr("ServerModules")[ModuleName]
-    else:
-        print Bcolors.ERROR + ModuleName + " not in package"
+    try:
+        if ModuleName in ServerComp.CreateModAttr(serverApi.GetLevelId()).GetAttr("ServerModules"):
+            return ServerComp.CreateModAttr(serverApi.GetLevelId()).GetAttr("ServerModules")[ModuleName]
+        else:
+            print Bcolors.ERROR + ModuleName + " not in package"
+    except:
+        return serverApi.ImportModule(ModuleName)
 
 
 def __RegisterModule_Client(event):
@@ -342,7 +378,7 @@ def __RegisterModule_Client(event):
         print Module.__name__, "Client"
         PlayerId = clientApi.GetLocalPlayerId()
         ClientModules = ClientComp.CreateModAttr(PlayerId).GetAttr("ClientModules")
-        if ClientModules == None:
+        if not ClientModules:
             ClientModules = {}
         ClientModules[Module.__name__] = Module
         ClientComp.CreateModAttr(PlayerId).SetAttr("ClientModules", ClientModules)
@@ -351,11 +387,11 @@ def __RegisterModule_Client(event):
 def __RegisterModule_Server(event):
     for Module in QingYunMod.ServerModuleList:
         print Module.__name__, "Server"
-        ServerModules = ServerComp.CreateModAttr("qingyun").GetAttr("ServerModules")
-        if ServerModules == None:
+        ServerModules = ServerComp.CreateModAttr(serverApi.GetLevelId()).GetAttr("ServerModules")
+        if not ServerModules:
             ServerModules = {}
         ServerModules[Module.__name__] = Module
-        ServerComp.CreateModAttr("qingyun").SetAttr("ServerModules", ServerModules)
+        ServerComp.CreateModAttr(serverApi.GetLevelId()).SetAttr("ServerModules", ServerModules)
 
 
 def DestroyAllServerEvents(args):
@@ -397,6 +433,7 @@ def Call(TargetId="-1", ForAllMod=False):
                 if ForAllMod:
                     if AllClient:
                         AllClient.ListenAllCall(BackFunc)
+            _CallBackFuncDictClient[BackFunc.__name__] = BackFunc
         return BackFunc
     return SetCall
 
@@ -404,7 +441,6 @@ def Call(TargetId="-1", ForAllMod=False):
 def ListenServer(EventName):
     """
     监听服务端游戏原生事件
-
     :param EventName: 事件名称
     """
     def Listen(BackFunc):
@@ -417,7 +453,6 @@ def ListenServer(EventName):
 def ListenClient(EventName):
     """
     监听客户端游戏原生事件
-
     :param EventName: 事件名称
     """
     def Listen(BackFunc):
@@ -430,7 +465,6 @@ def ListenClient(EventName):
 def UnListenServer(EventName, BackFunc):
     """
     注销监听服务端游戏原生事件
-
     :param EventName: 事件名称
     :param BackFunc: 用于触发事件逻辑的回调函数
     """
@@ -470,6 +504,7 @@ def UnListenClient(EventName, BackFunc):
 
 
 CallBack(__Mapping)
+CallBack(__PackageDataFunc)
 ListenClientEvents("LoadClientAddonScriptsAfter", __RegisterModule_Client)
 ListenServerEvents("LoadServerAddonScriptsAfter", __RegisterModule_Server)
 if ServerObj:
@@ -478,6 +513,7 @@ if ClientObj:
     ClientObj.ListenResult(__GetServerResult)
 ListenServerEvents("PlayerIntendLeaveServerEvent", DestroyAllServerEvents)
 ListenServerEvents("UnLoadClientAddonScriptsBefore", DestroyAllClientEvents)
+ListenClientEvents("OnScriptTickClient", TickPackageData)
 
 
 print "\n%s[QyMod] SystemApi加载完毕" % Bcolors.SUC

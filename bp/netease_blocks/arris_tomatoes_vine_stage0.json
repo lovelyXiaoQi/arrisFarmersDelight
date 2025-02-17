@@ -11,12 +11,6 @@
             "minecraft:loot": {
                 "table": "loot_tables/immaturate_tomatoes.json"
             },
-            "netease:connection": {
-                "blocks": []
-            },
-            "netease:on_entity_inside": {
-                "send_python_event": true
-            },
             "netease:aabb": {
                 "clip": {
                     "max": [
@@ -48,8 +42,16 @@
                 "movable": false,
                 "tick": false
             },
+            "netease:connection": {
+                "blocks": [
+
+                ]
+            },
             "netease:neighborchanged_sendto_script": {
                 "value": true
+            },
+            "netease:on_entity_inside": {
+                "send_python_event": true
             },
             "netease:random_tick": {
                 "enable": true,
@@ -64,6 +66,7 @@
         },
         "description": {
             "base_block": "custom_crop_block",
+            "category": "none",
             "identifier": "arris:tomatoes_vine_stage0"
         }
     }

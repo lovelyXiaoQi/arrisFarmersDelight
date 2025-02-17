@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from serverUtils.serverUtils import *
-from ..modCommon.modConfig import *
 
 @ListenServer("ServerBlockUseEvent")
 def OnServerPlatePackagedBlockUse(args):

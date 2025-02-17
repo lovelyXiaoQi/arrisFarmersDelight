@@ -14,9 +14,6 @@
             "minecraft:explosion_resistance": {
                 "value": 0.8
             },
-            "netease:connection": {
-                "blocks": []
-            },
             "minecraft:loot": {
                 "table": "loot_tables/air_loot.json"
             },
@@ -51,6 +48,11 @@
                 "movable": false,
                 "tick": true
             },
+            "netease:connection": {
+                "blocks": [
+
+                ]
+            },
             "netease:face_directional": {
                 "type": "direction"
             },
@@ -62,6 +64,7 @@
             }
         },
         "description": {
+            "category": "none",
             "identifier": "arris:sweet_berry_cheesecake",
             "register_to_creative_menu": false
         }

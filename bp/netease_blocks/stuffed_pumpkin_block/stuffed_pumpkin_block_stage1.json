@@ -54,6 +54,7 @@
             }
         },
         "description": {
+            "category": "none",
             "identifier": "arris:stuffed_pumpkin_block_stage1"
         }
     }

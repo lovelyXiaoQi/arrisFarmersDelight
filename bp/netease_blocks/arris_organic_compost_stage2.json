@@ -17,9 +17,6 @@
             "minecraft:loot": {
                 "table": "loot_tables/organic_compost.json"
             },
-            "netease:connection": {
-                "blocks": []
-            },
             "netease:aabb": {
                 "clip": {
                     "max": [
@@ -46,6 +43,11 @@
                     ]
                 }
             },
+            "netease:connection": {
+                "blocks": [
+
+                ]
+            },
             "netease:random_tick": {
                 "enable": true,
                 "tick_to_script": true
@@ -63,6 +65,7 @@
             }
         },
         "description": {
+            "category": "none",
             "identifier": "arris:organic_compost_stage2"
         }
     }

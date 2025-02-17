@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 uiGuideBookPath = "arrisFarmersDelightScripts.modClient.uiScript.uiGuideBook.guideBook"
 uiGuideBookScreen = "guideBook.main"
+uiCookingPotPath = "arrisFarmersDelightScripts.modClient.uiScript.uiCookingPot.uiCookingPot"
+uiCookingPotScreen = "cooking_pot.main"
 
 # 可以烹饪的食物及输出结果字典
 CanCookedFoodDict = {

@@ -54,6 +54,7 @@
             }
         },
         "description": {
+            "category": "none",
             "identifier": "arris:rice_roll_medley_block_stage1"
         }
     }

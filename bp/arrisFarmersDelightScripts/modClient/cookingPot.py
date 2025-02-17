@@ -1,20 +1,15 @@
 # -*- coding: utf-8 -*-
 from ..QingYunModLibs.ClientMod import *
 from ..QingYunModLibs.SystemApi import *
-# 导入QyMod插件
-from ..QingYunModLibs.Plugins.KeyBoardPlugins.KeyBoardClient import AddKeyFuncBind
+from ..modCommon.modConfig import *
 
 playerId = clientApi.GetLocalPlayerId()
 uiNode = None
 cookingPotRecipeList = None
-uiCookingPotPath = "arrisFarmersDelightScripts.modClient.uiScript.uiCookingPot.uiCookingPot"
-uiCookingPotScreen = "cooking_pot.main"
 
 @ListenClient("UiInitFinished")
 def CookingPotUiInit(args):
     clientApi.RegisterUI("arrisFarmersDelight", "uiCookingPot", uiCookingPotPath, uiCookingPotScreen)
-    # 注册键盘设置
-    AddKeyFuncBind(27, CloseCookingPotUI)
 
 @ListenClient("ActorAcquiredItemClientEvent")
 def OnCookingPotActorAcquiredItem(args):
@@ -35,8 +30,17 @@ def OnCookingPotGridComponentSizeChanged(args):
     if args["path"] == RECIPE_SCROLL:
         uiNode.GetFoodRecipeBook()
 
-@ListenClient("GameRenderTickEvent")
-def OnGameRenderTick(args):
+@ListenClient("OnKeyPressInGame")
+def OnCookingPotKeyPressInGame(args):
+    if not uiNode:
+        return
+    if args["isDown"] == "1" and args["key"] == "27":
+        clientApi.PopScreen()
+        data = {"blockPos": uiNode.blockPos, "dimensionId": uiNode.dimensionId}
+        CallServer("PlayerCloseCrabTrap", data)
+
+@ListenClient("OnScriptTickNonChaseFrameClient")
+def OnScriptTickNonChaseFrame():
     if not uiNode:
         return
     uiNode.GameTick()
@@ -75,10 +79,3 @@ def CheckPlayerScreen(args):
         return None
     else:
         return args
-
-def CloseCookingPotUI():
-    if not uiNode:
-        return
-    clientApi.PopScreen()
-    data = {"blockPos": uiNode.blockPos, "dimensionId": uiNode.dimensionId}
-    CallServer("PlayerCloseCrabTrap", data)

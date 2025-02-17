@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-import time
-
 from mod.common.mod import Mod
 import mod.server.extraServerApi as serverApi
 import mod.client.extraClientApi as clientApi
+
 levelId = serverApi.GetLevelId()
 ModObject = None
 Server = []
@@ -15,7 +14,6 @@ _PluginsClient = []
 ClientEvents = []
 ServerEvents = []
 
-
 def CreateGameTick(BindTickName):
     try:
         clientApi.GetEngineCompFactory().CreateModAttr(clientApi.GetLevelId()).SetAttr("TickName", BindTickName)
@@ -24,10 +22,9 @@ def CreateGameTick(BindTickName):
 
 
 class QingYunMod(object):
-    '''
+    """
     通过实例化此类来注册Mod
-
-    '''
+    """
     def __init__(self):
         self.ModName = None
         global ModObject
@@ -158,31 +155,36 @@ class _ClientSystem(clientApi.GetClientSystemCls()):
             for EventData in self.ClientListen["EventList"]:
                 EventName, BackFunc = EventData
                 self._ListenEvent(EventName, BackFunc)
-                self.ClientListen["Update"] = False
+            self.ClientListen["Update"] = False
+            self.ClientListen["EventList"] = []
 
         if self.ClientCall["Update"]:
             for CallData in self.ClientCall["CallList"]:
                 BackFunc = CallData
                 self._ListenCall(BackFunc)
-                self.ClientCall["Update"] = False
+            self.ClientCall["Update"] = False
+            self.ClientCall["CallList"] = []
 
         if self.ClientAllCall["Update"]:
             for CallData in self.ClientAllCall["CallList"]:
                 BackFunc = CallData
                 self._ListenAllCall(BackFunc)
-                self.ClientAllCall["Update"] = False
+            self.ClientAllCall["Update"] = False
+            self.ClientAllCall["CallList"] = []
 
         if self.ClientResult["Update"]:
             for CallData in self.ClientResult["CallList"]:
                 BackFunc = CallData
                 self._ListenResult(BackFunc)
-                self.ClientResult["Update"] = False
+            self.ClientResult["Update"] = False
+            self.ClientResult["CallList"] = []
 
         if self.ClientNotify["Update"]:
             for CallData in self.ClientNotify["CallList"]:
                 BackFunc, EventName = CallData
                 self._ListenNotify(BackFunc, EventName)
-                self.ClientNotify["Update"] = False
+            self.ClientNotify["Update"] = False
+            self.ClientNotify["CallList"] = []
 
     def ListenEvent(self, EventName, BackFunc):
         self.ClientListen["EventList"].append([EventName, BackFunc])
@@ -191,7 +193,7 @@ class _ClientSystem(clientApi.GetClientSystemCls()):
     def _ListenEvent(self, EventName, BackFunc):
         from types import MethodType
         try:
-            self.UnListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(), EventName, self, getattr(self, EventName + "Listen"))
+            self.UnListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(), EventName, self, getattr(self, BackFunc.__name__ + EventName+"Listen"))
         except:
             pass
 
@@ -350,7 +352,7 @@ class _ServerSystem(serverApi.GetServerSystemCls()):
     def _ListenEvent(self, EventName, BackFunc):
         from types import MethodType
         try:
-            self.UnListenForEvent(ModObject.ModName, "Client", BackFunc.__name__ + "Listen", self, getattr(self, BackFunc.__name__ + "Listen"))
+            self.UnListenForEvent(serverApi.GetEngineNamespace(), serverApi.GetEngineSystemName(), EventName, self, getattr(self, BackFunc.__name__+EventName + "Listen"))
         except:
             pass
 

@@ -42,6 +42,7 @@
             },
             "netease:connection": {
                 "blocks": [
+
                 ]
             },
             "netease:neighborchanged_sendto_script": {
@@ -60,6 +61,7 @@
         },
         "description": {
             "base_block": "custom_crop_block",
+            "category": "none",
             "identifier": "arris:rice_upper_crop_stage0"
         }
     }

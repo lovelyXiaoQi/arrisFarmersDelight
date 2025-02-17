@@ -11,9 +11,6 @@
             "minecraft:destroy_time": {
                 "value": 0.5
             },
-            "netease:connection": {
-                "blocks": []
-            },
             "minecraft:explosion_resistance": {
                 "value": 0.5
             },
@@ -46,6 +43,11 @@
                     ]
                 }
             },
+            "netease:connection": {
+                "blocks": [
+
+                ]
+            },
             "netease:random_tick": {
                 "enable": true,
                 "tick_to_script": true
@@ -63,6 +65,7 @@
             }
         },
         "description": {
+            "category": "none",
             "identifier": "arris:rich_soil_farmland_moist"
         }
     }
