@@ -1149,10 +1149,10 @@
             }
          }
       ],
-      "default_control" : "default",
-      "hover_control" : "hover",
+      "default_control" : "",
+      "hover_control" : "",
       "is_handle_button_move_event" : true,
-      "pressed_control" : "pressed",
+      "pressed_control" : "",
       "size" : [ 18.0, 18.0 ],
       "sound_volume" : 0.0,
       "type" : "button"
