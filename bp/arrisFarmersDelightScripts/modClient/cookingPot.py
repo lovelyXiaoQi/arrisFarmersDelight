@@ -13,3 +13,10 @@ def OnClientBlockUsed(args):
         return
     x, y, z = args["x"], args["y"], args["z"]
     ClientComp.CreateModAttr(playerId).SetAttr("arrisUsedCookingPotPos", (x, y, z))
+
+@ListenClient("GridComponentSizeChangedClientEvent")
+def OnGridComponentSizeChanged(args):
+    topUIName = clientApi.GetTopUI()
+    if topUIName != "arrisCookingPotMain":
+        return
+    clientApi.GetTopUINode().UpdateScreen(True)
