@@ -1,30 +1,6 @@
 {
     "resource_pack_name": "vanilla",
     "texture_data": {
-        "red_mushroom_colony_stage3": {
-			"textures": "textures/blocks/red_mushroom_colony_stage3"
-		},
-		"red_mushroom_colony_stage2": {
-			"textures": "textures/blocks/red_mushroom_colony_stage2"
-		},
-		"red_mushroom_colony_stage1": {
-			"textures": "textures/blocks/red_mushroom_colony_stage1"
-		},
-		"red_mushroom_colony_stage0": {
-			"textures": "textures/blocks/red_mushroom_colony_stage0"
-		},
-        "brown_mushroom_colony_stage3": {
-			"textures": "textures/blocks/brown_mushroom_colony_stage3"
-		},
-		"brown_mushroom_colony_stage2": {
-			"textures": "textures/blocks/brown_mushroom_colony_stage2"
-		},
-		"brown_mushroom_colony_stage1": {
-			"textures": "textures/blocks/brown_mushroom_colony_stage1"
-		},
-		"brown_mushroom_colony_stage0": {
-			"textures": "textures/blocks/brown_mushroom_colony_stage0"
-		},
         "arris:acacia_cabinet_front": {
             "textures": "textures/blocks/acacia_cabinet_front"
         },
@@ -553,8 +529,32 @@
         "arris:wild_tomatoes": {
             "textures": "textures/blocks/wild_tomatoes"
         },
+        "brown_mushroom_colony_stage0": {
+            "textures": "textures/blocks/brown_mushroom_colony_stage0"
+        },
+        "brown_mushroom_colony_stage1": {
+            "textures": "textures/blocks/brown_mushroom_colony_stage1"
+        },
+        "brown_mushroom_colony_stage2": {
+            "textures": "textures/blocks/brown_mushroom_colony_stage2"
+        },
+        "brown_mushroom_colony_stage3": {
+            "textures": "textures/blocks/brown_mushroom_colony_stage3"
+        },
         "oak_cabinet_destroy": {
             "textures": "textures/entity/oak_cabinet_close"
+        },
+        "red_mushroom_colony_stage0": {
+            "textures": "textures/blocks/red_mushroom_colony_stage0"
+        },
+        "red_mushroom_colony_stage1": {
+            "textures": "textures/blocks/red_mushroom_colony_stage1"
+        },
+        "red_mushroom_colony_stage2": {
+            "textures": "textures/blocks/red_mushroom_colony_stage2"
+        },
+        "red_mushroom_colony_stage3": {
+            "textures": "textures/blocks/red_mushroom_colony_stage3"
         },
         "skillet_destroy": {
             "textures": "textures/blocks/skillet"

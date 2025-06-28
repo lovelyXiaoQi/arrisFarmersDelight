@@ -117,23 +117,21 @@ def DetectionExperimentalHoliday():
     else:
         return {0: 0, 1: 1, 2: 2, 3: 3}
 
-def CheckCookingPotRecipe(blockEntityData):
+def CheckCookingPotRecipe(inputItemSlot):
     # 检查厨锅内的物品是否符合配方
-    inputItemSlot = blockEntityData["inputItemSlot"]
-    if inputItemSlot:
-        inputItemList = list()
-        for itemDict in inputItemSlot:
-            if itemDict != {}:
-                tupleRecipe = (itemDict["newItemName"], itemDict["newAuxValue"])
-                inputItemList.append(tupleRecipe)
-        for RecipeDict in CookingPotRecipeList:
-            for recipe in RecipeDict["Recipe"]:
-                if Counter(recipe) == Counter(inputItemList):
-                    resultItem = {"newItemName": RecipeDict["CookResult"][0], "newAuxValue": RecipeDict["CookResult"][1], "count": 1}
-                    pushItemList = RecipeDict.get("PushItem")
-                    data = (resultItem, pushItemList)
-                    return data
-    return (None, None)
+    inputItemList = list()
+    for itemDict in inputItemSlot:
+        if itemDict != {}:
+            tupleRecipe = (itemDict["newItemName"], itemDict["newAuxValue"])
+            inputItemList.append(tupleRecipe)
+    for RecipeDict in CookingPotRecipeList:
+        for recipe in RecipeDict["Recipe"]:
+            if Counter(recipe) == Counter(inputItemList):
+                resultItem = {"newItemName": RecipeDict["CookResult"][0], "newAuxValue": RecipeDict["CookResult"][1], "count": 1}
+                pushItemList = RecipeDict.get("PushItem")
+                data = (resultItem, pushItemList)
+                return data
+    return None, None
 
 def StoveDisplayEntity(itemDict, playerId, data):
     posList = [
@@ -217,23 +215,29 @@ def CuttingBoardDisplayEntity(itemDict, playerId, data):
 
     CallAllClient("SetItemDisplayMolang", {"itemType": itemType, "entityId": Id})
 
-def CheckCookingPotVessel(blockEntityData):
+def CheckCookingPotVessel(blockPos, dimensionId):
     # 检查厨锅内的容器是否符合并更新
-    def CookingPotUpdate():
-        update = {
-            "heatEnable": blockEntityData["heatEnable"],
-            "inputItemSlot": blockEntityData["inputItemSlot"],
-            "vesselItemSlot": blockEntityData["vesselItemSlot"],
-            "resultItemSlot": blockEntityData["resultItemSlot"],
-            "previewItemSlot": blockEntityData["previewItemSlot"],
-            "blockPos": blockEntityData["blockPos"],
-            "dimensionId": blockEntityData["dimensionId"]
+    def SetCookingPotSlotItem(index, itemDict):
+        blockEntityContainer = ServerComp.CreateBlockInfo(levelId).GetBlockEntityData(dimensionId, blockPos)
+        items = blockEntityContainer["Items"]
+        nbtItem = {
+            'Count': {'__type__': 1, '__value__': itemDict.get("count", 1)},
+            'Slot': {'__type__': 1, '__value__': index},
+            'WasPickedUp': {'__type__': 1, '__value__': 0},
+            'Damage': {'__type__': 2, '__value__': 0},
+            'Name': {'__type__': 8, '__value__': itemDict.get("newItemName", "minecraft:air")}
         }
-        CallClient("UpdateCookingPot", blockEntityData["playerId"], update)
-        x, y, z = blockEntityData["blockPos"]
-        CreateEntityServer("minecraft:xp_orb", (x + 0.5, y + 1, z + 0.5), (0, 0), blockEntityData["dimensionId"])
+        items.append(nbtItem)
+        blockEntityContainer["Items"] = items
+        ServerComp.CreateBlockInfo(levelId).SetBlockEntityData(dimensionId, blockPos, blockEntityContainer)
+
+    x, y, z = blockPos
+    blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
+    if not blockEntityData:
+        return
     previewItemSlot = blockEntityData["previewItemSlot"][0]
-    vesselItemSlot = blockEntityData["vesselItemSlot"][0]
+    vesselItemSlot = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, 6, dimensionId)
+
     for RecipeDict in CookingPotRecipeList:
         cookResult = RecipeDict["CookResult"]
         vessel = RecipeDict.get("Vessel")
@@ -248,46 +252,54 @@ def CheckCookingPotVessel(blockEntityData):
             if not vessel:
                 basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(resultItemName, resultAuxValue)
                 maxStackSize = basicInfo["maxStackSize"]
-                resultItemSlot = blockEntityData["resultItemSlot"]
-                if resultItemSlot[0] and resultItemSlot[0]["count"] >= maxStackSize:
+                resultItemSlot = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, 7, dimensionId)
+                if resultItemSlot and resultItemSlot["newItemName"] != resultItemName:
+                    return
+                if resultItemSlot and resultItemSlot["count"] >= maxStackSize:
                     return
                 previewItemCount = previewItemSlot["count"]
                 blockEntityData["previewItemSlot"] = [None]
-                if not resultItemSlot[0]:
+                if not resultItemSlot:
                     resultCount = previewItemCount
                 else:
                     resultCount = previewItemCount + resultItemSlot[0]["count"]
-                blockEntityData["resultItemSlot"] = [{"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []}]
-                CookingPotUpdate()
+
+                SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
+                CreateEntityServer("minecraft:xp_orb", (x + 0.5, y + 1, z + 0.5), (0, 0), dimensionId)
 
             elif vesselItemSlot and vesselDict.get("newItemName") == vesselItemSlot.get("newItemName"):
                 count = vesselItemSlot["count"] - previewItemSlot["count"]
 
                 basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(resultItemName, resultAuxValue)
                 maxStackSize = basicInfo["maxStackSize"]
-                resultItemSlot = blockEntityData["resultItemSlot"]
-                if resultItemSlot[0] and resultItemSlot[0]["count"] >= maxStackSize:
+                resultItemSlot = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, 7, dimensionId)
+                if resultItemSlot and resultItemSlot["newItemName"] != resultItemName:
+                    return
+                if resultItemSlot and resultItemSlot["count"] >= maxStackSize:
                     return
                 if count >= 0:
                     previewItemCount = previewItemSlot["count"]
                     blockEntityData["previewItemSlot"] = [None]
                     vesselItemSlot["count"] = count
-                    blockEntityData["vesselItemSlot"] = [vesselItemSlot]
-                    if not resultItemSlot[0]:
+                    SetCookingPotSlotItem(6, vesselItemSlot)
+
+                    if not resultItemSlot:
                         resultCount = previewItemCount
                     else:
-                        resultCount = previewItemCount + resultItemSlot[0]["count"]
-                    blockEntityData["resultItemSlot"] = [{"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []}]
+                        resultCount = previewItemCount + resultItemSlot["count"]
+                    SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
                 else:
                     previewItemSlot["count"] = abs(count)
                     blockEntityData["previewItemSlot"] = [previewItemSlot]
-                    blockEntityData["vesselItemSlot"] = [None]
-                    if not resultItemSlot[0]:
+
+                    SetCookingPotSlotItem(6, {})
+
+                    if not resultItemSlot:
                         resultCount = abs(count)
                     else:
-                        resultCount = abs(count) + resultItemSlot[0]["count"]
-                    blockEntityData["resultItemSlot"] = [{"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []}]
-                CookingPotUpdate()
+                        resultCount = abs(count) + resultItemSlot["count"]
+                    SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
+                CreateEntityServer("minecraft:xp_orb", (x + 0.5, y + 1, z + 0.5), (0, 0), dimensionId)
 
 def SetCarriedDurability(playerId, itemDict, dimensionId, pos):
     # 设置手持物品耐久-1

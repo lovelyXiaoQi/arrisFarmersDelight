@@ -55,6 +55,9 @@
             "west": "arris:birch_cabinet_side"
         }
     },
+    "arris:brown_mushroom_colony": {
+        "sound": "grass"
+    },
     "arris:budding_tomatoes_stage0": {
         "model_item_texture": "arris:budding_tomatoes_stage0",
         "model_textures": [
@@ -374,6 +377,9 @@
             "side": "arris:potato_crate_side",
             "up": "arris:potato_crate_top"
         }
+    },
+    "arris:red_mushroom_colony": {
+        "sound": "grass"
     },
     "arris:rice_bag": {
         "sound": "cloth",
@@ -913,12 +919,6 @@
     },
     "arris:wild_tomatoes": {
         "netease_model": "arris:wild_tomatoes",
-        "sound": "grass"
-    },
-    "arris:brown_mushroom_colony": {
-        "sound": "grass"
-    },
-    "arris:red_mushroom_colony": {
         "sound": "grass"
     },
     "format_version": [

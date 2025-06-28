@@ -13,12 +13,24 @@ ServerComp.CreateModAttr("arris").SetAttr("ArrisAddCookingPotRecipe", AddCooking
 # 堆肥桶设置监听
 ServerComp.CreateBlockUseEventWhiteList(levelId).AddBlockItemListenForUseEvent("minecraft:composter:*")
 
+@ListenServer("AddEntityServerEvent")
+def InitWolfAndHorseComponents(args):
+    entityName = args["engineTypeStr"]
+    entityId = args["id"]
+    if entityName == "minecraft:wolf":
+        for k, v in wolfComponentsDict.items():
+            ServerComp.CreateEntityEvent(entityId).AddActorComponent(k, v)
+    elif entityName == "minecraft:horse":
+        for k, v in horseComponentsDict.items():
+            ServerComp.CreateEntityEvent(entityId).AddActorComponent(k, v)
+
 @ListenServer("ClientLoadAddonsFinishServerEvent")
 def ClientLoadAddonsFinish(args):
     # 给新加入的玩家设置CD并重置
     playerId = args["playerId"]
     ServerComp.CreateModAttr(playerId).SetAttr("arrisUsedCD", False)
-    CallAllClient("SetCookingPotRecipeList", CookingPotRecipeList)
+    # 设置厨锅UI
+    ServerComp.CreateModAttr(playerId).SetAttr("arrisCookingPotRecipeList", CookingPotRecipeList)
 
 @ListenServer("ItemUseAfterServerEvent")
 def OnRottenTomatoUseAfterServer(args):

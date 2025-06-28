@@ -248,3 +248,6 @@ tile.arris:brown_mushroom_colony.name=棕色蘑菇菌落
 item.arris:spatula.name=锅铲
 item.arris:farmer_delight_guide_book.name=农夫乐事说明书
 item.arris:item_display_destroy.name=物品展示实体消除器
+tile.arris:rich_soil_torchflower0.name=沃土火把花苗
+tile.arris:rich_soil_torchflower1.name=沃土火把花1
+tile.arris:rich_soil_torchflower2.name=沃土火把花成熟

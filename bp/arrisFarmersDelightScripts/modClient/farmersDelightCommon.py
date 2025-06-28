@@ -31,6 +31,7 @@ def SetEntityBlockMolang(args):
     pos = args["blockPos"]
     molang = args["molang"]
     name = args["name"]
+    print args
     ClientComp.CreateBlockInfo(levelId).SetEnableBlockEntityAnimations(pos, True)
     ClientComp.CreateBlockInfo(levelId).SetBlockEntityMolangValue(pos, name, molang)
 

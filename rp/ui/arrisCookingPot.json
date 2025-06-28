@@ -1,0 +1,993 @@
+{
+    "arrisCookingPotMain@common.inventory_screen_common": {
+        "$close_on_player_hurt|default": true,
+        "close_on_player_hurt": "$close_on_player_hurt",
+        "variables": [
+            {
+                "$screen_background_alpha": 0.4,
+                "$screen_bg_content": "common.screen_background",
+                "$screen_content": "arrisCookingPot.arrisCookingPotPanel",
+                "requires": "$desktop_screen"
+            },
+            {
+                "$screen_content": "netease_container_pocket.arrisCookingPotPanel",
+                "requires": "$pocket_screen"
+            }
+        ]
+    },
+    "arrisCookingPotPanel": {
+        "type": "panel",
+        "controls": [
+            {
+                "container_gamepad_helpers@common.container_gamepad_helpers": {}
+            },
+            {
+                "flying_item_renderer@common.flying_item_renderer": {
+                    "layer": 11,
+                    "offset": [
+                        -48.5,
+                        0
+                    ]
+                }
+            },
+            {
+                "selected_item_details_factory@common.selected_item_details_factory": {
+                    "control_name": "@arrisCookingPot.selected_item_details"
+                }
+            },
+            {
+                "item_lock_notification_factory@common.item_lock_notification_factory": {
+                    "control_name": "@common.item_lock_notification"
+                }
+            },
+            {
+                "root_panel@common.root_panel": {
+                    "controls": [
+                        {
+                            "common_panel@common.common_panel": {
+                                "$dialog_background|default": "common.dialog_background_opaque",
+                                "controls": [
+                                    {
+                                        "bg_image@$dialog_background": {
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "$close_button_visible_binding_name",
+                                                    "binding_name_override": "#visible"
+                                                }
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "cookpot_panel": {
+                                                        "type": "image",
+                                                        "size": [
+                                                            "100%+20px",
+                                                            168.0
+                                                        ],
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": 0.0,
+                                                        "texture": "textures/ui/recipe_back_panel",
+                                                        "controls": [
+                                                            {
+                                                                "bg": {
+                                                                    "type": "image",
+                                                                    "size": [
+                                                                        176.0,
+                                                                        175.0
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "texture": "textures/ui/dialog_background_opaque",
+                                                                    "controls": [
+                                                                        {
+                                                                            "arris_cooking_pot_top_half@arrisCookingPot.arrisCookingPotTopHalf": {
+                                                                                "offset": [
+                                                                                    0,
+                                                                                    7
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {}
+                                                                        },
+                                                                        {
+                                                                            "hotbar_grid@common.hotbar_grid_template": {}
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "option_bg": {
+                                                                    "type": "image",
+                                                                    "anchor_from": "left_middle",
+                                                                    "anchor_to": "right_middle",
+                                                                    "offset": [
+                                                                        7.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "size": [
+                                                                        103.0,
+                                                                        175.0
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "clip_direction": "left",
+                                                                    "clip_ratio": 0.0,
+                                                                    "keep_ratio": false,
+                                                                    "texture": "textures/ui/tutorial_book_screen_ui",
+                                                                    "controls": [
+                                                                        {
+                                                                            "edit_panel": {
+                                                                                "type": "panel",
+                                                                                "anchor_from": "top_middle",
+                                                                                "anchor_to": "top_middle",
+                                                                                "offset": [
+                                                                                    -0.5,
+                                                                                    6.0
+                                                                                ],
+                                                                                "size": [
+                                                                                    "100.0%+-6.0px",
+                                                                                    27.0
+                                                                                ],
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "edit_box@common.text_edit_box": {
+                                                                                            "type": "edit_box",
+                                                                                            "$edit_box_default_texture": "textures/ui/edit_box_indent",
+                                                                                            "$edit_box_hover_texture": "textures/ui/edit_box_indent_hover",
+                                                                                            "$font_scale_factor": 1.0,
+                                                                                            "$font_size": "normal",
+                                                                                            "$is_new_nine_slice": false,
+                                                                                            "$nine_slice_buttom": 0,
+                                                                                            "$nine_slice_left": 0,
+                                                                                            "$nine_slice_right": 0,
+                                                                                            "$nine_slice_top": 0,
+                                                                                            "$nineslice_size": [
+                                                                                                0,
+                                                                                                0,
+                                                                                                0,
+                                                                                                0
+                                                                                            ],
+                                                                                            "$place_holder_text": "请输入食谱",
+                                                                                            "$place_holder_text_color": [
+                                                                                                0.5,
+                                                                                                0.5,
+                                                                                                0.5
+                                                                                            ],
+                                                                                            "$text_background_default": "netease_editor_template_namespace.edit_box_background_default",
+                                                                                            "$text_background_hover": "netease_editor_template_namespace.edit_box_background_hover",
+                                                                                            "$text_box_name": "#arrisCookingPotEditBox",
+                                                                                            "$text_box_text_color": [
+                                                                                                1,
+                                                                                                1,
+                                                                                                1
+                                                                                            ],
+                                                                                            "$text_edit_box_content_binding_name": "#netease_editor_template_namespace.message_content",
+                                                                                            "$text_edit_box_label_anchor_point": "right_middle",
+                                                                                            "$text_edit_box_label_min_size": [
+                                                                                                "100%",
+                                                                                                0
+                                                                                            ],
+                                                                                            "$text_edit_box_label_size": [
+                                                                                                "default",
+                                                                                                "default"
+                                                                                            ],
+                                                                                            "anchor_from": "top_middle",
+                                                                                            "anchor_to": "top_middle",
+                                                                                            "offset": [
+                                                                                                0.0,
+                                                                                                2.0
+                                                                                            ],
+                                                                                            "size": [
+                                                                                                "100.0%+-6.0px",
+                                                                                                22
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "max_length": 32
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "search_img": {
+                                                                                            "type": "image",
+                                                                                            "anchor_from": "right_middle",
+                                                                                            "anchor_to": "right_middle",
+                                                                                            "offset": [
+                                                                                                -5.0,
+                                                                                                0.0
+                                                                                            ],
+                                                                                            "size": [
+                                                                                                15.0,
+                                                                                                15.0
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "texture": "textures/ui/magnifyingGlass",
+                                                                                            "controls": []
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "scroll_view@common.scrolling_panel": {
+                                                                                "$background_nine_slice_buttom": 0,
+                                                                                "$background_nine_slice_left": 0,
+                                                                                "$background_nine_slice_right": 0,
+                                                                                "$background_nine_slice_top": 0,
+                                                                                "$background_nineslice_size": [
+                                                                                    0,
+                                                                                    0,
+                                                                                    0,
+                                                                                    0
+                                                                                ],
+                                                                                "$box_nine_slice_buttom": 0,
+                                                                                "$box_nine_slice_left": 0,
+                                                                                "$box_nine_slice_right": 0,
+                                                                                "$box_nine_slice_top": 0,
+                                                                                "$box_nineslice_size": [
+                                                                                    0,
+                                                                                    0,
+                                                                                    0,
+                                                                                    0
+                                                                                ],
+                                                                                "$collection_name": "food_recipe_book",
+                                                                                "$is_background_nine_slice": false,
+                                                                                "$is_box_nine_slice": false,
+                                                                                "$is_track_nine_slice": false,
+                                                                                "$scroll_background_image_control": "netease_editor_template_namespace.scroll_background_image",
+                                                                                "$scroll_background_texture": "",
+                                                                                "$scroll_box_mouse_image_control": "netease_editor_template_namespace.scroll_box_image",
+                                                                                "$scroll_box_texture": "",
+                                                                                "$scroll_box_touch_image_control": "netease_editor_template_namespace.scroll_box_image",
+                                                                                "$scroll_track_image_control": "netease_editor_template_namespace.scroll_track_image",
+                                                                                "$scroll_track_texture": "",
+                                                                                "$scrolling_content": "arrisCookingPot.scroll_grid",
+                                                                                "$show_background": false,
+                                                                                "$track_nine_slice_buttom": 0,
+                                                                                "$track_nine_slice_left": 0,
+                                                                                "$track_nine_slice_right": 0,
+                                                                                "$track_nine_slice_top": 0,
+                                                                                "$track_nineslice_size": [
+                                                                                    0,
+                                                                                    0,
+                                                                                    0,
+                                                                                    0
+                                                                                ],
+                                                                                "layer": 9,
+                                                                                "offset": [
+                                                                                    -0.5,
+                                                                                    10.5
+                                                                                ],
+                                                                                "size": [
+                                                                                    "100.0%+-1.0px",
+                                                                                    135
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "cookbook_bg": {
+                                                                    "type": "image",
+                                                                    "anchor_from": "right_middle",
+                                                                    "anchor_to": "left_middle",
+                                                                    "offset": [
+                                                                        -7.0,
+                                                                        0.0
+                                                                    ],
+                                                                    "size": [
+                                                                        99.0,
+                                                                        175.0
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "clip_direction": "left",
+                                                                    "clip_ratio": 0.0,
+                                                                    "texture": "textures/ui/dialog_background_opaque",
+                                                                    "controls": [
+                                                                        {
+                                                                            "stack_panel": {
+                                                                                "type": "stack_panel",
+                                                                                "size": [
+                                                                                    "100.0%+-4.0px",
+                                                                                    "100.0%+0.0px"
+                                                                                ],
+                                                                                "layer": 1,
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "food_title": {
+                                                                                            "type": "panel",
+                                                                                            "offset": [
+                                                                                                0.0,
+                                                                                                -1.5
+                                                                                            ],
+                                                                                            "size": [
+                                                                                                "100.0%+0.0px",
+                                                                                                22.0
+                                                                                            ],
+                                                                                            "controls": [
+                                                                                                {
+                                                                                                    "title": {
+                                                                                                        "type": "label",
+                                                                                                        "offset": [
+                                                                                                            0.0,
+                                                                                                            2.0
+                                                                                                        ],
+                                                                                                        "color": [
+                                                                                                            0.207843137254902,
+                                                                                                            0.207843137254902,
+                                                                                                            0.207843137254902
+                                                                                                        ],
+                                                                                                        "font_type": "default",
+                                                                                                        "text": "食谱名称",
+                                                                                                        "text_alignment": "center"
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "cook_recipe": {
+                                                                                            "type": "panel",
+                                                                                            "size": [
+                                                                                                "100.0%+0.0px",
+                                                                                                100
+                                                                                            ],
+                                                                                            "controls": [
+                                                                                                {
+                                                                                                    "grid": {
+                                                                                                        "type": "grid",
+                                                                                                        "offset": [
+                                                                                                            0.0,
+                                                                                                            -32.0
+                                                                                                        ],
+                                                                                                        "size": [
+                                                                                                            54.0,
+                                                                                                            36.0
+                                                                                                        ],
+                                                                                                        "layer": 1,
+                                                                                                        "collection_name": "test_grid",
+                                                                                                        "grid_dimensions": [
+                                                                                                            3,
+                                                                                                            2
+                                                                                                        ],
+                                                                                                        "grid_item_template": "arrisCookingPot.recipeItem"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "arrow": {
+                                                                                                        "type": "image",
+                                                                                                        "offset": [
+                                                                                                            0.0,
+                                                                                                            -1.0
+                                                                                                        ],
+                                                                                                        "size": [
+                                                                                                            22.0,
+                                                                                                            15.0
+                                                                                                        ],
+                                                                                                        "layer": 1,
+                                                                                                        "clip_direction": "left",
+                                                                                                        "clip_ratio": 0.0,
+                                                                                                        "rotate_angle": -90.0,
+                                                                                                        "texture": "textures/ui/arrow_active"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "preview": {
+                                                                                                        "type": "image",
+                                                                                                        "anchor_from": "top_right",
+                                                                                                        "anchor_to": "top_right",
+                                                                                                        "offset": [
+                                                                                                            "-11.0%+-17.5px",
+                                                                                                            "7.0%+56.0px"
+                                                                                                        ],
+                                                                                                        "size": [
+                                                                                                            38.0,
+                                                                                                            38.0
+                                                                                                        ],
+                                                                                                        "layer": 1,
+                                                                                                        "clip_direction": "up",
+                                                                                                        "clip_ratio": 0.13,
+                                                                                                        "texture": "textures/ui/preview",
+                                                                                                        "controls": [
+                                                                                                            {
+                                                                                                                "item": {
+                                                                                                                    "type": "panel",
+                                                                                                                    "offset": [
+                                                                                                                        0.0,
+                                                                                                                        2.0
+                                                                                                                    ],
+                                                                                                                    "size": [
+                                                                                                                        18.0,
+                                                                                                                        18.0
+                                                                                                                    ],
+                                                                                                                    "controls": [
+                                                                                                                        {
+                                                                                                                            "item_renderer": {
+                                                                                                                                "type": "custom",
+                                                                                                                                "renderer": "inventory_item_renderer",
+                                                                                                                                "size": [
+                                                                                                                                    "100.0%+-2.0px",
+                                                                                                                                    "100.0%+-2.0px"
+                                                                                                                                ],
+                                                                                                                                "layer": 6,
+                                                                                                                                "visible": false,
+                                                                                                                                "property_bag": {
+                                                                                                                                    "#item_id_aux": 131072
+                                                                                                                                },
+                                                                                                                                "controls": []
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "spoon": {
+                                                                                                        "type": "image",
+                                                                                                        "offset": [
+                                                                                                            -19.0,
+                                                                                                            33.0
+                                                                                                        ],
+                                                                                                        "size": [
+                                                                                                            14.0,
+                                                                                                            14.0
+                                                                                                        ],
+                                                                                                        "layer": 1,
+                                                                                                        "clip_direction": "left",
+                                                                                                        "clip_ratio": 0.0,
+                                                                                                        "texture": "textures/ui/spoon",
+                                                                                                        "controls": []
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "vessel@arrisCookingPot.recipeItem": {
+                                                                                                        "offset": [
+                                                                                                            -35,
+                                                                                                            33
+                                                                                                        ]
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "fire": {
+                                                                                                        "type": "image",
+                                                                                                        "offset": [
+                                                                                                            0.5,
+                                                                                                            54.0
+                                                                                                        ],
+                                                                                                        "size": [
+                                                                                                            18.0,
+                                                                                                            18.0
+                                                                                                        ],
+                                                                                                        "layer": 1,
+                                                                                                        "clip_direction": "left",
+                                                                                                        "clip_ratio": 0.0,
+                                                                                                        "texture": "textures/ui/heat",
+                                                                                                        "controls": []
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "button_panel": {
+                                                                                            "type": "panel",
+                                                                                            "size": [
+                                                                                                "100.0%+0.0px",
+                                                                                                50.0
+                                                                                            ],
+                                                                                            "controls": [
+                                                                                                {
+                                                                                                    "add_food@common.button": {
+                                                                                                        "type": "button",
+                                                                                                        "$control_alpha": 1.0,
+                                                                                                        "$default_texture": "textures/ui/use_recipe_up_ui",
+                                                                                                        "$hover_texture": "textures/ui/use_recipe_down_ui",
+                                                                                                        "$is_new_nine_slice": false,
+                                                                                                        "$label_layer": 3,
+                                                                                                        "$nine_slice_buttom": 0,
+                                                                                                        "$nine_slice_left": 0,
+                                                                                                        "$nine_slice_right": 0,
+                                                                                                        "$nine_slice_top": 0,
+                                                                                                        "$nineslice_size": [
+                                                                                                            0,
+                                                                                                            0,
+                                                                                                            0,
+                                                                                                            0
+                                                                                                        ],
+                                                                                                        "$pressed_button_name": "#arrisCookingPotAddFood",
+                                                                                                        "$pressed_texture": "textures/ui/use_recipe_down_ui",
+                                                                                                        "$texture_layer": 2,
+                                                                                                        "offset": [
+                                                                                                            0.5,
+                                                                                                            -2.0
+                                                                                                        ],
+                                                                                                        "size": [
+                                                                                                            17.0,
+                                                                                                            17.0
+                                                                                                        ],
+                                                                                                        "layer": 2,
+                                                                                                        "default_control": "default",
+                                                                                                        "hover_control": "hover",
+                                                                                                        "is_handle_button_move_event": true,
+                                                                                                        "pressed_control": "pressed",
+                                                                                                        "bindings": [
+                                                                                                            {
+                                                                                                                "binding_type": "collection_details",
+                                                                                                                "binding_collection_name": "",
+                                                                                                                "binding_condition": "always_when_visible"
+                                                                                                            }
+                                                                                                        ],
+                                                                                                        "controls": [
+                                                                                                            {
+                                                                                                                "default@netease_editor_template_namespace.default": {}
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "hover@netease_editor_template_namespace.hover": {}
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "pressed@netease_editor_template_namespace.pressed": {}
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "tips": {
+                                                                                                                    "type": "label",
+                                                                                                                    "anchor_from": "bottom_middle",
+                                                                                                                    "anchor_to": "top_middle",
+                                                                                                                    "offset": [
+                                                                                                                        0.0,
+                                                                                                                        4.0
+                                                                                                                    ],
+                                                                                                                    "color": [
+                                                                                                                        0.2470588235294118,
+                                                                                                                        0.2470588235294118,
+                                                                                                                        0.2470588235294118
+                                                                                                                    ],
+                                                                                                                    "font_type": "default",
+                                                                                                                    "text": "一键添加食材",
+                                                                                                                    "text_alignment": "center"
+                                                                                                                }
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "inventory_selected_icon_button@common.inventory_selected_icon_button": {}
+                                                },
+                                                {
+                                                    "gamepad_cursor@common.gamepad_cursor_button": {}
+                                                },
+                                                {
+                                                    "close@common.close_button": {
+                                                        "ignored": "$use_compact_close_button",
+                                                        "layer": "$close_button_layer",
+                                                        "offset": [
+                                                            0,
+                                                            -3
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "compact_close@common.compact_close_button": {
+                                                        "ignored": "(not $use_compact_close_button)",
+                                                        "layer": "$close_button_layer",
+                                                        "offset": "$close_button_offset"
+                                                    }
+                                                }
+                                            ],
+                                            "layer": 1,
+                                            "size": [
+                                                "100%",
+                                                "100.0%c+-37.0px"
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "size": [
+                                    "100%",
+                                    "100.0%c"
+                                ]
+                            }
+                        }
+                    ],
+                    "layer": 1,
+                    "size": [
+                        176,
+                        220
+                    ]
+                }
+            }
+        ]
+    },
+    "arrisCookingPotTopHalf": {
+        "type": "panel",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [
+            0,
+            11
+        ],
+        "size": [
+            174.0,
+            "100%c+0px"
+        ],
+        "controls": [
+            {
+                "title@arrisCookingPot.cookingpot_container_label": {
+                    "offset": [
+                        7,
+                        -1
+                    ]
+                }
+            },
+            {
+                "cooking_pot": {
+                    "type": "panel",
+                    "offset": [
+                        0.0,
+                        3.0
+                    ],
+                    "size": [
+                        "100%+0px",
+                        58.0
+                    ],
+                    "controls": [
+                        {
+                            "spoon": {
+                                "type": "image",
+                                "offset": [
+                                    32.0,
+                                    20.0
+                                ],
+                                "size": [
+                                    14.0,
+                                    14.0
+                                ],
+                                "layer": 1,
+                                "clip_direction": "left",
+                                "clip_ratio": 0.0,
+                                "texture": "textures/ui/spoon",
+                                "controls": []
+                            }
+                        },
+                        {
+                            "arrow": {
+                                "type": "image",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "offset": [
+                                    "8%+-2px",
+                                    "21%+0px"
+                                ],
+                                "size": [
+                                    22.0,
+                                    15.0
+                                ],
+                                "layer": 1,
+                                "clip_direction": "left",
+                                "clip_ratio": 0.0,
+                                "texture": "textures/ui/arrow",
+                                "controls": [
+                                    {
+                                        "progress": {
+                                            "type": "image",
+                                            "size": [
+                                                22.0,
+                                                15.0
+                                            ],
+                                            "layer": 1,
+                                            "clip_direction": "left",
+                                            "texture": "textures/ui/arrow_active",
+                                            "controls": []
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "preview": {
+                                "type": "image",
+                                "anchor_from": "top_right",
+                                "anchor_to": "top_right",
+                                "offset": [
+                                    "-11%+0px",
+                                    "7%+-4px"
+                                ],
+                                "size": [
+                                    38.0,
+                                    38.0
+                                ],
+                                "layer": 1,
+                                "clip_direction": "left",
+                                "clip_ratio": 0.0,
+                                "texture": "textures/ui/preview",
+                                "controls": [
+                                    {
+                                        "item": {
+                                            "type": "panel",
+                                            "offset": [
+                                                0.0,
+                                                2.0
+                                            ],
+                                            "size": [
+                                                18.0,
+                                                18.0
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "item_renderer": {
+                                                        "type": "custom",
+                                                        "renderer": "inventory_item_renderer",
+                                                        "size": [
+                                                            "100.0%+-2.0px",
+                                                            "100.0%+-2.0px"
+                                                        ],
+                                                        "layer": 6,
+                                                        "visible": false,
+                                                        "property_bag": {
+                                                            "#item_id_aux": 131072
+                                                        },
+                                                        "controls": []
+                                                    }
+                                                },
+                                                {
+                                                    "stack_count_label": {
+                                                        "type": "label",
+                                                        "anchor_from": "bottom_right",
+                                                        "anchor_to": "bottom_right",
+                                                        "offset": [
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "layer": 61,
+                                                        "shadow": true,
+                                                        "controls": []
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "heat": {
+                                "type": "image",
+                                "anchor_from": "left_middle",
+                                "anchor_to": "left_middle",
+                                "offset": [
+                                    37.0,
+                                    21.0
+                                ],
+                                "size": [
+                                    18.0,
+                                    18.0
+                                ],
+                                "layer": 1,
+                                "clip_direction": "left",
+                                "clip_ratio": 0.0,
+                                "texture": "textures/ui/fire_icon",
+                                "controls": [
+                                    {
+                                        "fire": {
+                                            "type": "image",
+                                            "size": [
+                                                18.0,
+                                                18.0
+                                            ],
+                                            "layer": 1,
+                                            "visible": false,
+                                            "clip_direction": "left",
+                                            "clip_ratio": 0.0,
+                                            "texture": "textures/ui/heat",
+                                            "controls": []
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "cookingpotContainerGrid@arrisCookingPot.cookingpot_container_grid": {
+                                "anchor_from": "left_middle",
+                                "anchor_to": "left_middle",
+                                "grid_rescaling_type": "horizontal",
+                                "maximum_grid_items": 8,
+                                "offset": [
+                                    19,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cookingpot_container_grid": {
+        "type": "grid",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "size": [
+            54.0,
+            "100.0%c"
+        ],
+        "collection_name": "netease_container",
+        "grid_item_template": "arrisCookingPot.cookingpot_grid_item",
+        "grid_rescaling_type": "horizontal",
+        "maximum_grid_items": 7
+    },
+    "cookingpot_container_label": {
+        "type": "label",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [
+            7,
+            -1
+        ],
+        "size": [
+            "90%",
+            "default"
+        ],
+        "layer": 2,
+        "color": "$title_text_color",
+        "text": "$container_title"
+    },
+    "cookingpot_drop_container_grid": {
+        "type": "grid",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "size": [
+            "100%c+0px",
+            "100.0%c"
+        ],
+        "collection_name": "netease_ui_container",
+        "grid_dimensions": [
+            9,
+            2
+        ],
+        "grid_item_template": "arrisCookingPot.cookingpot_drop_grid_item",
+        "grid_rescaling_type": "horizontal",
+        "maximum_grid_items": 1
+    },
+    "cookingpot_drop_grid_item@common.container_item": {
+        "$item_collection_name": "netease_ui_container"
+    },
+    "cookingpot_grid_item@common.container_item": {
+        "$item_collection_name": "netease_container"
+    },
+    "foodRecipe@common.button": {
+        "type": "button",
+        "$control_alpha": 1.0,
+        "$default_texture": "textures/ui/recipe_book_item_bg",
+        "$hover_texture": "textures/ui/recipe_book_item_bg",
+        "$is_new_nine_slice": false,
+        "$label_layer": 3,
+        "$nine_slice_buttom": 0,
+        "$nine_slice_left": 0,
+        "$nine_slice_right": 0,
+        "$nine_slice_top": 0,
+        "$nineslice_size": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "$pressed_button_name": "#arrisCookingPotRecipeButtonClick",
+        "$pressed_texture": "textures/ui/recipe_book_touch_cell_selected",
+        "$texture_layer": 2,
+        "size": [
+            18.0,
+            18.0
+        ],
+        "layer": 2,
+        "default_control": "default",
+        "hover_control": "hover",
+        "is_handle_button_move_event": true,
+        "pressed_control": "pressed",
+        "bindings": [
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "$collection_name",
+                "binding_condition": "always_when_visible"
+            }
+        ],
+        "controls": [
+            {
+                "item_renderer": {
+                    "type": "custom",
+                    "renderer": "inventory_item_renderer",
+                    "size": [
+                        "100.0%+-2.0px",
+                        "100.0%+-2.0px"
+                    ],
+                    "layer": 3,
+                    "property_bag": {
+                        "#item_id_aux": 131072
+                    }
+                }
+            },
+            {
+                "default@netease_editor_template_namespace.default": {}
+            },
+            {
+                "hover@netease_editor_template_namespace.hover": {}
+            },
+            {
+                "pressed@netease_editor_template_namespace.pressed": {}
+            }
+        ]
+    },
+    "namespace": "arrisCookingPot",
+    "recipeItem": {
+        "type": "image",
+        "size": [
+            18.0,
+            18.0
+        ],
+        "layer": 1,
+        "clip_direction": "left",
+        "clip_ratio": 0.0,
+        "texture": "textures/ui/cell_image",
+        "controls": [
+            {
+                "item_renderer": {
+                    "type": "custom",
+                    "renderer": "inventory_item_renderer",
+                    "size": [
+                        "100.0%+-2.0px",
+                        "100.0%+-2.0px"
+                    ],
+                    "layer": 1,
+                    "visible": false,
+                    "property_bag": {
+                        "#item_id_aux": 131072
+                    }
+                }
+            }
+        ]
+    },
+    "scroll_grid": {
+        "type": "grid",
+        "$binding_condition|default": "visible",
+        "$grid_item_precache_count|default": 0,
+        "$grid_item_template|default": "arrisCookingPot.foodRecipe",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "size": [
+            "100%",
+            "default"
+        ],
+        "collection_name": "$collection_name",
+        "grid_item_template": "$grid_item_template",
+        "grid_rescaling_type": "horizontal",
+        "property_bag": {
+            "#maximum_grid_items": 1
+        },
+        "bindings": [
+            {
+                "binding_name_override": "#maximum_grid_items",
+                "binding_collection_name": "$collection_name",
+                "binding_condition": "$binding_condition",
+                "binding_type": "collection",
+                "binding_name": "#recipe_book_total_items"
+            }
+        ]
+    },
+    "selected_item_details@common.selected_item_details": {
+        "offset": [
+            0,
+            0
+        ]
+    }
+}

@@ -17,7 +17,8 @@ serverSystem = [
 
 clientSystem = [
     "modClient.farmersDelightCommon",
-    "modClient.cookingPot"
+    "modClient.cookingPot",
+    "modClient.skillet"
 ]
 
 for sys in serverSystem:

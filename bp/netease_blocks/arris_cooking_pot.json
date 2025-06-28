@@ -2,6 +2,11 @@
     "format_version": "1.10.0",
     "minecraft:block": {
         "components": {
+            "netease:block_container": {
+				"custom_description": "厨锅",
+				"screen_name": "arrisCookingPot.arrisCookingPotMain",
+				"container_size": 8
+			},
             "minecraft:block_light_absorption": {
                 "value": 0
             },
@@ -76,6 +81,7 @@
         "description": {
             "category": "arris_farmers_delight",
             "identifier": "arris:cooking_pot",
+            "base_block": "netease_container",
             "register_to_creative_menu": true
         }
     }

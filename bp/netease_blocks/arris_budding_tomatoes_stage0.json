@@ -44,7 +44,6 @@
             },
             "netease:connection": {
                 "blocks": [
-
                 ]
             },
             "netease:neighborchanged_sendto_script": {
