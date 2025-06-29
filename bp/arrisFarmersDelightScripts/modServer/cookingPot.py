@@ -68,62 +68,66 @@ def OnCookingPotTick(args):
         return
     dimensionId = args["dimension"]
     blockPos = (args["posX"], args["posY"], args["posZ"])
-    if ServerComp.CreateTime(levelId).GetTime() % 2 == 0:
-        blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
-        if not blockEntityData:
+    blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
+    if not blockEntityData:
+        return
+    inputItemSlot = []
+    num = 0
+    for index in xrange(6):
+        itemDict = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, index, dimensionId)
+        if not itemDict:
+            itemDict = {}
+            num += 1
+        inputItemSlot.append(itemDict)
+    CheckCookingPotVessel(blockEntityData, blockPos, dimensionId)
+    if num >= 6:
+        blockEntityData["timer"] = 10.0
+        return
+    resultItem, pushItemList = CheckCookingPotRecipe(inputItemSlot)
+
+    if blockEntityData["heatEnable"] and resultItem:
+        previewItemSlot = blockEntityData["previewItemSlot"]
+        itemName = resultItem["newItemName"]
+        auxValue = resultItem["newAuxValue"]
+        basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(itemName, auxValue)
+        maxStackSize = basicInfo["maxStackSize"]
+
+        if previewItemSlot[0] and previewItemSlot[0].get("count") >= maxStackSize:
             return
-        CheckCookingPotVessel(blockPos, dimensionId)
-        inputItemSlot = []
-        for index in xrange(6):
-            itemDict = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, index, dimensionId)
-            if not itemDict:
-                itemDict = {}
-            inputItemSlot.append(itemDict)
-        resultItem, pushItemList = CheckCookingPotRecipe(inputItemSlot)
+        if not previewItemSlot[0] or resultItem["newItemName"] == previewItemSlot[0].get("newItemName"):
+            blockEntityData["timer"] -= 0.05
+            if blockEntityData["timer"] <= 0.05:
+                blockEntityData["timer"] = 10.0
 
-        if blockEntityData["heatEnable"] and resultItem:
-            previewItemSlot = blockEntityData["previewItemSlot"]
-            itemName = resultItem["newItemName"]
-            auxValue = resultItem["newAuxValue"]
-            basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(itemName, auxValue)
-            maxStackSize = basicInfo["maxStackSize"]
+                if pushItemList:
+                    for pushItem in pushItemList:
+                        output = {"newItemName": pushItem[0], "newAuxValue": pushItem[1], "count": 1}
+                        ServerObj.CreateEngineItemEntity(output, dimensionId, (args["posX"] + 0.5, args["posY"] + 1.0, args["posZ"] + 0.5))
 
-            if previewItemSlot[0] and previewItemSlot[0].get("count") >= maxStackSize:
-                return
-            if not previewItemSlot[0] or resultItem["newItemName"] == previewItemSlot[0].get("newItemName"):
-                blockEntityData["timer"] -= 0.1
-                if blockEntityData["timer"] <= 0.1:
-                    blockEntityData["timer"] = 10.0
-
-                    if pushItemList:
-                        for pushItem in pushItemList:
-                            output = {"newItemName": pushItem[0], "newAuxValue": pushItem[1], "count": 1}
-                            ServerObj.CreateEngineItemEntity(output, dimensionId, (args["posX"] + 0.5, args["posY"] + 1.0, args["posZ"] + 0.5))
-
-                    blockEntityInfo = ServerComp.CreateBlockInfo(levelId).GetBlockEntityData(dimensionId, blockPos)
-                    items = blockEntityInfo["Items"]
-                    for i in range(0, len(inputItemSlot)):
-                        itemDict = inputItemSlot[i]
-                        if itemDict == {}:
+                blockEntityInfo = ServerComp.CreateBlockInfo(levelId).GetBlockEntityData(dimensionId, blockPos)
+                items = blockEntityInfo["Items"]
+                for i in range(0, len(inputItemSlot)):
+                    itemDict = inputItemSlot[i]
+                    if itemDict == {}:
+                        continue
+                    for item in items:
+                        slotIndex = item["Slot"]["__value__"]
+                        if slotIndex != i:
                             continue
-                        for item in items:
-                            slotIndex = item["Slot"]["__value__"]
-                            if slotIndex != i:
-                                continue
-                            item["Count"]["__value__"] -= 1
-                    blockEntityInfo["Items"] = items
-                    ServerComp.CreateBlockInfo(levelId).SetBlockEntityData(dimensionId, blockPos, blockEntityInfo)
+                        item["Count"]["__value__"] -= 1
+                blockEntityInfo["Items"] = items
+                ServerComp.CreateBlockInfo(levelId).SetBlockEntityData(dimensionId, blockPos, blockEntityInfo)
 
-                    if not previewItemSlot[0]:
-                        blockEntityData["previewItemSlot"] = [resultItem]
-                    else:
-                        if not resultItem:
-                            return
-                        count = previewItemSlot[0]["count"] + resultItem["count"]
-                        previewItemSlot[0]["count"] = count
-                        blockEntityData["previewItemSlot"] = previewItemSlot
-        else:
-            blockEntityData["timer"] = 10.0
+                if not previewItemSlot[0]:
+                    blockEntityData["previewItemSlot"] = [resultItem]
+                else:
+                    if not resultItem:
+                        return
+                    count = previewItemSlot[0]["count"] + resultItem["count"]
+                    previewItemSlot[0]["count"] = count
+                    blockEntityData["previewItemSlot"] = previewItemSlot
+    else:
+        blockEntityData["timer"] = 10.0
 
 @Call()
 def CookingPotAddFood(args):

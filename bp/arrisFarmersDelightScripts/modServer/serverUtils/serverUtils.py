@@ -215,7 +215,7 @@ def CuttingBoardDisplayEntity(itemDict, playerId, data):
 
     CallAllClient("SetItemDisplayMolang", {"itemType": itemType, "entityId": Id})
 
-def CheckCookingPotVessel(blockPos, dimensionId):
+def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
     # 检查厨锅内的容器是否符合并更新
     def SetCookingPotSlotItem(index, itemDict):
         blockEntityContainer = ServerComp.CreateBlockInfo(levelId).GetBlockEntityData(dimensionId, blockPos)
@@ -232,9 +232,6 @@ def CheckCookingPotVessel(blockPos, dimensionId):
         ServerComp.CreateBlockInfo(levelId).SetBlockEntityData(dimensionId, blockPos, blockEntityContainer)
 
     x, y, z = blockPos
-    blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
-    if not blockEntityData:
-        return
     previewItemSlot = blockEntityData["previewItemSlot"][0]
     vesselItemSlot = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, 6, dimensionId)
 
