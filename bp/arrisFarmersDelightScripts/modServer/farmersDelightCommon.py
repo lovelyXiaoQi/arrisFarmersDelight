@@ -167,7 +167,8 @@ def OnServerItemUseCommon(args):
 def OnDestroyBlockCommon(args):
     # 当方块已经被玩家破坏时触发该事件
     blockName = args["fullName"]
-    if blockName in ["minecraft:double_plant", "minecraft:tallgrass", "arris:sandy_shrub", "arris:rich_soil_wheat7", "arris:rice_upper_crop_stage3", "arris:rice_supporting"]:
+    print blockName
+    if blockName in ["minecraft:fern", "minecraft:large_fern", "minecraft:short_grass", "minecraft:tall_grass", "arris:sandy_shrub", "arris:rich_soil_wheat7", "arris:rice_upper_crop_stage3", "arris:rice_supporting"]:
         dimensionId = args["dimensionId"]
         playerId = args["playerId"]
         gameType = ServerComp.CreateGame(levelId).GetPlayerGameType(playerId)
