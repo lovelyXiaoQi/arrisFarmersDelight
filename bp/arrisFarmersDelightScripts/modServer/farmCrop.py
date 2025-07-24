@@ -23,13 +23,13 @@ def OnBlockNeighborChanged(args):
 
     elif blockName in cropsDict:
         if neighborPos == (args["posX"], args["posY"] - 1, args["posZ"]):
-            if neighborName not in ["minecraft:farmland", "arris:rich_soil_farmland_moist", "arris:rich_soil_farmland", "minecraft:grass"]:
+            if neighborName not in ["minecraft:farmland", "arris:rich_soil_farmland_moist", "arris:rich_soil_farmland", "minecraft:grass_block"]:
                 ServerComp.CreateBlockInfo(levelId).SetBlockNew(blockPos, {"name": "minecraft:air"}, 1, dimensionId)
 
     elif blockName in "arris:rice_supporting":
         neighborName = args["toBlockName"]
         if neighborPos == (args["posX"], args["posY"] - 1, args["posZ"]):
-            if neighborName not in ["minecraft:farmland", "minecraft:grass", "minecraft:dirt"]:
+            if neighborName not in ["minecraft:farmland", "minecraft:grass_block", "minecraft:dirt"]:
                 ServerComp.CreateBlockInfo(levelId).SetBlockNew(blockPos, {"name": "minecraft:air"}, 1, dimensionId)
         elif neighborPos == (args["posX"], args["posY"] + 1, args["posZ"]):
             if neighborName not in ["arris:rice_upper_crop_stage0", "arris:rice_upper_crop_stage1", "arris:rice_upper_crop_stage2", "arris:rice_upper_crop_stage3"]:
@@ -128,7 +128,7 @@ def OnServerItemUse(args):
     if itemName == "arris:rice":
         if SetPlayerUsedCD(playerId) is True:
             return
-        if blockName in ["minecraft:dirt", "minecraft:grass", "arris:rich_soil"] and face == 1:
+        if blockName in ["minecraft:dirt", "minecraft:grass_block", "arris:rich_soil"] and face == 1:
             upBlock = ServerComp.CreateBlockInfo(levelId).GetBlockNew((x, y + 1, z), dimensionId)
             if upBlock["name"] == "minecraft:water":
                 SetNotCreateItem(playerId, itemDict)

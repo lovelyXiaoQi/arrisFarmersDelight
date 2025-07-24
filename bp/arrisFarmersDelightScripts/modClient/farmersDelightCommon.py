@@ -2,6 +2,7 @@
 from ..QingYunModLibs.ClientMod import *
 from ..QingYunModLibs.SystemApi import *
 from ..modCommon.modConfig import *
+from ..jeiLinkage import *
 
 playerId = clientApi.GetLocalPlayerId()
 isJump = None
@@ -66,6 +67,7 @@ def LoadAddon(args):
 @ListenClient("UiInitFinished")
 def UiGuideBookInit(args):
     clientApi.RegisterUI("arris", "farmerDelightGuideBook", uiGuideBookPath, uiGuideBookScreen)
+    FarmersDelightJeiLinkageInit()
 
 @ListenClient("ClientItemTryUseEvent")
 def OnClientItemTryUse(args):

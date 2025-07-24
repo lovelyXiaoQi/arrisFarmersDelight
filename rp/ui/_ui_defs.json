@@ -2,6 +2,7 @@
     "ui_defs": [
         "ui/arrisCookingPot.json",
         "ui/guideBook.json",
+        "ui/jei_farmers_delight.json",
         "ui/netease_editor_template_namespace.json"
     ]
 }

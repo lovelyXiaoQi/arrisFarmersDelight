@@ -1,0 +1,1048 @@
+{
+    "jeiArrowClipAnim": {
+        "anim_type": "clip",
+        "duration": "$anim_duration",
+        "from": 1,
+        "next": "@jei_farmers_delight.jeiArrowClipAnim",
+        "to": 0
+    },
+    "jeiBrewingStandClipAnim": {
+        "anim_type": "clip",
+        "duration": 1,
+        "from": 1,
+        "next": "@jei_farmers_delight.jeiBrewingStandClipAnim",
+        "to": 0
+    },
+    "jeiCookingPotRecipe": {
+        "type": "stack_grid",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "offset": [
+            0,
+            0
+        ],
+        "size": [
+            "100%+0px",
+            "100%c+0px"
+        ],
+        "layer": 0,
+        "visible": true,
+        "collection_name": "jeiCuttingBoardRecipe",
+        "item_count": 1,
+        "orientation": "vertical",
+        "controls": [
+            {
+                "itemTemplate": {
+                    "type": "panel",
+                    "offset": [
+                        0.0,
+                        -1.0
+                    ],
+                    "size": [
+                        "100%+0px",
+                        "100%c+5px"
+                    ],
+                    "layer": 1,
+                    "property_bag": {
+                        "force_update": false
+                    },
+                    "controls": [
+                        {
+                            "bg": {
+                                "type": "image",
+                                "size": [
+                                    "100%c+4px",
+                                    65.0
+                                ],
+                                "layer": 1,
+                                "nineslice_size": [
+                                    2.0,
+                                    2.0,
+                                    2.0,
+                                    2.0
+                                ],
+                                "texture": "textures/ui/jeiFarmersDelight/single_recipe_background",
+                                "uv": [
+                                    0.0,
+                                    0.0
+                                ],
+                                "controls": [
+                                    {
+                                        "stack_panel": {
+                                            "type": "stack_panel",
+                                            "size": [
+                                                "100%c+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "orientation": "horizontal",
+                                            "controls": [
+                                                {
+                                                    "input_panel": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            52.0,
+                                                            "100%+0px"
+                                                        ],
+                                                        "layer": 1,
+                                                        "controls": [
+                                                            {
+                                                                "heat": {
+                                                                    "type": "image",
+                                                                    "offset": [
+                                                                        0.0,
+                                                                        15.0
+                                                                    ],
+                                                                    "size": [
+                                                                        18.0,
+                                                                        18.0
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "clip_direction": "left",
+                                                                    "clip_ratio": 0.0,
+                                                                    "texture": "textures/ui/fire_icon",
+                                                                    "controls": [
+                                                                        {
+                                                                            "fire": {
+                                                                                "type": "image",
+                                                                                "size": [
+                                                                                    18.0,
+                                                                                    18.0
+                                                                                ],
+                                                                                "layer": 1,
+                                                                                "clip_direction": "left",
+                                                                                "clip_ratio": 0.0,
+                                                                                "texture": "textures/ui/heat",
+                                                                                "controls": []
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "jeiInputItemRender1@jei_farmers_delight.jeiInputItemRender": {
+                                                                    "$bgVisible": true,
+                                                                    "offset": [
+                                                                        -16,
+                                                                        -21
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "jeiInputItemRender2@jei_farmers_delight.jeiInputItemRender": {
+                                                                    "$bgVisible": true,
+                                                                    "offset": [
+                                                                        0,
+                                                                        -21
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "jeiInputItemRender3@jei_farmers_delight.jeiInputItemRender": {
+                                                                    "$bgVisible": true,
+                                                                    "offset": [
+                                                                        16,
+                                                                        -21
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "jeiInputItemRender4@jei_farmers_delight.jeiInputItemRender": {
+                                                                    "$bgVisible": true,
+                                                                    "offset": [
+                                                                        -16,
+                                                                        -5
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "jeiInputItemRender5@jei_farmers_delight.jeiInputItemRender": {
+                                                                    "$bgVisible": true,
+                                                                    "offset": [
+                                                                        0,
+                                                                        -5
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "jeiInputItemRender6@jei_farmers_delight.jeiInputItemRender": {
+                                                                    "$bgVisible": true,
+                                                                    "offset": [
+                                                                        16,
+                                                                        -5
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "arrow_panel": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            24.0,
+                                                            "100%+0px"
+                                                        ],
+                                                        "layer": 1,
+                                                        "controls": [
+                                                            {
+                                                                "arrow_bg": {
+                                                                    "type": "image",
+                                                                    "offset": [
+                                                                        0.0,
+                                                                        -13.0
+                                                                    ],
+                                                                    "size": [
+                                                                        22.0,
+                                                                        16.0
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "texture": "textures/ui/jeiFarmersDelight/recipe_arrow",
+                                                                    "controls": [
+                                                                        {
+                                                                            "arrow": {
+                                                                                "type": "image",
+                                                                                "$anim_duration": 10,
+                                                                                "layer": 1,
+                                                                                "clip_direction": "left",
+                                                                                "clip_ratio": "@jei_farmers_delight.jeiArrowClipAnim",
+                                                                                "texture": "textures/ui/jeiFarmersDelight/recipe_arrow_filled",
+                                                                                "animation_reset_name": "screen_animation_reset"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "output_panel": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "100%cm+0px",
+                                                            "100%+0px"
+                                                        ],
+                                                        "layer": 1,
+                                                        "controls": [
+                                                            {
+                                                                "preview": {
+                                                                    "type": "image",
+                                                                    "anchor_from": "top_middle",
+                                                                    "anchor_to": "top_middle",
+                                                                    "offset": [
+                                                                        0.0,
+                                                                        2.0
+                                                                    ],
+                                                                    "size": [
+                                                                        38.0,
+                                                                        38.0
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "clip_direction": "left",
+                                                                    "clip_ratio": 0.0,
+                                                                    "texture": "textures/ui/preview",
+                                                                    "controls": [
+                                                                        {
+                                                                            "item": {
+                                                                                "type": "panel",
+                                                                                "offset": [
+                                                                                    0.0,
+                                                                                    2.0
+                                                                                ],
+                                                                                "size": [
+                                                                                    18.0,
+                                                                                    18.0
+                                                                                ],
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "item_renderer": {
+                                                                                            "type": "custom",
+                                                                                            "renderer": "inventory_item_renderer",
+                                                                                            "size": [
+                                                                                                "100.0%+-2.0px",
+                                                                                                "100.0%+-2.0px"
+                                                                                            ],
+                                                                                            "layer": 6,
+                                                                                            "visible": false,
+                                                                                            "property_bag": {
+                                                                                                "#item_id_aux": 131072
+                                                                                            },
+                                                                                            "controls": []
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "stack_count_label": {
+                                                                                            "type": "label",
+                                                                                            "anchor_from": "bottom_right",
+                                                                                            "anchor_to": "bottom_right",
+                                                                                            "offset": [
+                                                                                                0,
+                                                                                                1
+                                                                                            ],
+                                                                                            "layer": 61,
+                                                                                            "shadow": true,
+                                                                                            "controls": []
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "jeiOutputItemRender@jei_farmers_delight.jeiOutputItemRender": {
+                                                                    "anchor_from": "bottom_middle",
+                                                                    "anchor_to": "bottom_middle",
+                                                                    "offset": [
+                                                                        0,
+                                                                        -3.5
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "spoon": {
+                                                                    "type": "image",
+                                                                    "anchor_from": "bottom_left",
+                                                                    "anchor_to": "bottom_left",
+                                                                    "offset": [
+                                                                        -4.0,
+                                                                        -6.0
+                                                                    ],
+                                                                    "size": [
+                                                                        14.0,
+                                                                        14.0
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "clip_direction": "left",
+                                                                    "clip_ratio": 0.0,
+                                                                    "texture": "textures/ui/spoon",
+                                                                    "controls": []
+                                                                }
+                                                            },
+                                                            {
+                                                                "jeiVesselItemRender@jei_farmers_delight.jeiOutputItemRender": {
+                                                                    "anchor_from": "bottom_middle",
+                                                                    "anchor_to": "bottom_middle",
+                                                                    "offset": [
+                                                                        -34,
+                                                                        -3.5
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "jeiCuttingBoardRecipe": {
+        "type": "stack_grid",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "offset": [
+            0,
+            0
+        ],
+        "size": [
+            "100%+0px",
+            "100%c+0px"
+        ],
+        "layer": 0,
+        "visible": true,
+        "collection_name": "jeiCuttingBoardRecipe",
+        "item_count": 1,
+        "orientation": "vertical",
+        "controls": [
+            {
+                "itemTemplate": {
+                    "type": "panel",
+                    "size": [
+                        "100%+0px",
+                        "100%c+5px"
+                    ],
+                    "layer": 1,
+                    "property_bag": {
+                        "force_update": false
+                    },
+                    "controls": [
+                        {
+                            "bg": {
+                                "type": "image",
+                                "size": [
+                                    "100%c+4px",
+                                    47.0
+                                ],
+                                "layer": 1,
+                                "nineslice_size": [
+                                    2.0,
+                                    2.0,
+                                    2.0,
+                                    2.0
+                                ],
+                                "texture": "textures/ui/jeiFarmersDelight/single_recipe_background",
+                                "uv": [
+                                    0.0,
+                                    0.0
+                                ],
+                                "controls": [
+                                    {
+                                        "stack_panel": {
+                                            "type": "stack_panel",
+                                            "size": [
+                                                "100%c+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "orientation": "horizontal",
+                                            "controls": [
+                                                {
+                                                    "cutting_board_panel": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            43.0,
+                                                            "100%+0px"
+                                                        ],
+                                                        "layer": 1,
+                                                        "controls": [
+                                                            {
+                                                                "cutting_board_bg": {
+                                                                    "type": "image",
+                                                                    "anchor_from": "bottom_middle",
+                                                                    "anchor_to": "bottom_middle",
+                                                                    "offset": [
+                                                                        0.0,
+                                                                        -3.0
+                                                                    ],
+                                                                    "size": [
+                                                                        40.0,
+                                                                        22.0
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "clip_direction": "left",
+                                                                    "clip_ratio": 0.0,
+                                                                    "texture": "textures/ui/jeiFarmersDelight/cutting_board",
+                                                                    "controls": [
+                                                                        {
+                                                                            "jeiInputFoodRender@jei_farmers_delight.jeiInputItemRender": {
+                                                                                "offset": [
+                                                                                    0,
+                                                                                    -4.5
+                                                                                ],
+                                                                                "size": [
+                                                                                    18,
+                                                                                    18
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "jeiKnifeRenderer@jei_farmers_delight.jeiInputItemRender": {
+                                                                    "anchor_from": "top_middle",
+                                                                    "anchor_to": "top_middle",
+                                                                    "offset": [
+                                                                        0,
+                                                                        2
+                                                                    ],
+                                                                    "size": [
+                                                                        18,
+                                                                        18
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "arrow_panel": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            24.0,
+                                                            "100%+0px"
+                                                        ],
+                                                        "layer": 1,
+                                                        "controls": [
+                                                            {
+                                                                "arrow": {
+                                                                    "type": "image",
+                                                                    "size": [
+                                                                        22.0,
+                                                                        16.0
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "texture": "textures/ui/jeiFarmersDelight/recipe_arrow_filled"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "output_panel": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "100%c+3px",
+                                                            "100%+0px"
+                                                        ],
+                                                        "layer": 1,
+                                                        "controls": [
+                                                            {
+                                                                "grid": {
+                                                                    "type": "grid",
+                                                                    "anchor_from": "center",
+                                                                    "anchor_to": "center",
+                                                                    "offset": [
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "size": [
+                                                                        "100%c+0px",
+                                                                        "100%c+0px"
+                                                                    ],
+                                                                    "layer": 0,
+                                                                    "visible": true,
+                                                                    "collection_name": "jeiLootTableRecipeGrid",
+                                                                    "grid_dimensions": [
+                                                                        1,
+                                                                        1
+                                                                    ],
+                                                                    "grid_item_template": "jei_farmers_delight.jeiInputItemRender"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "jeiInputItemRender": {
+        "type": "input_panel",
+        "size": [
+            16.0,
+            16.0
+        ],
+        "draggable": "horizontal",
+        "layer": 1,
+        "is_swallow": true,
+        "property_bag": {
+            "force_update": false
+        },
+        "controls": [
+            {
+                "item_cell": {
+                    "type": "panel",
+                    "size": [
+                        "100%+0px",
+                        "100%+0px"
+                    ],
+                    "layer": 1,
+                    "controls": [
+                        {
+                            "bg": {
+                                "type": "panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 1,
+                                "controls": [
+                                    {
+                                        "cell_classic": {
+                                            "type": "image",
+                                            "$bgVisible|default": false,
+                                            "size": [
+                                                "100%+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "visible": "$bgVisible",
+                                            "texture": "textures/ui/cell_image"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "item": {
+                                "type": "panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 3,
+                                "controls": [
+                                    {
+                                        "stack_count_label": {
+                                            "type": "label",
+                                            "anchor_from": "bottom_right",
+                                            "anchor_to": "bottom_right",
+                                            "offset": [
+                                                1.0,
+                                                0.0
+                                            ],
+                                            "layer": 10,
+                                            "visible": true,
+                                            "color": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "shadow": true
+                                        }
+                                    },
+                                    {
+                                        "item_renderer": {
+                                            "type": "custom",
+                                            "renderer": "inventory_item_renderer",
+                                            "size": [
+                                                "100%+-2px",
+                                                "100%+-2px"
+                                            ],
+                                            "layer": 8,
+                                            "property_bag": {
+                                                "#item_id_aux": 131072
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "button_ref@common.button": {
+                    "type": "button",
+                    "$control_alpha": 1.0,
+                    "$is_new_nine_slice": false,
+                    "$label_layer": 3,
+                    "$nine_slice_buttom": 0,
+                    "$nine_slice_left": 0,
+                    "$nine_slice_right": 0,
+                    "$nine_slice_top": 0,
+                    "$nineslice_size": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "$pressed_button_name": "#jeiRecipeSlotItem",
+                    "$texture_layer": 2,
+                    "size": [
+                        "100%+0px",
+                        "100%+0px"
+                    ],
+                    "layer": 3,
+                    "button_mappings": [
+                        {
+                            "to_button_id": "$pressed_button_name",
+                            "from_button_id": "button.menu_select",
+                            "mapping_type": "pressed"
+                        }
+                    ],
+                    "default_control": "default",
+                    "hover_control": "hover",
+                    "is_handle_button_move_event": true,
+                    "pressed_control": "pressed",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "",
+                            "binding_condition": "always_when_visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "default": {
+                                "type": "panel"
+                            }
+                        },
+                        {
+                            "pressed": {
+                                "type": "panel"
+                            }
+                        },
+                        {
+                            "hover": {
+                                "type": "panel",
+                                "layer": 3,
+                                "controls": [
+                                    {
+                                        "highlight": {
+                                            "type": "image",
+                                            "size": [
+                                                "100% - 2px",
+                                                "100% - 2px"
+                                            ],
+                                            "alpha": 0.8,
+                                            "texture": "textures/ui/highlight_slot"
+                                        }
+                                    },
+                                    {
+                                        "white_border": {
+                                            "type": "image",
+                                            "size": [
+                                                "100%",
+                                                "100%"
+                                            ],
+                                            "texture": "textures/ui/focus_border_white"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "jeiOutputItemRender": {
+        "type": "input_panel",
+        "$bgVisible": true,
+        "size": [
+            20.0,
+            20.0
+        ],
+        "draggable": "horizontal",
+        "layer": 1,
+        "is_swallow": true,
+        "property_bag": {
+            "force_update": false
+        },
+        "controls": [
+            {
+                "item_cell": {
+                    "type": "panel",
+                    "size": [
+                        "100%+0px",
+                        "100%+0px"
+                    ],
+                    "layer": 1,
+                    "controls": [
+                        {
+                            "bg": {
+                                "type": "panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 1,
+                                "controls": [
+                                    {
+                                        "cell_classic": {
+                                            "type": "image",
+                                            "size": [
+                                                "100%+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "visible": "$bgVisible",
+                                            "texture": "textures/ui/cell_image"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "item": {
+                                "type": "panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 3,
+                                "controls": [
+                                    {
+                                        "stack_count_label": {
+                                            "type": "label",
+                                            "anchor_from": "bottom_right",
+                                            "anchor_to": "bottom_right",
+                                            "offset": [
+                                                -1.0,
+                                                0.0
+                                            ],
+                                            "layer": 10,
+                                            "visible": true,
+                                            "color": [
+                                                1.0,
+                                                1.0,
+                                                1.0
+                                            ],
+                                            "shadow": true
+                                        }
+                                    },
+                                    {
+                                        "item_renderer": {
+                                            "type": "custom",
+                                            "renderer": "inventory_item_renderer",
+                                            "size": [
+                                                "100%+-2px",
+                                                "100%+-2px"
+                                            ],
+                                            "layer": 8,
+                                            "property_bag": {
+                                                "#item_id_aux": 131072
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "button_ref@common.button": {
+                    "type": "button",
+                    "$control_alpha": 1.0,
+                    "$is_new_nine_slice": false,
+                    "$label_layer": 3,
+                    "$nine_slice_buttom": 0,
+                    "$nine_slice_left": 0,
+                    "$nine_slice_right": 0,
+                    "$nine_slice_top": 0,
+                    "$nineslice_size": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "$pressed_button_name": "#xxxxx",
+                    "$texture_layer": 2,
+                    "size": [
+                        "100%+0px",
+                        "100%+0px"
+                    ],
+                    "layer": 3,
+                    "button_mappings": [
+                        {
+                            "to_button_id": "$pressed_button_name",
+                            "from_button_id": "button.menu_select",
+                            "mapping_type": "pressed"
+                        }
+                    ],
+                    "default_control": "default",
+                    "hover_control": "hover",
+                    "is_handle_button_move_event": true,
+                    "pressed_control": "pressed",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "",
+                            "binding_condition": "always_when_visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "default": {
+                                "type": "panel"
+                            }
+                        },
+                        {
+                            "pressed": {
+                                "type": "panel"
+                            }
+                        },
+                        {
+                            "hover": {
+                                "type": "panel",
+                                "layer": 3,
+                                "visible": "$bgVisible",
+                                "controls": [
+                                    {
+                                        "highlight": {
+                                            "type": "image",
+                                            "size": [
+                                                "100% - 2px",
+                                                "100% - 2px"
+                                            ],
+                                            "alpha": 0.8,
+                                            "texture": "textures/ui/highlight_slot"
+                                        }
+                                    },
+                                    {
+                                        "white_border": {
+                                            "type": "image",
+                                            "size": [
+                                                "100%",
+                                                "100%"
+                                            ],
+                                            "texture": "textures/ui/focus_border_white"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "jeiSkilletAndStoveRecipe": {
+        "type": "stack_grid",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "offset": [
+            0,
+            0
+        ],
+        "size": [
+            "100%+0px",
+            "100%c+0px"
+        ],
+        "layer": 0,
+        "visible": true,
+        "collection_name": "jeiSkilletAndStoveRecipe",
+        "item_count": 1,
+        "orientation": "vertical",
+        "controls": [
+            {
+                "itemTemplate": {
+                    "type": "panel",
+                    "size": [
+                        "100%+0px",
+                        "100%c+5px"
+                    ],
+                    "layer": 1,
+                    "property_bag": {
+                        "force_update": false
+                    },
+                    "controls": [
+                        {
+                            "bg": {
+                                "type": "image",
+                                "size": [
+                                    100.0,
+                                    55.0
+                                ],
+                                "layer": 1,
+                                "nineslice_size": [
+                                    2.0,
+                                    2.0,
+                                    2.0,
+                                    2.0
+                                ],
+                                "texture": "textures/ui/jeiFarmersDelight/single_recipe_background",
+                                "uv": [
+                                    0.0,
+                                    0.0
+                                ],
+                                "controls": [
+                                    {
+                                        "arrow_bg": {
+                                            "type": "image",
+                                            "size": [
+                                                22.0,
+                                                16.0
+                                            ],
+                                            "layer": 1,
+                                            "texture": "textures/ui/jeiFarmersDelight/recipe_arrow",
+                                            "controls": [
+                                                {
+                                                    "arrow": {
+                                                        "type": "image",
+                                                        "$anim_duration": 7,
+                                                        "layer": 1,
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": "@jei_farmers_delight.jeiArrowClipAnim",
+                                                        "texture": "textures/ui/jeiFarmersDelight/recipe_arrow_filled",
+                                                        "animation_reset_name": "screen_animation_reset"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "jeiOutputItemRender@jei_farmers_delight.jeiOutputItemRender": {
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                -8,
+                                                0
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "jeiInputItemRender@jei_farmers_delight.jeiInputItemRender": {
+                                            "$bgVisible": true,
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
+                                            "offset": [
+                                                12,
+                                                -11
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "flame_bg": {
+                                            "type": "image",
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
+                                            "offset": [
+                                                13.0,
+                                                10.0
+                                            ],
+                                            "size": [
+                                                14.0,
+                                                14.0
+                                            ],
+                                            "layer": 1,
+                                            "texture": "textures/ui/jeiFarmersDelight/flame_empty",
+                                            "controls": [
+                                                {
+                                                    "flame": {
+                                                        "type": "image",
+                                                        "layer": 1,
+                                                        "texture": "textures/ui/jeiFarmersDelight/flame"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "timer": {
+                                            "type": "label",
+                                            "anchor_from": "bottom_right",
+                                            "anchor_to": "bottom_right",
+                                            "offset": [
+                                                -8.0,
+                                                -4.0
+                                            ],
+                                            "color": [
+                                                0.5843137254901961,
+                                                0.5843137254901961,
+                                                0.5843137254901961
+                                            ],
+                                            "font_type": "default",
+                                            "text": "7 秒",
+                                            "text_alignment": "center"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "namespace": "jei_farmers_delight"
+}
