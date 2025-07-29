@@ -260,7 +260,7 @@ def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
                     resultCount = previewItemCount
                 else:
                     resultCount = previewItemCount + resultItemSlot[0]["count"]
-
+                print "输出物品: {} 数量: {}".format(resultItemName, resultCount)
                 SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
                 CreateEntityServer("minecraft:xp_orb", (x + 0.5, y + 1, z + 0.5), (0, 0), dimensionId)
 
@@ -284,6 +284,7 @@ def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
                         resultCount = previewItemCount
                     else:
                         resultCount = previewItemCount + resultItemSlot["count"]
+                    print "输出物品: {} 数量: {}".format(resultItemName, resultCount)
                     SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
                 else:
                     previewItemSlot["count"] = abs(count)
@@ -292,9 +293,10 @@ def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
                     SetCookingPotSlotItem(6, {})
 
                     if not resultItemSlot:
-                        resultCount = abs(count)
+                        resultCount = vesselItemSlot["count"]
                     else:
                         resultCount = abs(count) + resultItemSlot["count"]
+                    print "输出物品: {} 数量: {}".format(resultItemName, resultCount)
                     SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
                 CreateEntityServer("minecraft:xp_orb", (x + 0.5, y + 1, z + 0.5), (0, 0), dimensionId)
 

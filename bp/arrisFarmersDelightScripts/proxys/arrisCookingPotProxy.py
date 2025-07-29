@@ -25,7 +25,7 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
         self.allItemList = ClientComp.CreateItem(playerId).GetPlayerAllItems(clientApi.GetMinecraftEnum().ItemPosType.INVENTORY, True)
 
     def OnCreate(self):
-        self.foodRecipe = self.screenNode.GetBaseUIControl(uiRootPanelPath + "/root_panel/common_panel/bg_image/cookpot_panel/option_bg/scroll_view").asScrollView().GetScrollViewContentControl()
+        self.foodRecipe = self.screenNode.GetBaseUIControl(uiRootPanelPath + "/root_panel/common_panel/bg_image/cookpot_panel/option_bg/stack_panel/scroll_panel/scroll_view").asScrollView().GetScrollViewContentControl()
         CreateTimer(0.1, self.CookingPotInit, False)
 
     def OnTick(self):
@@ -131,7 +131,6 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
                 break
         inputList = [index for index in range(len(indexList))]
         if not inputList:
-
             return
         dimensionId = ClientComp.CreateGame(playerId).GetCurrentDimension()
         pos = ClientComp.CreateModAttr(playerId).GetAttr("arrisUsedCookingPotPos")
@@ -140,12 +139,27 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
 
     @ViewBinder.binding_collection(ViewBinder.BF_BindInt, "food_recipe_book", "#recipe_book_total_items")
     def FoodRecipeBook(self, args):
-        self.GetFoodRecipeBook()
         return len(self.RecipeList)
+
+    @ViewBinder.binding_collection(ViewBinder.BF_BindBool, "food_recipe_book", "#arrisfoodRecipe.visible")
+    def SetFoodRecipeItemVisible(self, index):
+        if index >= len(self.RecipeList):
+            return False
+        recipeDict = self.RecipeList[index]
+        cookResult = recipeDict["CookResult"]
+        itemRenderer = self.foodRecipe.GetChildByPath("/foodRecipe{}/item_renderer".format(index + 1))
+        if not itemRenderer:
+            return False
+        result = itemRenderer.asItemRenderer().SetUiItem(cookResult[0], cookResult[1])
+        if result is False:
+            itemRenderer.asItemRenderer().SetUiItem("minecraft:barrier", 0)
+        return True
 
     @ViewBinder.binding(ViewBinder.BF_ButtonClickUp, "#arrisCookingPotRecipeButtonClick")
     def ClickRecipeButton(self, args):
         index = args["#collection_index"]
+        if index >= len(self.RecipeList):
+            return
         recipeDict = self.RecipeList[index]
         recipeList = recipeDict["Recipe"]
         recipeText = recipeDict["text"]
@@ -180,17 +194,6 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
         else:
             vesselItem.SetVisible(False)
         self.screenNode.GetBaseUIControl(cookRecipePanel + "/food_title/title").asLabel().SetText(recipeText)
-
-    def GetFoodRecipeBook(self):
-        for index in range(0, len(self.RecipeList)):
-            recipeDict = self.RecipeList[index]
-            cookResult = recipeDict["CookResult"]
-            foodRecipeButton = self.foodRecipe.GetChildByName("foodRecipe{}".format(index + 1))
-            if foodRecipeButton:
-                itemRenderer = foodRecipeButton.GetChildByName("item_renderer")
-                result = itemRenderer.asItemRenderer().SetUiItem(cookResult[0], cookResult[1])
-                if result is False:
-                    itemRenderer.asItemRenderer().SetUiItem("minecraft:barrier", 0)
 
     def CookingPotInit(self):
         vessel = self.screenNode.GetBaseUIControl(uiRootPanelPath + "/root_panel/common_panel/bg_image/cookpot_panel/bg/arris_cooking_pot_top_half/cooking_pot/cookingpotContainerGrid/cookingpot_grid_item7")

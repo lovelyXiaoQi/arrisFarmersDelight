@@ -69,6 +69,8 @@ def UiGuideBookInit(args):
     clientApi.RegisterUI("arris", "farmerDelightGuideBook", uiGuideBookPath, uiGuideBookScreen)
     FarmersDelightJeiLinkageInit()
 
+    ClientComp.CreatePlayerView(levelId).SetUIProfile(0)
+
 @ListenClient("ClientItemTryUseEvent")
 def OnClientItemTryUse(args):
     itemDict = args["itemDict"]

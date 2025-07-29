@@ -3,7 +3,7 @@ from QingYunModLibs.ClientMod import *
 from QingYunModLibs.SystemApi import *
 from modCommon.modConfig import *
 
-def CuttingBoardHandleFunc(recipeControl, recipe, uiNode=None, itemName=None):
+def CuttingBoardHandleFunc(recipeControl, recipe, uiNode=None, itemName=None, screenName=None):
     data = recipe["recipe"]["output"]
     inputItem = recipe["recipe"]["input"]
     inputRender = recipeControl.GetChildByPath("/bg/stack_panel/cutting_board_panel/cutting_board_bg/jeiInputFoodRender/item_cell/item/item_renderer")
@@ -24,7 +24,7 @@ def CuttingBoardHandleFunc(recipeControl, recipe, uiNode=None, itemName=None):
         label = recipeControl.GetChildByPath("/bg/stack_panel/output_panel/grid/jeiInputItemRender" + str(index + 1) + "/item_cell/item/stack_count_label")
         label.asLabel().SetText(str(count))
 
-def LoopCuttingBoardHandleFunc(recipeControl, recipe, uiNode=None, itemName=None):
+def LoopCuttingBoardHandleFunc(recipeControl, recipe, uiNode=None, itemName=None, screenName=None):
     recipe["index"] += 1
     data = recipe["recipe"]["output"]
     tool = data["tool"]
@@ -33,7 +33,7 @@ def LoopCuttingBoardHandleFunc(recipeControl, recipe, uiNode=None, itemName=None
     toolRender = recipeControl.GetChildByPath("/bg/stack_panel/cutting_board_panel/jeiKnifeRenderer/item_cell/item/item_renderer")
     toolRender.asItemRenderer().SetUiItem(tool[recipe["index"]], 0)
 
-def CookingPotHandleFunc(recipeControl, recipe, uiNode=None, itemName=None):
+def CookingPotHandleFunc(recipeControl, recipe, uiNode=None, itemName=None, screenName=None):
     if not recipe["Recipe"]:
         return
     inputNum = len(recipe["Recipe"][0])
@@ -52,7 +52,7 @@ def CookingPotHandleFunc(recipeControl, recipe, uiNode=None, itemName=None):
     inputRender = recipeControl.GetChildByPath("/bg/stack_panel/output_panel/jeiOutputItemRender/item_cell/item/item_renderer")
     inputRender.asItemRenderer().SetUiItem(cookResult[0], cookResult[1])
 
-def LoopCookingPotHandleFunc(recipeControl, recipe, uiNode=None, itemName=None):
+def LoopCookingPotHandleFunc(recipeControl, recipe, uiNode=None, itemName=None, screenName=None):
     recipe["index"] += 1
     if recipe["index"] >= len(recipe["Recipe"]):
         recipe["index"] = 0
@@ -67,7 +67,7 @@ def LoopCookingPotHandleFunc(recipeControl, recipe, uiNode=None, itemName=None):
         inputRender = recipeControl.GetChildByPath("/bg/stack_panel/input_panel/jeiInputItemRender" + str(i + 1) + "/item_cell/item/item_renderer")
         inputRender.SetVisible(False)
 
-def SkilletAndStoveHandleFunc(recipeControl, recipe, uiNode=None, itemName=None):
+def SkilletAndStoveHandleFunc(recipeControl, recipe, uiNode=None, itemName=None, screenName=None):
     outputItem = recipe["output"]
     inputItem = recipe["input"]
     inputRender = recipeControl.GetChildByPath("/bg/jeiInputItemRender/item_cell/item/item_renderer")
