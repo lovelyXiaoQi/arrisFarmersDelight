@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from ...QingYunModLibs.SystemApi import *
 from ...modCommon.guideBookConfig import config
-import copy
 
 ScreenNode = clientApi.GetScreenNodeCls()
 playerId = clientApi.GetLocalPlayerId()
@@ -43,12 +42,14 @@ class guideBook(ScreenNode):
     def OnSelectorToggleText(self, index):
         if self.pag:
             return config[self.pag][index]["title"]
+        return ""
 
     @ViewBinder.binding_collection(ViewBinder.BF_BindString, "pagToggle", "#toggleLabel.text")
     def OnPagToggleText(self, index):
         if len(config) > index:
             pag = config.keys()
             return pag[index]
+        return ""
 
     @ViewBinder.binding(ViewBinder.BF_ToggleChanged, "#selectorToggleGroup")
     def OnSelectorChecked(self, args):
@@ -84,7 +85,9 @@ class guideBook(ScreenNode):
     def OnSelectorToggleGridResize(self):
         if self.pag:
             return len(config[self.pag])
+        return 0
 
-    def CloseGuideBookScreen(self, args):
+    @staticmethod
+    def CloseGuideBookScreen(args):
         # 退出教程书界面
         clientApi.PopScreen()

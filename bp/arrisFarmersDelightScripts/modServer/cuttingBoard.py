@@ -35,7 +35,7 @@ def OnServerCuttingBoardBlockUse(args):
     blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
     if not blockEntityData:
         return
-    carriedDict = ServerComp.CreateItem(playerId).GetPlayerItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, 0)
+    carriedDict = ServerComp.CreateItem(playerId).GetPlayerItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, 0, True)
     if carriedDict:
         itemType = GetItemType(carriedDict)
         displayEntityId = blockEntityData["displayEntityId"]

@@ -133,6 +133,21 @@ def CheckCookingPotRecipe(inputItemSlot):
                 return data
     return None, None
 
+def GetDisplayEntityCarriedItemType(itemDict):
+    if itemDict:
+        itemType = GetItemType(itemDict)
+        itemName = itemDict["newItemName"]
+        auxValue = itemDict["newAuxValue"]
+        key = (itemName, auxValue)
+        if key in CuttingBoardDict:
+            exceptional = CuttingBoardDict[key].get("type")
+            if exceptional is not None:
+                itemType = exceptional
+            return itemType
+        return None
+    else:
+        return None
+
 def StoveDisplayEntity(itemDict, playerId, data):
     posList = [
         (0.25, 0.27),
@@ -160,6 +175,9 @@ def StoveDisplayEntity(itemDict, playerId, data):
     blockEntityData["displayEntityDict"] = displayEntityDict
     blockEntityData[str(cookingIndex)] = {"itemDict": itemDict, "cookTimer": 7}
     ServerComp.CreateItem(Id).SetEntityItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, itemDict, 0)
+
+    itemType = GetDisplayEntityCarriedItemType(itemDict)
+    ServerComp.CreateModAttr(Id).SetAttr("arrisEntityCarriedItemType", itemType, True, True)
 
 def SkilletDisplayEntity(itemDict, playerId, data):
     count = itemDict["count"]
@@ -190,6 +208,8 @@ def SkilletDisplayEntity(itemDict, playerId, data):
         displayDict = copy.deepcopy(itemDict)
         displayDict["count"] = 1
         ServerComp.CreateItem(Id).SetEntityItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, displayDict, 0)
+        itemType = GetDisplayEntityCarriedItemType(displayDict)
+        ServerComp.CreateModAttr(Id).SetAttr("arrisEntityCarriedItemType", itemType, True, True)
     blockEntityData["displayEntityList"] = displayEntityList
 
 def CuttingBoardDisplayEntity(itemDict, playerId, data):
@@ -212,8 +232,7 @@ def CuttingBoardDisplayEntity(itemDict, playerId, data):
         exceptional = CuttingBoardDict[key].get("type")
         if exceptional is not None:
             itemType = exceptional
-
-    CallAllClient("SetItemDisplayMolang", {"itemType": itemType, "entityId": Id})
+    ServerComp.CreateModAttr(Id).SetAttr("arrisEntityCarriedItemType", itemType, True, True)
 
 def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
     # 检查厨锅内的容器是否符合并更新

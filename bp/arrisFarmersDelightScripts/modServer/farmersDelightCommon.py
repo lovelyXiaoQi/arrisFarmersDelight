@@ -277,19 +277,3 @@ def PlayerShapedRecipe(args):
     dimensionId = args["dimensionId"]
     playerPos = args["playerPos"]
     ServerObj.CreateEngineItemEntity(itemDict, dimensionId, playerPos)
-
-@Call()
-def GetEntityCarriedItem(entityId):
-    itemDict = ServerComp.CreateItem(entityId).GetEntityItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, 0)
-    if itemDict:
-        itemType = GetItemType(itemDict)
-        itemName = itemDict["newItemName"]
-        auxValue = itemDict["newAuxValue"]
-        key = (itemName, auxValue)
-        if key in CuttingBoardDict:
-            exceptional = CuttingBoardDict[key].get("type")
-            if exceptional is not None:
-                itemType = exceptional
-            CallAllClient("SetItemDisplayMolang", {"itemType": itemType, "entityId": entityId})
-    else:
-        CallAllClient("SetItemDisplayMolang", {"itemType": None, "entityId": entityId})

@@ -36,18 +36,17 @@ def SetEntityBlockMolang(args):
     ClientComp.CreateBlockInfo(levelId).SetEnableBlockEntityAnimations(pos, True)
     ClientComp.CreateBlockInfo(levelId).SetBlockEntityMolangValue(pos, name, molang)
 
-@Call(playerId)
 def SetItemDisplayMolang(args):
     entityId = args["entityId"]
-    itemType = args["itemType"]
-    if itemType:
-        comp = ClientComp.CreateQueryVariable(entityId)
-        if itemType == "" or itemType == "food":
-            comp.Set('query.mod.item_display_mode', 0.0)
-        elif itemType == "block":
-            comp.Set('query.mod.item_display_mode', 1.0)
-        else:
-            comp.Set('query.mod.item_display_mode', 2.0)
+    itemType = args["newValue"]
+    print args
+    comp = ClientComp.CreateQueryVariable(entityId)
+    if not itemType or itemType == "" or itemType == "food":
+        comp.Set('query.mod.item_display_mode', 0.0)
+    elif itemType == "block":
+        comp.Set('query.mod.item_display_mode', 1.0)
+    else:
+        comp.Set('query.mod.item_display_mode', 2.0)
 
 @Call(playerId)
 def PlayAttackAnimationCommon(args):
@@ -56,8 +55,9 @@ def PlayAttackAnimationCommon(args):
 @ListenClient("AddEntityClientEvent")
 def OnAddEntityClient(args):
     entityName = args["engineTypeStr"]
-    if entityName == "arris:item_display":
-        CallServer("GetEntityCarriedItem", args["id"])
+    if entityName != "arris:item_display":
+        return
+    ClientComp.CreateModAttr(args["id"]).RegisterUpdateFunc("arrisEntityCarriedItemType", SetItemDisplayMolang)
 
 @ListenClient("LoadClientAddonScriptsAfter")
 def LoadAddon(args):
@@ -68,8 +68,6 @@ def LoadAddon(args):
 def UiGuideBookInit(args):
     clientApi.RegisterUI("arris", "farmerDelightGuideBook", uiGuideBookPath, uiGuideBookScreen)
     FarmersDelightJeiLinkageInit()
-
-    ClientComp.CreatePlayerView(levelId).SetUIProfile(0)
 
 @ListenClient("ClientItemTryUseEvent")
 def OnClientItemTryUse(args):
