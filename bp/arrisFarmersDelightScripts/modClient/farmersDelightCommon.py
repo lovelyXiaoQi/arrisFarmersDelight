@@ -32,14 +32,12 @@ def SetEntityBlockMolang(args):
     pos = args["blockPos"]
     molang = args["molang"]
     name = args["name"]
-    print args
     ClientComp.CreateBlockInfo(levelId).SetEnableBlockEntityAnimations(pos, True)
     ClientComp.CreateBlockInfo(levelId).SetBlockEntityMolangValue(pos, name, molang)
 
 def SetItemDisplayMolang(args):
     entityId = args["entityId"]
     itemType = args["newValue"]
-    print args
     comp = ClientComp.CreateQueryVariable(entityId)
     if not itemType or itemType == "" or itemType == "food":
         comp.Set('query.mod.item_display_mode', 0.0)
