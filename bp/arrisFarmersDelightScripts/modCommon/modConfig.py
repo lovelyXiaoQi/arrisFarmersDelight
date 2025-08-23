@@ -862,6 +862,39 @@ CookingPotRecipeList = [
     {
         "Recipe": [
             [
+                ("arris:raw_pasta", 0),
+                ("minecraft:dried_kelp", 0),
+                ("arris:fried_egg", 0),
+                ("arris:bacon", 0)
+            ],
+            [
+                ("arris:raw_pasta", 0),
+                ("minecraft:dried_kelp", 0),
+                ("arris:fried_egg", 0),
+                ("arris:minced_beef", 0)
+            ],
+            [
+                ("arris:raw_pasta", 0),
+                ("minecraft:dried_kelp", 0),
+                ("arris:fried_egg", 0),
+                ("arris:cod_slice", 0)
+            ],
+            [
+                ("arris:raw_pasta", 0),
+                ("minecraft:dried_kelp", 0),
+                ("arris:fried_egg", 0),
+                ("arris:salmon_slice", 0)
+            ]
+        ],
+        "CookResult": ("arris:noodle_soup", 0),
+        "Vessel": ("minecraft:bowl", 0),
+        "PushItem": [
+        ],
+        "text": "面条汤"
+    },
+    {
+        "Recipe": [
+            [
                 ("arris:milk_bottle", 0),
                 ("minecraft:cocoa_beans", 0),
                 ("minecraft:cocoa_beans", 0),
