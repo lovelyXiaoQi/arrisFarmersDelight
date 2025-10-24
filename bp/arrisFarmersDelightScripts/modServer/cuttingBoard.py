@@ -47,7 +47,7 @@ def OnServerCuttingBoardBlockUse(args):
             if carriedDict["newItemName"] in result["tool"]:
                 for resultDict in result["itemList"]:
                     ServerObj.CreateEngineItemEntity(resultDict, dimensionId, (x + 0.5, y + 0.5, z + 0.5))
-                DesEntityServer(displayEntityId)
+                ServerObj.DestroyEntity(displayEntityId)
                 ToAllPlayerPlaySound(dimensionId, (x, y, z), "ambient.cutting_board.knife")
                 SetCarriedDurability(playerId, carriedDict, dimensionId, (x, y, z))
                 blockEntityData["cuttingDict"] = None
@@ -74,7 +74,7 @@ def OnServerCuttingBoardBlockUse(args):
             ToAllPlayerPlaySound(dimensionId, blockPos, "armor.equip_leather")
             blockEntityData["cuttingDict"] = None
         if displayEntityId:
-            DesEntityServer(displayEntityId)
+            ServerObj.DestroyEntity(displayEntityId)
             blockEntityData["displayEntityId"] = None
 
 @ListenServer("BlockRemoveServerEvent")
@@ -88,6 +88,6 @@ def OnCuttingBoardRemove(args):
         displayEntityId = blockEntityData["displayEntityId"]
         cuttingDict = blockEntityData["cuttingDict"]
         if displayEntityId:
-            DesEntityServer(displayEntityId)
+            ServerObj.DestroyEntity(displayEntityId)
         if cuttingDict:
             ServerObj.CreateEngineItemEntity(cuttingDict, dimensionId, (args["x"] + 0.5, args["y"] + 0.5, args["z"] + 0.5))

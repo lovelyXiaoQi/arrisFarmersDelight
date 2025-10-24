@@ -105,7 +105,7 @@ def OnEntityInsideBasketServer(args):
                 containerItem = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, index, dimensionId)
                 if containerItem is None:
                     ServerComp.CreateItem(levelId).SpawnItemToContainer(itemDict, index, blockPos, dimensionId)
-                    DesEntityServer(entityId)
+                    ServerObj.DestroyEntity(entityId)
                     break
 
 @ListenServer("ServerItemUseOnEvent")
@@ -267,7 +267,7 @@ def OnDamageCommon(args):
     if entityName in ["arris:item_display", "arris:corpse_display"]:
         carriedDict = ServerComp.CreateItem(playerId).GetPlayerItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, 0)
         if carriedDict and carriedDict["newItemName"] == "arris:item_display_destroy":
-            DesEntityServer(entityId)
+            ServerObj.DestroyEntity(entityId)
             ServerComp.CreateGame(playerId).SetOneTipMessage(playerId, "§7物品展示实体 §a删除成功!")
             ServerComp.CreateItem(playerId).SetEntityItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, {}, 0)
 

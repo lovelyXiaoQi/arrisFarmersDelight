@@ -81,7 +81,7 @@ def OnStoveTick(args):
                     blockEntityData[str(index)] = {"itemDict": None, "cookTimer": 7}
                     ServerObj.CreateEngineItemEntity(output, dimensionId, (args["posX"] + 0.5, args["posY"] + 1.3, args["posZ"] + 0.5))
                     entityId = displayEntityDict[str(index)]
-                    DesEntityServer(entityId)
+                    ServerObj.DestroyEntity(entityId)
                     displayEntityDict[str(index)] = None
                     blockEntityData["displayEntityDict"] = displayEntityDict
             if blockEntityData["cookingIndex"] >= 6:
@@ -104,5 +104,6 @@ def OnStoveRemove(args):
         if displayEntityDict:
             for i in displayEntityDict:
                 entityId = displayEntityDict[str(i)]
-                if entityId:
-                    DesEntityServer(entityId)
+                if not entityId:
+                    continue
+                ServerObj.DestroyEntity(entityId)

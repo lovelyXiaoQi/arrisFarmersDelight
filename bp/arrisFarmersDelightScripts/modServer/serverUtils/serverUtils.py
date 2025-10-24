@@ -3,9 +3,7 @@ from ...QingYunModLibs.ServerMod import *
 from ...QingYunModLibs.SystemApi import *
 from ...modCommon.modConfig import *
 from collections import Counter
-import math
-import random
-import copy
+import math, random, copy
 
 entityFace = {
     0: (0, -90),
@@ -143,10 +141,20 @@ def GetDisplayEntityCarriedItemType(itemDict):
             exceptional = CuttingBoardDict[key].get("type")
             if exceptional is not None:
                 itemType = exceptional
-            return itemType
-        return None
+            if not itemType or itemType == "" or itemType == "food":
+                return 0
+            elif itemType == "block":
+                return 1
+            else:
+                return 2
+        if not itemType or itemType == "" or itemType == "food":
+            return 0
+        elif itemType == "block":
+            return 1
+        else:
+            return 2
     else:
-        return None
+        return 0
 
 def StoveDisplayEntity(itemDict, playerId, data):
     posList = [
@@ -177,7 +185,7 @@ def StoveDisplayEntity(itemDict, playerId, data):
     ServerComp.CreateItem(Id).SetEntityItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, itemDict, 0)
 
     itemType = GetDisplayEntityCarriedItemType(itemDict)
-    ServerComp.CreateModAttr(Id).SetAttr("arrisEntityCarriedItemType", itemType, True, True)
+    ServerComp.CreateEntityDefinitions(Id).SetVariant(int(itemType))
 
 def SkilletDisplayEntity(itemDict, playerId, data):
     count = itemDict["count"]
@@ -209,7 +217,7 @@ def SkilletDisplayEntity(itemDict, playerId, data):
         displayDict["count"] = 1
         ServerComp.CreateItem(Id).SetEntityItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, displayDict, 0)
         itemType = GetDisplayEntityCarriedItemType(displayDict)
-        ServerComp.CreateModAttr(Id).SetAttr("arrisEntityCarriedItemType", itemType, True, True)
+        ServerComp.CreateEntityDefinitions(Id).SetVariant(int(itemType))
     blockEntityData["displayEntityList"] = displayEntityList
 
 def CuttingBoardDisplayEntity(itemDict, playerId, data):
@@ -223,16 +231,11 @@ def CuttingBoardDisplayEntity(itemDict, playerId, data):
     displayDict = copy.deepcopy(itemDict)
     ServerComp.CreateItem(Id).SetEntityItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, displayDict, 0)
     blockEntityData["displayEntityId"] = Id
-    itemType = GetItemType(itemDict)
-
-    itemName = itemDict["newItemName"]
-    auxValue = itemDict["newAuxValue"]
-    key = (itemName, auxValue)
-    if key in CuttingBoardDict:
-        exceptional = CuttingBoardDict[key].get("type")
-        if exceptional is not None:
-            itemType = exceptional
-    ServerComp.CreateModAttr(Id).SetAttr("arrisEntityCarriedItemType", itemType, True, True)
+    itemType = GetDisplayEntityCarriedItemType(itemDict)
+    print itemType
+    basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(itemDict["newItemName"])
+    print basicInfo["itemType"]
+    ServerComp.CreateEntityDefinitions(Id).SetVariant(int(itemType))
 
 def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
     # 检查厨锅内的容器是否符合并更新

@@ -30,7 +30,7 @@
             "minecraft:loot": {
                 "table": "loot_tables/air_loot.json"
             },
-            "minecraft:mark_variant": {
+            "minecraft:variant": {
                 "value": 0
             },
             "minecraft:persistent": {

@@ -24,13 +24,13 @@
             "scripts": {
                 "animate": [
                     {
-                        "item": "query.mod.item_display_mode == 0.0"
+                        "item": "query.variant == 0.0"
                     },
                     {
-                        "block": "query.mod.item_display_mode == 1.0"
+                        "block": "query.variant == 1.0"
                     },
                     {
-                        "armor": "query.mod.item_display_mode == 2.0"
+                        "armor": "query.variant == 2.0"
                     }
                 ]
             }

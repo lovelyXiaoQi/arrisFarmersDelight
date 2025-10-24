@@ -430,4 +430,4 @@ def OnDestroyBlock(args):
         if enchant[0] == 16:
             dropItemList = args["dropEntityIds"]
             for Id in dropItemList:
-                DesEntityServer(Id)
+                ServerObj.DestroyEntity(Id)

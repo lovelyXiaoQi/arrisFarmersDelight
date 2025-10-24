@@ -35,27 +35,9 @@ def SetEntityBlockMolang(args):
     ClientComp.CreateBlockInfo(levelId).SetEnableBlockEntityAnimations(pos, True)
     ClientComp.CreateBlockInfo(levelId).SetBlockEntityMolangValue(pos, name, molang)
 
-def SetItemDisplayMolang(args):
-    entityId = args["entityId"]
-    itemType = args["newValue"]
-    comp = ClientComp.CreateQueryVariable(entityId)
-    if not itemType or itemType == "" or itemType == "food":
-        comp.Set('query.mod.item_display_mode', 0.0)
-    elif itemType == "block":
-        comp.Set('query.mod.item_display_mode', 1.0)
-    else:
-        comp.Set('query.mod.item_display_mode', 2.0)
-
 @Call(playerId)
 def PlayAttackAnimationCommon(args):
     ClientComp.CreatePlayer(playerId).Swing()
-
-@ListenClient("AddEntityClientEvent")
-def OnAddEntityClient(args):
-    entityName = args["engineTypeStr"]
-    if entityName != "arris:item_display":
-        return
-    ClientComp.CreateModAttr(args["id"]).RegisterUpdateFunc("arrisEntityCarriedItemType", SetItemDisplayMolang)
 
 @ListenClient("LoadClientAddonScriptsAfter")
 def LoadAddon(args):

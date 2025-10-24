@@ -46,7 +46,7 @@ def OnServerSkilletBlockUse(args):
             displayEntityList = blockEntityData["displayEntityList"]
             if displayEntityList:
                 for Id in displayEntityList:
-                    DesEntityServer(Id)
+                    ServerObj.DestroyEntity(Id)
                 blockEntityData["displayEntityList"] = None
             blockEntityData["cookTimer"] = 7
 
@@ -163,7 +163,7 @@ def OnSkilletTick(args):
                 else: index = 0
                 try:
                     entityId = displayEntityList[index]
-                    DesEntityServer(entityId)
+                    ServerObj.DestroyEntity(entityId)
                 except IndexError:
                     pass
                 blockEntityData["cookTimer"] = 7
@@ -189,6 +189,6 @@ def OnSkilletRemove(args):
         cookingDict = blockEntityData["cookingDict"]
         if displayEntityList:
             for Id in displayEntityList:
-                DesEntityServer(Id)
+                ServerObj.DestroyEntity(Id)
         if cookingDict:
             ServerObj.CreateEngineItemEntity(cookingDict, dimensionId, (args["x"] + 0.5, args["y"] + 0.5, args["z"] + 0.5))
