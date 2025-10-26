@@ -69,7 +69,9 @@ def OnBlockRandomTick(args):
         PosList.remove((x, y, z))
         blockList = []
         for pos in PosList:
-            blockDict = comp.GetBlockNew(pos, dimensionId)
+            blockDict = comp.GetLiquidBlock(pos, dimensionId)
+            if not blockDict:
+                continue
             blockList.append(blockDict["name"])
         if "minecraft:water" in blockList or "minecraft:flowing_water" in blockList:
             comp.SetBlockNew((x, y, z), {"name": "arris:rich_soil_farmland_moist"}, 0, dimensionId, False, False)
@@ -79,11 +81,11 @@ def OnBlockRandomTick(args):
         PosList.remove((x, y, z))
         blockList = []
         for pos in PosList:
-            blockDict = comp.GetBlockNew(pos, dimensionId)
+            blockDict = comp.GetLiquidBlock(pos, dimensionId)
+            if not blockDict:
+                continue
             blockList.append(blockDict["name"])
-        if "minecraft:water" in blockList or "minecraft:flowing_water" in blockList:
-            pass
-        else:
+        if "minecraft:water" not in blockList and "minecraft:flowing_water" not in blockList:
             comp.SetBlockNew((x, y, z), {"name": "arris:rich_soil_farmland"}, 0, dimensionId, False, False)
 
         upBlock = ServerComp.CreateBlockInfo(levelId).GetBlockNew((x, y + 1, z), dimensionId)
