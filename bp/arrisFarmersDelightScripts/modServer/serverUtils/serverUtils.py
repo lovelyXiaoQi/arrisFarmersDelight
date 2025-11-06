@@ -242,20 +242,6 @@ def CuttingBoardDisplayEntity(itemDict, playerId, data):
 
 def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
     # 检查厨锅内的容器是否符合并更新
-    def SetCookingPotSlotItem(index, itemDict):
-        blockEntityContainer = ServerComp.CreateBlockInfo(levelId).GetBlockEntityData(dimensionId, blockPos)
-        items = blockEntityContainer["Items"]
-        nbtItem = {
-            'Count': {'__type__': 1, '__value__': itemDict.get("count", 1)},
-            'Slot': {'__type__': 1, '__value__': index},
-            'WasPickedUp': {'__type__': 1, '__value__': 0},
-            'Damage': {'__type__': 2, '__value__': 0},
-            'Name': {'__type__': 8, '__value__': itemDict.get("newItemName", "minecraft:air")}
-        }
-        items.append(nbtItem)
-        blockEntityContainer["Items"] = items
-        ServerComp.CreateBlockInfo(levelId).SetBlockEntityData(dimensionId, blockPos, blockEntityContainer)
-
     x, y, z = blockPos
     previewItemSlot = blockEntityData["previewItemSlot"][0]
     vesselItemSlot = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, 6, dimensionId)
@@ -286,7 +272,7 @@ def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
             if not vessel:
                 # 无容器的情况
                 resultCount = previewItemCount if not resultItemSlot else previewItemCount + resultItemSlot["count"]
-                SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
+                ServerComp.CreateItem(levelId).SpawnItemToContainer({"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []}, 7, blockPos, dimensionId)
                 CreateEntityServer("minecraft:xp_orb", (x + 0.5, y + 1, z + 0.5), (0, 0), dimensionId)
                 
             elif vesselItemSlot and vesselDict.get("newItemName") == vesselItemSlot.get("newItemName"):
@@ -295,15 +281,15 @@ def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
                 
                 if count >= 0:
                     vesselItemSlot["count"] = count
-                    SetCookingPotSlotItem(6, vesselItemSlot)
+                    ServerComp.CreateItem(levelId).SpawnItemToContainer(vesselItemSlot, 6, blockPos, dimensionId)
                     resultCount = previewItemCount if not resultItemSlot else previewItemCount + resultItemSlot["count"]
                 else:
                     previewItemSlot["count"] = abs(count)
                     blockEntityData["previewItemSlot"] = [previewItemSlot]
-                    SetCookingPotSlotItem(6, {})
+                    ServerComp.CreateItem(levelId).SpawnItemToContainer({}, 6, blockPos, dimensionId)
                     resultCount = vesselItemSlot["count"] if not resultItemSlot else abs(count) + resultItemSlot["count"]
-                
-                SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
+
+                ServerComp.CreateItem(levelId).SpawnItemToContainer(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []}, blockPos, dimensionId)
                 CreateEntityServer("minecraft:xp_orb", (x + 0.5, y + 1, z + 0.5), (0, 0), dimensionId)
 
 def SetCarriedDurability(playerId, itemDict, dimensionId, pos):
