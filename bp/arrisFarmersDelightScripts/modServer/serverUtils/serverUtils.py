@@ -42,34 +42,22 @@ def clickBlockFace(x, y, z):
 
 def ProbabilityFunc(probability):
     # 以 probability % 的概率返回True否则返回False
-    randomList = []
-    for i in range(probability):
-        randomList.append(1)
-    for x in range(100 - probability):
-        randomList.append(0)
-    extract = random.choice(randomList)
-    if extract == 1:
-        return True
-    else:
-        return False
+    return random.randint(1, 100) <= probability
 
 def ToAllPlayerPlaySound(dmId, pos, soundName):
     # 播放音效
     playerList = serverApi.GetPlayerList()
     for playerId in playerList:
         dimensionId = ServerComp.CreateDimension(playerId).GetEntityDimensionId()
-        if dimensionId == dmId:
-            data = {"soundName": soundName, "pos": pos}
-            CallClient("OnPlaySound", playerId, data)
+        if dimensionId != dmId:
+            continue
+        CallClient("OnPlaySound", playerId, {"soundName": soundName, "pos": pos})
 
 def IsFullBackpack(playerId):
     # 检测玩家背包是否已满
     playerAllItems = ServerComp.CreateItem(playerId).GetPlayerAllItems(serverApi.GetMinecraftEnum().ItemPosType.INVENTORY)
     itemList = list(filter(None, playerAllItems))
-    if len(itemList) >= 36:
-        return True
-    else:
-        return False
+    return len(itemList) >= 36
 
 def ResetPlayerUsedCD(playerId):
     # 重置CD
@@ -78,13 +66,14 @@ def ResetPlayerUsedCD(playerId):
 def SetPlayerUsedCD(playerId):
     # 设置CD
     cd = ServerComp.CreateModAttr(playerId).GetAttr("arrisUsedCD")
-    if cd is False:
-        ServerComp.CreateModAttr(playerId).SetAttr("arrisUsedCD", True)
-        ServerComp.CreateGame(levelId).AddTimer(0.2, ResetPlayerUsedCD, playerId)
-        CallClient("PlayAttackAnimationCommon", playerId, None)
-        return False
-    else:
+    if cd:
         return True
+    
+    # 设置CD并启动重置定时器
+    ServerComp.CreateModAttr(playerId).SetAttr("arrisUsedCD", True)
+    ServerComp.CreateGame(levelId).AddTimer(0.2, ResetPlayerUsedCD, playerId)
+    CallClient("PlayAttackAnimationCommon", playerId, None)
+    return False
 
 def SetNotCreateItem(playerId, itemDict):
     # 在非创造模式下，扣除1个玩家手持物品
@@ -106,55 +95,68 @@ def GetItemType(itemDict):
     else:
         return None
 
+# 缓存游戏规则检查结果以提高性能
+_experimental_holiday_cache = None
+
 def DetectionExperimentalHoliday():
-    # 检测是否为假日创造者模式
-    gameRules = ServerComp.CreateGame(levelId).GetGameRulesInfoServer()
-    experimental_holiday = gameRules["option_info"]["experimental_holiday"]
-    if experimental_holiday is True:
-        return {0: 0, 4: 1, 8: 2, 12: 3}
-    else:
-        return {0: 0, 1: 1, 2: 2, 3: 3}
+    # 检测是否为假日创造者模式 - 使用缓存提高性能
+    global _experimental_holiday_cache
+    if _experimental_holiday_cache is None:
+        gameRules = ServerComp.CreateGame(levelId).GetGameRulesInfoServer()
+        experimental_holiday = gameRules["option_info"]["experimental_holiday"]
+        _experimental_holiday_cache = {0: 0, 4: 1, 8: 2, 12: 3} if experimental_holiday else {0: 0, 1: 1, 2: 2, 3: 3}
+    return _experimental_holiday_cache
 
 def CheckCookingPotRecipe(inputItemSlot):
-    # 检查厨锅内的物品是否符合配方
-    inputItemList = list()
+    # 检查厨锅内的物品是否符合配方 - 优化版本
+    inputItemList = []
     for itemDict in inputItemSlot:
         if itemDict != {}:
             tupleRecipe = (itemDict["newItemName"], itemDict["newAuxValue"])
             inputItemList.append(tupleRecipe)
+    
+    # 如果没有输入物品，直接返回
+    if not inputItemList:
+        return None, None
+    
+    # 转换为Counter进行快速比较
+    inputCounter = Counter(inputItemList)
+    
     for RecipeDict in CookingPotRecipeList:
         for recipe in RecipeDict["Recipe"]:
-            if Counter(recipe) == Counter(inputItemList):
-                resultItem = {"newItemName": RecipeDict["CookResult"][0], "newAuxValue": RecipeDict["CookResult"][1], "count": 1}
+            if Counter(recipe) == inputCounter:
+                resultItem = {
+                    "newItemName": RecipeDict["CookResult"][0], 
+                    "newAuxValue": RecipeDict["CookResult"][1], 
+                    "count": 1
+                }
                 pushItemList = RecipeDict.get("PushItem")
-                data = (resultItem, pushItemList)
-                return data
+                return resultItem, pushItemList
+    
     return None, None
 
 def GetDisplayEntityCarriedItemType(itemDict):
-    if itemDict:
-        itemType = GetItemType(itemDict)
-        itemName = itemDict["newItemName"]
-        auxValue = itemDict["newAuxValue"]
-        key = (itemName, auxValue)
-        if key in CuttingBoardDict:
-            exceptional = CuttingBoardDict[key].get("type")
-            if exceptional is not None:
-                itemType = exceptional
-            if not itemType or itemType == "" or itemType == "food":
-                return 0
-            elif itemType == "block":
-                return 1
-            else:
-                return 2
-        if not itemType or itemType == "" or itemType == "food":
-            return 0
-        elif itemType == "block":
-            return 1
-        else:
-            return 2
-    else:
+    if not itemDict:
         return 0
+    
+    itemType = GetItemType(itemDict)
+    itemName = itemDict["newItemName"]
+    auxValue = itemDict["newAuxValue"]
+    key = (itemName, auxValue)
+    
+    # 检查是否在CuttingBoardDict中有特殊定义
+    if key in CuttingBoardDict:
+        exceptional = CuttingBoardDict[key].get("type")
+        if exceptional is not None:
+            itemType = exceptional
+
+    # 统一的类型判断逻辑
+    if not itemType or itemType == "" or itemType == "food":
+        return 0
+    elif itemType == "block":
+        return 1
+    else:
+        return 2
 
 def StoveDisplayEntity(itemDict, playerId, data):
     posList = [
@@ -197,18 +199,21 @@ def SkilletDisplayEntity(itemDict, playerId, data):
     aux = DetectionExperimentalHoliday()
     blockAux = aux.get(blockAuxValue, blockAuxValue)
     step = -0.037
-    if count == 1:
+    # 使用更高效的数量映射计算
+    if count <= 0:
+        num = 0
+    elif count == 1:
         num = 1
-    elif 2 <= count <= 16:
+    elif count <= 16:
         num = 2
-    elif 17 <= count <= 32:
+    elif count <= 32:
         num = 3
-    elif 33 <= count <= 48:
+    elif count <= 48:
         num = 4
-    elif 49 <= count <= 64:
+    elif count <= 64:
         num = 5
     else:
-        num = 0
+        num = 5
     for i in range(0, num):
         step += 0.037
         Id = ServerObj.CreateEngineEntityByTypeStr("arris:item_display", (x + random.uniform(0.43, 0.57), y + step, z + random.uniform(0.43, 0.57)), entityFace[blockAux], dimensionId)
@@ -232,9 +237,7 @@ def CuttingBoardDisplayEntity(itemDict, playerId, data):
     ServerComp.CreateItem(Id).SetEntityItem(serverApi.GetMinecraftEnum().ItemPosType.CARRIED, displayDict, 0)
     blockEntityData["displayEntityId"] = Id
     itemType = GetDisplayEntityCarriedItemType(itemDict)
-    print itemType
     basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(itemDict["newItemName"])
-    print basicInfo["itemType"]
     ServerComp.CreateEntityDefinitions(Id).SetVariant(int(itemType))
 
 def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
@@ -262,64 +265,45 @@ def CheckCookingPotVessel(blockEntityData, blockPos, dimensionId):
         vessel = RecipeDict.get("Vessel")
         resultItemName = cookResult[0]
         resultAuxValue = cookResult[1]
-        if vessel:
-            vesselDict = {"newItemName": vessel[0], "newAuxValue": vessel[1]}
-        else:
-            vesselDict = {}
+
+        vesselDict = {"newItemName": vessel[0], "newAuxValue": vessel[1]} if vessel else {}
 
         if previewItemSlot and previewItemSlot.get("newItemName") == resultItemName:
+            # 获取物品基础信息
+            basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(resultItemName, resultAuxValue)
+            maxStackSize = basicInfo["maxStackSize"]
+            resultItemSlot = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, 7, dimensionId)
+            
+            # 检查结果槽位是否可用
+            if resultItemSlot and resultItemSlot["newItemName"] != resultItemName:
+                return
+            if resultItemSlot and resultItemSlot["count"] >= maxStackSize:
+                return
+            
+            previewItemCount = previewItemSlot["count"]
+            blockEntityData["previewItemSlot"] = [None]
+            
             if not vessel:
-                basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(resultItemName, resultAuxValue)
-                maxStackSize = basicInfo["maxStackSize"]
-                resultItemSlot = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, 7, dimensionId)
-                if resultItemSlot and resultItemSlot["newItemName"] != resultItemName:
-                    return
-                if resultItemSlot and resultItemSlot["count"] >= maxStackSize:
-                    return
-                previewItemCount = previewItemSlot["count"]
-                blockEntityData["previewItemSlot"] = [None]
-                if not resultItemSlot:
-                    resultCount = previewItemCount
-                else:
-                    resultCount = previewItemCount + resultItemSlot[0]["count"]
-                print "输出物品: {} 数量: {}".format(resultItemName, resultCount)
+                # 无容器的情况
+                resultCount = previewItemCount if not resultItemSlot else previewItemCount + resultItemSlot["count"]
                 SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
                 CreateEntityServer("minecraft:xp_orb", (x + 0.5, y + 1, z + 0.5), (0, 0), dimensionId)
-
+                
             elif vesselItemSlot and vesselDict.get("newItemName") == vesselItemSlot.get("newItemName"):
+                # 有容器的情况
                 count = vesselItemSlot["count"] - previewItemSlot["count"]
-
-                basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(resultItemName, resultAuxValue)
-                maxStackSize = basicInfo["maxStackSize"]
-                resultItemSlot = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, 7, dimensionId)
-                if resultItemSlot and resultItemSlot["newItemName"] != resultItemName:
-                    return
-                if resultItemSlot and resultItemSlot["count"] >= maxStackSize:
-                    return
+                
                 if count >= 0:
-                    previewItemCount = previewItemSlot["count"]
-                    blockEntityData["previewItemSlot"] = [None]
                     vesselItemSlot["count"] = count
                     SetCookingPotSlotItem(6, vesselItemSlot)
-
-                    if not resultItemSlot:
-                        resultCount = previewItemCount
-                    else:
-                        resultCount = previewItemCount + resultItemSlot["count"]
-                    print "输出物品: {} 数量: {}".format(resultItemName, resultCount)
-                    SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
+                    resultCount = previewItemCount if not resultItemSlot else previewItemCount + resultItemSlot["count"]
                 else:
                     previewItemSlot["count"] = abs(count)
                     blockEntityData["previewItemSlot"] = [previewItemSlot]
-
                     SetCookingPotSlotItem(6, {})
-
-                    if not resultItemSlot:
-                        resultCount = vesselItemSlot["count"]
-                    else:
-                        resultCount = abs(count) + resultItemSlot["count"]
-                    print "输出物品: {} 数量: {}".format(resultItemName, resultCount)
-                    SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
+                    resultCount = vesselItemSlot["count"] if not resultItemSlot else abs(count) + resultItemSlot["count"]
+                
+                SetCookingPotSlotItem(7, {"newItemName": resultItemName, "newAuxValue": resultAuxValue, "count": resultCount, "enchantData": []})
                 CreateEntityServer("minecraft:xp_orb", (x + 0.5, y + 1, z + 0.5), (0, 0), dimensionId)
 
 def SetCarriedDurability(playerId, itemDict, dimensionId, pos):

@@ -140,7 +140,7 @@ def OnServerItemUseCommon(args):
     if itemName in itemChangeBlockDict:
         if blockName not in ["minecraft:frame", "minecraft:glow_frame", "arris:cutting_board"]:
             playerId = args["entityId"]
-            if SetPlayerUsedCD(playerId) is True:
+            if SetPlayerUsedCD(playerId):
                 return
             face = args["face"]
             placePos = clickBlockFace(x, y, z)
@@ -167,7 +167,6 @@ def OnServerItemUseCommon(args):
 def OnDestroyBlockCommon(args):
     # 当方块已经被玩家破坏时触发该事件
     blockName = args["fullName"]
-    print blockName
     if blockName in ["minecraft:fern", "minecraft:large_fern", "minecraft:short_grass", "minecraft:tall_grass", "arris:sandy_shrub", "arris:rich_soil_wheat7", "arris:rice_upper_crop_stage3", "arris:rice_supporting"]:
         dimensionId = args["dimensionId"]
         playerId = args["playerId"]

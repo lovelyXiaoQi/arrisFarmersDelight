@@ -1,18 +1,20 @@
 # -*- coding: utf-8 -*-
 from serverUtils.serverUtils import *
-import copy, time
+import copy
 
 @ListenServer("ServerPlaceBlockEntityEvent")
 def OnServerCookingPotCreate(args):
     blockName = args["blockName"]
     if blockName != "arris:cooking_pot":
         return
+        
     blockPos = (args["posX"], args["posY"], args["posZ"])
     dimensionId = args["dimension"]
     blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
     if not blockEntityData:
         return
 
+    # 初始化实体数据
     blockEntityData["previewItemSlot"] = [{}]
     blockEntityData["timer"] = 10.0
 
@@ -40,6 +42,8 @@ def OnCookingPotNeighborChanged(args):
     blockPos = (args["posX"], args["posY"], args["posZ"])
     dimensionId = args["dimensionId"]
     neighborPos = (args["neighborPosX"], args["neighborPosY"], args["neighborPosZ"])
+    
+    # 只处理烹饪锅下方方块的变化
     if blockName != "arris:cooking_pot" or neighborPos != (args["posX"], args["posY"] - 1, args["posZ"]):
         return
     blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
@@ -66,23 +70,30 @@ def OnCookingPotNeighborChanged(args):
 def OnCookingPotTick(args):
     if args["blockName"] != "arris:cooking_pot":
         return
+    
     dimensionId = args["dimension"]
     blockPos = (args["posX"], args["posY"], args["posZ"])
     blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
     if not blockEntityData:
         return
+    
+    # 一次性收集所有物品槽数据，减少API调用
     inputItemSlot = []
-    num = 0
-    for index in xrange(6):
+    emptySlots = 0
+    for index in range(6):
         itemDict = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, index, dimensionId)
         if not itemDict:
             itemDict = {}
-            num += 1
+            emptySlots += 1
         inputItemSlot.append(itemDict)
+    
     CheckCookingPotVessel(blockEntityData, blockPos, dimensionId)
-    if num >= 6:
+    
+    # 如果所有槽位都为空，重置计时器并返回
+    if emptySlots >= 6:
         blockEntityData["timer"] = 10.0
         return
+    
     resultItem, pushItemList = CheckCookingPotRecipe(inputItemSlot)
 
     if blockEntityData["heatEnable"] and resultItem:
@@ -92,31 +103,29 @@ def OnCookingPotTick(args):
         basicInfo = ServerComp.CreateItem(levelId).GetItemBasicInfo(itemName, auxValue)
         maxStackSize = basicInfo["maxStackSize"]
 
+        # 检查预览槽位是否已满
         if previewItemSlot[0] and previewItemSlot[0].get("count") >= maxStackSize:
             return
+            
+        # 检查是否可以添加到预览槽位
         if not previewItemSlot[0] or resultItem["newItemName"] == previewItemSlot[0].get("newItemName"):
             blockEntityData["timer"] -= 0.05
             if blockEntityData["timer"] <= 0.05:
                 blockEntityData["timer"] = 10.0
 
+                # 处理抛出的物品
                 if pushItemList:
+                    dropPos = (args["posX"] + 0.5, args["posY"] + 1.0, args["posZ"] + 0.5)
                     for pushItem in pushItemList:
                         output = {"newItemName": pushItem[0], "newAuxValue": pushItem[1], "count": 1}
-                        ServerObj.CreateEngineItemEntity(output, dimensionId, (args["posX"] + 0.5, args["posY"] + 1.0, args["posZ"] + 0.5))
+                        ServerObj.CreateEngineItemEntity(output, dimensionId, dropPos)
 
-                blockEntityInfo = ServerComp.CreateBlockInfo(levelId).GetBlockEntityData(dimensionId, blockPos)
-                items = blockEntityInfo["Items"]
-                for i in range(0, len(inputItemSlot)):
-                    itemDict = inputItemSlot[i]
-                    if itemDict == {}:
+                # 从输入槽位扣除材料
+                for index, itemDict in enumerate(inputItemSlot):
+                    if not itemDict:
                         continue
-                    for item in items:
-                        slotIndex = item["Slot"]["__value__"]
-                        if slotIndex != i:
-                            continue
-                        item["Count"]["__value__"] -= 1
-                blockEntityInfo["Items"] = items
-                ServerComp.CreateBlockInfo(levelId).SetBlockEntityData(dimensionId, blockPos, blockEntityInfo)
+                    itemDict["count"] -= 1
+                    ServerComp.CreateItem(levelId).SpawnItemToContainer(itemDict, index, blockPos, dimensionId)
 
                 if not previewItemSlot[0]:
                     blockEntityData["previewItemSlot"] = [resultItem]
@@ -139,7 +148,7 @@ def CookingPotAddFood(args):
     indexList = args["indexList"]
 
     inputItemSlot = []
-    for index in xrange(7):
+    for index in range(7):
         itemDict = ServerComp.CreateItem(levelId).GetContainerItem(blockPos, index, dimensionId)
         if not itemDict:
             itemDict = {}
@@ -171,21 +180,8 @@ def CookingPotAddFood(args):
                 break
     for i in range(0, len(playerAllItemList)):
         itemsDictMap[(serverApi.GetMinecraftEnum().ItemPosType.INVENTORY, i)] = playerAllItemList[i]
+    
     if itemsDictMap:
         ServerComp.CreateItem(playerId).SetPlayerAllItems(itemsDictMap)
-    CookingPotAddItems(blockPos, dimensionId, len(inputList), inputItemSlot)
-
-def CookingPotAddItems(blockPos, dimensionId, index, itemList):
-    blockEntityData = ServerComp.CreateBlockInfo(levelId).GetBlockEntityData(dimensionId, blockPos)
-    items = blockEntityData["Items"]
-    for index in range(index):
-        itemDict = itemList[index]
-        if not itemDict:
-            continue
-        try:
-            items[index]["Count"]["__value__"] = itemDict.get("count")
-        except IndexError:
-            nbtItem = {'Count': {'__type__': 1, '__value__': 1}, 'Slot': {'__type__': 1, '__value__': index}, 'WasPickedUp': {'__type__': 1, '__value__': 0}, 'Damage': {'__type__': 2, '__value__': 0}, 'Name': {'__type__': 8, '__value__': itemDict["newItemName"]}}
-            items.append(nbtItem)
-    blockEntityData["Items"] = items
-    ServerComp.CreateBlockInfo(levelId).SetBlockEntityData(dimensionId, blockPos, blockEntityData)
+    for index, itemDict in enumerate(inputList):
+        ServerComp.CreateItem(levelId).SpawnItemToContainer(itemDict, index, blockPos, dimensionId)
