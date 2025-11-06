@@ -4,16 +4,14 @@ from serverUtils.serverUtils import *
 @ListenServer("BlockNeighborChangedServerEvent")
 def OnCuttingBoardNeighborChanged(args):
     blockName = args["blockName"]
-    if blockName != "arris:cutting_board":
-        return
-    neighborPos = (args["neighborPosX"], args["neighborPosY"], args["neighborPosZ"])
-    if neighborPos != (args["posX"], args["posY"] - 1, args["posZ"]):
-        return
     blockPos = (args["posX"], args["posY"], args["posZ"])
     dimensionId = args["dimensionId"]
+    neighborPos = (args["neighborPosX"], args["neighborPosY"], args["neighborPosZ"])
     neighborName = args["toBlockName"]
-    if neighborName == "minecraft:air":
-        ServerComp.CreateBlockInfo(levelId).SetBlockNew(blockPos, {"name": "minecraft:air"}, 1, dimensionId)
+    if blockName == "arris:cutting_board":
+        if neighborPos == (args["posX"], args["posY"] - 1, args["posZ"]):
+            if neighborName == "minecraft:air":
+                ServerComp.CreateBlockInfo(levelId).SetBlockNew(blockPos, {"name": "minecraft:air"}, 1, dimensionId)
 
 @ListenServer("ServerItemUseOnEvent")
 def OnServerCuttingBoardItemUse(args):
@@ -82,16 +80,14 @@ def OnServerCuttingBoardBlockUse(args):
 @ListenServer("BlockRemoveServerEvent")
 def OnCuttingBoardRemove(args):
     # 砧板销毁时触发
-    blockName = args["fullName"]
-    if blockName != "arris:cutting_board":
-        return
     blockPos = (args["x"], args["y"], args["z"])
+    blockName = args["fullName"]
     dimensionId = args["dimension"]
-    blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
-    displayEntityId = blockEntityData["displayEntityId"]
-    cuttingDict = blockEntityData["cuttingDict"]
-    if displayEntityId:
-        ServerObj.DestroyEntity(displayEntityId)
-    if cuttingDict:
-        ServerObj.CreateEngineItemEntity(cuttingDict, dimensionId, (blockPos[0] + 0.5, blockPos[1] + 0.5, blockPos[2] + 0.5))
-
+    if blockName == "arris:cutting_board":
+        blockEntityData = ServerComp.CreateBlockEntityData(levelId).GetBlockEntityData(dimensionId, blockPos)
+        displayEntityId = blockEntityData["displayEntityId"]
+        cuttingDict = blockEntityData["cuttingDict"]
+        if displayEntityId:
+            ServerObj.DestroyEntity(displayEntityId)
+        if cuttingDict:
+            ServerObj.CreateEngineItemEntity(cuttingDict, dimensionId, (args["x"] + 0.5, args["y"] + 0.5, args["z"] + 0.5))

@@ -2,21 +2,21 @@
   "modules": [
     {
       "type": "resources",
-      "uuid": "84594290-e9be-4363-9177-2d54a2965c46",
+      "uuid": "059c274b-300d-45d0-aabe-11873690cfb0",
       "version": [
         0,
         0,
-        4
+        5
       ],
       "description": ""
     }
   ],
   "header": {
-    "uuid": "fb6ff41b-aeec-42c8-8881-d996ec833af8",
+    "uuid": "2ea9da34-8c4b-498d-b7b8-5abb89e44446",
     "version": [
       0,
       0,
-      4
+      5
     ],
     "description": "",
     "name": "resource_pack",

@@ -41,13 +41,12 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
             self.screenNode.GetBaseUIControl(cookingPotFireIcon).SetVisible(False)
         else:
             self.screenNode.GetBaseUIControl(cookingPotFireIcon).SetVisible(True)
-
         previewItemSlot = blockEntityData["exData"]["previewItemSlot"][0]
-        if previewItemSlot and previewItemSlot != {'__type__': 1, '__value__': 1}:
+        if previewItemSlot and "newItemName" in previewItemSlot:
             itemDict = {
-                "newItemName": previewItemSlot.get("newItemName").get("__value__"),
-                "newAuxValue": previewItemSlot.get("newAuxValue").get("__value__"),
-                "count": previewItemSlot.get("count").get("__value__")
+                "newItemName": previewItemSlot.get("newItemName", {}).get("__value__"),
+                "newAuxValue": previewItemSlot.get("newAuxValue", {}).get("__value__"),
+                "count": previewItemSlot.get("count", {}).get("__value__")
             }
         else:
             itemDict = {}
@@ -62,7 +61,7 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
     def EditBoxFinished(self, args):
         text = args["Text"]
         recipeList = []
-        for index in range(0, len(self.cookingPotRecipeList)):
+        for index in range(len(self.cookingPotRecipeList)):
             recipeDict = self.cookingPotRecipeList[index]
             recipeText = recipeDict["text"]
             if text in recipeText:
@@ -76,7 +75,7 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
             if self.foodRecipeIndex >= len(self.foodRecipeList):
                 self.foodRecipeIndex = 0
             recipe = self.foodRecipeList[self.foodRecipeIndex]
-            for index in range(0, len(recipe)):
+            for index in range(len(recipe)):
                 recipeItem = self.screenNode.GetBaseUIControl(cookRecipePanel + "/cook_recipe/grid/recipeItem{}".format(index + 1))
                 itemRenderer = recipeItem.GetChildByName("item_renderer")
                 itemRenderer.SetVisible(True)
@@ -110,7 +109,7 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
         flag = False
         indexList = []
         allItemList = []
-        for i in range(0, len(self.allItemList)):
+        for i in range(len(self.allItemList)):
             itemDict = self.allItemList[i]
             if not itemDict:
                 allItemList.append(None)
@@ -171,10 +170,10 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
         self.foodRecipeTimer = CreateTimer(1.0, self.FoodRecipeTimerSwitch, True)
 
         recipe = self.foodRecipeList[self.foodRecipeIndex]
-        for index in range(0, 6):
+        for index in range(6):
             recipeItem = self.screenNode.GetBaseUIControl(cookRecipePanel + "/cook_recipe/grid/recipeItem{}".format(index + 1)).GetChildByName("item_renderer")
             recipeItem.SetVisible(False)
-        for index in range(0, len(recipe)):
+        for index in range(len(recipe)):
             recipeItem = self.screenNode.GetBaseUIControl(cookRecipePanel + "/cook_recipe/grid/recipeItem{}".format(index + 1))
             itemRenderer = recipeItem.GetChildByName("item_renderer")
             itemRenderer.SetVisible(True)
@@ -206,7 +205,7 @@ class arrisCookingPotProxy(CustomUIScreenProxy):
         vesselItem = self.screenNode.GetBaseUIControl(cookRecipePanel + "/cook_recipe/vessel/item_renderer")
         vesselItem.SetVisible(False)
         self.screenNode.GetBaseUIControl(cookRecipePanel + "/food_title/title").asLabel().SetText("请选择食谱")
-        for index in xrange(6):
+        for index in range(6):
             recipeItem = self.screenNode.GetBaseUIControl(cookRecipePanel + "/cook_recipe/grid/recipeItem{}".format(index + 1))
             itemRenderer = recipeItem.GetChildByName("item_renderer")
             itemRenderer.SetVisible(False)

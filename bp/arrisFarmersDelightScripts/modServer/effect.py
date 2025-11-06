@@ -8,18 +8,19 @@ def OnPlayerEatFoodServer(args):
     itemDict = args["itemDict"]
     itemName = itemDict["newItemName"]
     effectDictList = ServerComp.CreateEffect(playerId).GetAllEffects()
-    if not effectDictList:
-        return
-    index = random.randint(0, len(effectDictList) - 1)
-    if itemName == "arris:milk_bottle":
-        # 喝下牛奶瓶后随机清除一个效果
-        effectName = effectDictList[index]["effectName"]
-        ServerComp.CreateEffect(playerId).RemoveEffectFromEntity(effectName)
-    elif itemName == "arris:hot_cocoa":
-        # 喝下热可可后随机清除一个负面效果
-        effectName = effectDictList[index]["effectName"]
-        if effectName in negativeEffect:
+    if effectDictList:
+        if itemName == "arris:milk_bottle":
+            # 喝下牛奶瓶后随机清除一个效果
+            index = random.randint(0, len(effectDictList) - 1)
+            effectName = effectDictList[index]["effectName"]
             ServerComp.CreateEffect(playerId).RemoveEffectFromEntity(effectName)
+        elif itemName == "arris:hot_cocoa":
+            # 喝下热可可后随机清除一个负面效果
+            for index in range(0, len(effectDictList)):
+                effectName = effectDictList[index]["effectName"]
+                if effectName in negativeEffect:
+                    ServerComp.CreateEffect(playerId).RemoveEffectFromEntity(effectName)
+                    break
 
 @ListenServer("PlayerHungerChangeServerEvent")
 def OnPlayerHungerChange(args):

@@ -10,7 +10,7 @@
                 "requires": "$desktop_screen"
             },
             {
-                "$screen_content": "netease_container_pocket.arrisCookingPotPanel",
+                "$screen_content": "arrisCookingPot.arrisCookingPotPanel",
                 "requires": "$pocket_screen"
             }
         ]
