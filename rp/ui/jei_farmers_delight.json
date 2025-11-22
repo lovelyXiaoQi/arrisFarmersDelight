@@ -14,85 +14,78 @@
         "to": 0
     },
     "jeiCookingPotRecipe": {
-        "type": "stack_grid",
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
+        "type": "panel",
         "offset": [
-            0,
-            0
+            0.0,
+            -1.0
         ],
         "size": [
             "100%+0px",
-            "100%c+0px"
+            "100%c+5px"
         ],
-        "layer": 0,
-        "visible": true,
-        "collection_name": "jeiCuttingBoardRecipe",
-        "item_count": 1,
-        "orientation": "vertical",
+        "layer": 1,
+        "property_bag": {
+            "force_update": false
+        },
         "controls": [
             {
-                "itemTemplate": {
-                    "type": "panel",
-                    "offset": [
-                        0.0,
-                        -1.0
-                    ],
+                "bg": {
+                    "type": "image",
                     "size": [
-                        "100%+0px",
-                        "100%c+5px"
+                        "100%c+4px",
+                        65.0
                     ],
                     "layer": 1,
-                    "property_bag": {
-                        "force_update": false
-                    },
+                    "nineslice_size": [
+                        2.0,
+                        2.0,
+                        2.0,
+                        2.0
+                    ],
+                    "texture": "textures/ui/jeiFarmersDelight/single_recipe_background",
+                    "uv": [
+                        0.0,
+                        0.0
+                    ],
                     "controls": [
                         {
-                            "bg": {
-                                "type": "image",
+                            "stack_panel": {
+                                "type": "stack_panel",
                                 "size": [
-                                    "100%c+4px",
-                                    65.0
+                                    "100%c+0px",
+                                    "100%+0px"
                                 ],
                                 "layer": 1,
-                                "nineslice_size": [
-                                    2.0,
-                                    2.0,
-                                    2.0,
-                                    2.0
-                                ],
-                                "texture": "textures/ui/jeiFarmersDelight/single_recipe_background",
-                                "uv": [
-                                    0.0,
-                                    0.0
-                                ],
+                                "orientation": "horizontal",
                                 "controls": [
                                     {
-                                        "stack_panel": {
-                                            "type": "stack_panel",
+                                        "input_panel": {
+                                            "type": "panel",
                                             "size": [
-                                                "100%c+0px",
+                                                52.0,
                                                 "100%+0px"
                                             ],
                                             "layer": 1,
-                                            "orientation": "horizontal",
                                             "controls": [
                                                 {
-                                                    "input_panel": {
-                                                        "type": "panel",
+                                                    "heat": {
+                                                        "type": "image",
+                                                        "offset": [
+                                                            0.0,
+                                                            15.0
+                                                        ],
                                                         "size": [
-                                                            52.0,
-                                                            "100%+0px"
+                                                            18.0,
+                                                            18.0
                                                         ],
                                                         "layer": 1,
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": 0.0,
+                                                        "texture": "textures/ui/fire_icon",
                                                         "controls": [
                                                             {
-                                                                "heat": {
+                                                                "fire": {
                                                                     "type": "image",
-                                                                    "offset": [
-                                                                        0.0,
-                                                                        15.0
-                                                                    ],
                                                                     "size": [
                                                                         18.0,
                                                                         18.0
@@ -100,237 +93,222 @@
                                                                     "layer": 1,
                                                                     "clip_direction": "left",
                                                                     "clip_ratio": 0.0,
-                                                                    "texture": "textures/ui/fire_icon",
-                                                                    "controls": [
-                                                                        {
-                                                                            "fire": {
-                                                                                "type": "image",
-                                                                                "size": [
-                                                                                    18.0,
-                                                                                    18.0
-                                                                                ],
-                                                                                "layer": 1,
-                                                                                "clip_direction": "left",
-                                                                                "clip_ratio": 0.0,
-                                                                                "texture": "textures/ui/heat",
-                                                                                "controls": []
-                                                                            }
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            },
-                                                            {
-                                                                "jeiInputItemRender1@jei_farmers_delight.jeiInputItemRender": {
-                                                                    "$bgVisible": true,
-                                                                    "offset": [
-                                                                        -16,
-                                                                        -21
-                                                                    ]
-                                                                }
-                                                            },
-                                                            {
-                                                                "jeiInputItemRender2@jei_farmers_delight.jeiInputItemRender": {
-                                                                    "$bgVisible": true,
-                                                                    "offset": [
-                                                                        0,
-                                                                        -21
-                                                                    ]
-                                                                }
-                                                            },
-                                                            {
-                                                                "jeiInputItemRender3@jei_farmers_delight.jeiInputItemRender": {
-                                                                    "$bgVisible": true,
-                                                                    "offset": [
-                                                                        16,
-                                                                        -21
-                                                                    ]
-                                                                }
-                                                            },
-                                                            {
-                                                                "jeiInputItemRender4@jei_farmers_delight.jeiInputItemRender": {
-                                                                    "$bgVisible": true,
-                                                                    "offset": [
-                                                                        -16,
-                                                                        -5
-                                                                    ]
-                                                                }
-                                                            },
-                                                            {
-                                                                "jeiInputItemRender5@jei_farmers_delight.jeiInputItemRender": {
-                                                                    "$bgVisible": true,
-                                                                    "offset": [
-                                                                        0,
-                                                                        -5
-                                                                    ]
-                                                                }
-                                                            },
-                                                            {
-                                                                "jeiInputItemRender6@jei_farmers_delight.jeiInputItemRender": {
-                                                                    "$bgVisible": true,
-                                                                    "offset": [
-                                                                        16,
-                                                                        -5
-                                                                    ]
+                                                                    "texture": "textures/ui/heat",
+                                                                    "controls": []
                                                                 }
                                                             }
                                                         ]
                                                     }
                                                 },
                                                 {
-                                                    "arrow_panel": {
-                                                        "type": "panel",
+                                                    "jeiInputItemRender1@jei_farmers_delight.jeiInputItemRender": {
+                                                        "$bgVisible": true,
+                                                        "offset": [
+                                                            -16,
+                                                            -21
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "jeiInputItemRender2@jei_farmers_delight.jeiInputItemRender": {
+                                                        "$bgVisible": true,
+                                                        "offset": [
+                                                            0,
+                                                            -21
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "jeiInputItemRender3@jei_farmers_delight.jeiInputItemRender": {
+                                                        "$bgVisible": true,
+                                                        "offset": [
+                                                            16,
+                                                            -21
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "jeiInputItemRender4@jei_farmers_delight.jeiInputItemRender": {
+                                                        "$bgVisible": true,
+                                                        "offset": [
+                                                            -16,
+                                                            -5
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "jeiInputItemRender5@jei_farmers_delight.jeiInputItemRender": {
+                                                        "$bgVisible": true,
+                                                        "offset": [
+                                                            0,
+                                                            -5
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "jeiInputItemRender6@jei_farmers_delight.jeiInputItemRender": {
+                                                        "$bgVisible": true,
+                                                        "offset": [
+                                                            16,
+                                                            -5
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "arrow_panel": {
+                                            "type": "panel",
+                                            "size": [
+                                                24.0,
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "arrow_bg": {
+                                                        "type": "image",
+                                                        "offset": [
+                                                            0.0,
+                                                            -13.0
+                                                        ],
                                                         "size": [
-                                                            24.0,
-                                                            "100%+0px"
+                                                            22.0,
+                                                            16.0
                                                         ],
                                                         "layer": 1,
+                                                        "texture": "textures/ui/jeiFarmersDelight/recipe_arrow",
                                                         "controls": [
                                                             {
-                                                                "arrow_bg": {
+                                                                "arrow": {
                                                                     "type": "image",
-                                                                    "offset": [
-                                                                        0.0,
-                                                                        -13.0
-                                                                    ],
-                                                                    "size": [
-                                                                        22.0,
-                                                                        16.0
-                                                                    ],
+                                                                    "$anim_duration": 10,
                                                                     "layer": 1,
-                                                                    "texture": "textures/ui/jeiFarmersDelight/recipe_arrow",
-                                                                    "controls": [
-                                                                        {
-                                                                            "arrow": {
-                                                                                "type": "image",
-                                                                                "$anim_duration": 10,
-                                                                                "layer": 1,
-                                                                                "clip_direction": "left",
-                                                                                "clip_ratio": "@jei_farmers_delight.jeiArrowClipAnim",
-                                                                                "texture": "textures/ui/jeiFarmersDelight/recipe_arrow_filled",
-                                                                                "animation_reset_name": "screen_animation_reset"
-                                                                            }
-                                                                        }
-                                                                    ]
+                                                                    "clip_direction": "left",
+                                                                    "clip_ratio": "@jei_farmers_delight.jeiArrowClipAnim",
+                                                                    "texture": "textures/ui/jeiFarmersDelight/recipe_arrow_filled",
+                                                                    "animation_reset_name": "screen_animation_reset"
                                                                 }
                                                             }
                                                         ]
                                                     }
-                                                },
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "output_panel": {
+                                            "type": "panel",
+                                            "size": [
+                                                "100%cm+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
                                                 {
-                                                    "output_panel": {
-                                                        "type": "panel",
+                                                    "preview": {
+                                                        "type": "image",
+                                                        "anchor_from": "top_middle",
+                                                        "anchor_to": "top_middle",
+                                                        "offset": [
+                                                            0.0,
+                                                            2.0
+                                                        ],
                                                         "size": [
-                                                            "100%cm+0px",
-                                                            "100%+0px"
+                                                            38.0,
+                                                            38.0
                                                         ],
                                                         "layer": 1,
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": 0.0,
+                                                        "texture": "textures/ui/preview",
                                                         "controls": [
                                                             {
-                                                                "preview": {
-                                                                    "type": "image",
-                                                                    "anchor_from": "top_middle",
-                                                                    "anchor_to": "top_middle",
+                                                                "item": {
+                                                                    "type": "panel",
                                                                     "offset": [
                                                                         0.0,
                                                                         2.0
                                                                     ],
                                                                     "size": [
-                                                                        38.0,
-                                                                        38.0
+                                                                        18.0,
+                                                                        18.0
                                                                     ],
-                                                                    "layer": 1,
-                                                                    "clip_direction": "left",
-                                                                    "clip_ratio": 0.0,
-                                                                    "texture": "textures/ui/preview",
                                                                     "controls": [
                                                                         {
-                                                                            "item": {
-                                                                                "type": "panel",
-                                                                                "offset": [
-                                                                                    0.0,
-                                                                                    2.0
-                                                                                ],
+                                                                            "item_renderer": {
+                                                                                "type": "custom",
+                                                                                "renderer": "inventory_item_renderer",
                                                                                 "size": [
-                                                                                    18.0,
-                                                                                    18.0
+                                                                                    "100.0%+-2.0px",
+                                                                                    "100.0%+-2.0px"
                                                                                 ],
-                                                                                "controls": [
-                                                                                    {
-                                                                                        "item_renderer": {
-                                                                                            "type": "custom",
-                                                                                            "renderer": "inventory_item_renderer",
-                                                                                            "size": [
-                                                                                                "100.0%+-2.0px",
-                                                                                                "100.0%+-2.0px"
-                                                                                            ],
-                                                                                            "layer": 6,
-                                                                                            "visible": false,
-                                                                                            "property_bag": {
-                                                                                                "#item_id_aux": 131072
-                                                                                            },
-                                                                                            "controls": []
-                                                                                        }
-                                                                                    },
-                                                                                    {
-                                                                                        "stack_count_label": {
-                                                                                            "type": "label",
-                                                                                            "anchor_from": "bottom_right",
-                                                                                            "anchor_to": "bottom_right",
-                                                                                            "offset": [
-                                                                                                0,
-                                                                                                1
-                                                                                            ],
-                                                                                            "layer": 61,
-                                                                                            "shadow": true,
-                                                                                            "controls": []
-                                                                                        }
-                                                                                    }
-                                                                                ]
+                                                                                "layer": 6,
+                                                                                "visible": false,
+                                                                                "property_bag": {
+                                                                                    "#item_id_aux": 131072
+                                                                                },
+                                                                                "controls": []
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "stack_count_label": {
+                                                                                "type": "label",
+                                                                                "anchor_from": "bottom_right",
+                                                                                "anchor_to": "bottom_right",
+                                                                                "offset": [
+                                                                                    0,
+                                                                                    1
+                                                                                ],
+                                                                                "layer": 61,
+                                                                                "shadow": true,
+                                                                                "controls": []
                                                                             }
                                                                         }
                                                                     ]
                                                                 }
-                                                            },
-                                                            {
-                                                                "jeiOutputItemRender@jei_farmers_delight.jeiOutputItemRender": {
-                                                                    "anchor_from": "bottom_middle",
-                                                                    "anchor_to": "bottom_middle",
-                                                                    "offset": [
-                                                                        0,
-                                                                        -3.5
-                                                                    ]
-                                                                }
-                                                            },
-                                                            {
-                                                                "spoon": {
-                                                                    "type": "image",
-                                                                    "anchor_from": "bottom_left",
-                                                                    "anchor_to": "bottom_left",
-                                                                    "offset": [
-                                                                        -4.0,
-                                                                        -6.0
-                                                                    ],
-                                                                    "size": [
-                                                                        14.0,
-                                                                        14.0
-                                                                    ],
-                                                                    "layer": 1,
-                                                                    "clip_direction": "left",
-                                                                    "clip_ratio": 0.0,
-                                                                    "texture": "textures/ui/spoon",
-                                                                    "controls": []
-                                                                }
-                                                            },
-                                                            {
-                                                                "jeiVesselItemRender@jei_farmers_delight.jeiOutputItemRender": {
-                                                                    "anchor_from": "bottom_middle",
-                                                                    "anchor_to": "bottom_middle",
-                                                                    "offset": [
-                                                                        -34,
-                                                                        -3.5
-                                                                    ]
-                                                                }
                                                             }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "jeiOutputItemRender@jei_farmers_delight.jeiOutputItemRender": {
+                                                        "anchor_from": "bottom_middle",
+                                                        "anchor_to": "bottom_middle",
+                                                        "offset": [
+                                                            0,
+                                                            -3.5
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "spoon": {
+                                                        "type": "image",
+                                                        "anchor_from": "bottom_left",
+                                                        "anchor_to": "bottom_left",
+                                                        "offset": [
+                                                            -4.0,
+                                                            -6.0
+                                                        ],
+                                                        "size": [
+                                                            14.0,
+                                                            14.0
+                                                        ],
+                                                        "layer": 1,
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": 0.0,
+                                                        "texture": "textures/ui/spoon",
+                                                        "controls": []
+                                                    }
+                                                },
+                                                {
+                                                    "jeiVesselItemRender@jei_farmers_delight.jeiOutputItemRender": {
+                                                        "anchor_from": "bottom_middle",
+                                                        "anchor_to": "bottom_middle",
+                                                        "offset": [
+                                                            -34,
+                                                            -3.5
                                                         ]
                                                     }
                                                 }
@@ -346,114 +324,78 @@
         ]
     },
     "jeiCuttingBoardRecipe": {
-        "type": "stack_grid",
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
-        "offset": [
-            0,
-            0
-        ],
+        "type": "panel",
         "size": [
             "100%+0px",
-            "100%c+0px"
+            "100%c+5px"
         ],
-        "layer": 0,
-        "visible": true,
-        "collection_name": "jeiCuttingBoardRecipe",
-        "item_count": 1,
-        "orientation": "vertical",
+        "layer": 1,
+        "property_bag": {
+            "force_update": false
+        },
         "controls": [
             {
-                "itemTemplate": {
-                    "type": "panel",
+                "bg": {
+                    "type": "image",
                     "size": [
-                        "100%+0px",
-                        "100%c+5px"
+                        "100%c+4px",
+                        47.0
                     ],
                     "layer": 1,
-                    "property_bag": {
-                        "force_update": false
-                    },
+                    "nineslice_size": [
+                        2.0,
+                        2.0,
+                        2.0,
+                        2.0
+                    ],
+                    "texture": "textures/ui/jeiFarmersDelight/single_recipe_background",
+                    "uv": [
+                        0.0,
+                        0.0
+                    ],
                     "controls": [
                         {
-                            "bg": {
-                                "type": "image",
+                            "stack_panel": {
+                                "type": "stack_panel",
                                 "size": [
-                                    "100%c+4px",
-                                    47.0
+                                    "100%c+0px",
+                                    "100%+0px"
                                 ],
                                 "layer": 1,
-                                "nineslice_size": [
-                                    2.0,
-                                    2.0,
-                                    2.0,
-                                    2.0
-                                ],
-                                "texture": "textures/ui/jeiFarmersDelight/single_recipe_background",
-                                "uv": [
-                                    0.0,
-                                    0.0
-                                ],
+                                "orientation": "horizontal",
                                 "controls": [
                                     {
-                                        "stack_panel": {
-                                            "type": "stack_panel",
+                                        "cutting_board_panel": {
+                                            "type": "panel",
                                             "size": [
-                                                "100%c+0px",
+                                                43.0,
                                                 "100%+0px"
                                             ],
                                             "layer": 1,
-                                            "orientation": "horizontal",
                                             "controls": [
                                                 {
-                                                    "cutting_board_panel": {
-                                                        "type": "panel",
+                                                    "cutting_board_bg": {
+                                                        "type": "image",
+                                                        "anchor_from": "bottom_middle",
+                                                        "anchor_to": "bottom_middle",
+                                                        "offset": [
+                                                            0.0,
+                                                            -3.0
+                                                        ],
                                                         "size": [
-                                                            43.0,
-                                                            "100%+0px"
+                                                            40.0,
+                                                            22.0
                                                         ],
                                                         "layer": 1,
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": 0.0,
+                                                        "texture": "textures/ui/jeiFarmersDelight/cutting_board",
                                                         "controls": [
                                                             {
-                                                                "cutting_board_bg": {
-                                                                    "type": "image",
-                                                                    "anchor_from": "bottom_middle",
-                                                                    "anchor_to": "bottom_middle",
-                                                                    "offset": [
-                                                                        0.0,
-                                                                        -3.0
-                                                                    ],
-                                                                    "size": [
-                                                                        40.0,
-                                                                        22.0
-                                                                    ],
-                                                                    "layer": 1,
-                                                                    "clip_direction": "left",
-                                                                    "clip_ratio": 0.0,
-                                                                    "texture": "textures/ui/jeiFarmersDelight/cutting_board",
-                                                                    "controls": [
-                                                                        {
-                                                                            "jeiInputFoodRender@jei_farmers_delight.jeiInputItemRender": {
-                                                                                "offset": [
-                                                                                    0,
-                                                                                    -4.5
-                                                                                ],
-                                                                                "size": [
-                                                                                    18,
-                                                                                    18
-                                                                                ]
-                                                                            }
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            },
-                                                            {
-                                                                "jeiKnifeRenderer@jei_farmers_delight.jeiInputItemRender": {
-                                                                    "anchor_from": "top_middle",
-                                                                    "anchor_to": "top_middle",
+                                                                "jeiInputFoodRender@jei_farmers_delight.jeiInputItemRender": {
                                                                     "offset": [
                                                                         0,
-                                                                        2
+                                                                        -4.5
                                                                     ],
                                                                     "size": [
                                                                         18,
@@ -465,61 +407,75 @@
                                                     }
                                                 },
                                                 {
-                                                    "arrow_panel": {
-                                                        "type": "panel",
-                                                        "size": [
-                                                            24.0,
-                                                            "100%+0px"
+                                                    "jeiKnifeRenderer@jei_farmers_delight.jeiInputItemRender": {
+                                                        "anchor_from": "top_middle",
+                                                        "anchor_to": "top_middle",
+                                                        "offset": [
+                                                            0,
+                                                            2
                                                         ],
-                                                        "layer": 1,
-                                                        "controls": [
-                                                            {
-                                                                "arrow": {
-                                                                    "type": "image",
-                                                                    "size": [
-                                                                        22.0,
-                                                                        16.0
-                                                                    ],
-                                                                    "layer": 1,
-                                                                    "texture": "textures/ui/jeiFarmersDelight/recipe_arrow_filled"
-                                                                }
-                                                            }
+                                                        "size": [
+                                                            18,
+                                                            18
                                                         ]
                                                     }
-                                                },
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "arrow_panel": {
+                                            "type": "panel",
+                                            "size": [
+                                                24.0,
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
                                                 {
-                                                    "output_panel": {
-                                                        "type": "panel",
+                                                    "arrow": {
+                                                        "type": "image",
                                                         "size": [
-                                                            "100%c+3px",
-                                                            "100%+0px"
+                                                            22.0,
+                                                            16.0
                                                         ],
                                                         "layer": 1,
-                                                        "controls": [
-                                                            {
-                                                                "grid": {
-                                                                    "type": "grid",
-                                                                    "anchor_from": "center",
-                                                                    "anchor_to": "center",
-                                                                    "offset": [
-                                                                        0,
-                                                                        0
-                                                                    ],
-                                                                    "size": [
-                                                                        "100%c+0px",
-                                                                        "100%c+0px"
-                                                                    ],
-                                                                    "layer": 0,
-                                                                    "visible": true,
-                                                                    "collection_name": "jeiLootTableRecipeGrid",
-                                                                    "grid_dimensions": [
-                                                                        1,
-                                                                        1
-                                                                    ],
-                                                                    "grid_item_template": "jei_farmers_delight.jeiInputItemRender"
-                                                                }
-                                                            }
-                                                        ]
+                                                        "texture": "textures/ui/jeiFarmersDelight/recipe_arrow_filled"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "output_panel": {
+                                            "type": "panel",
+                                            "size": [
+                                                "100%c+3px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "grid": {
+                                                        "type": "grid",
+                                                        "anchor_from": "center",
+                                                        "anchor_to": "center",
+                                                        "offset": [
+                                                            0,
+                                                            0
+                                                        ],
+                                                        "size": [
+                                                            "100%c+0px",
+                                                            "100%c+0px"
+                                                        ],
+                                                        "layer": 0,
+                                                        "visible": true,
+                                                        "collection_name": "jeiLootTableRecipeGrid",
+                                                        "grid_dimensions": [
+                                                            1,
+                                                            1
+                                                        ],
+                                                        "grid_item_template": "jei_farmers_delight.jeiInputItemRender"
                                                     }
                                                 }
                                             ]
@@ -685,6 +641,15 @@
                                 "type": "panel",
                                 "layer": 3,
                                 "controls": [
+                                    {
+                                        "hover_text@common.hover_text": {
+                                            "layer": 29,
+                                            "property_bag": {
+                                                "#hover_text": ""
+                                            },
+                                            "visible": "(not $touch)"
+                                        }
+                                    },
                                     {
                                         "highlight": {
                                             "type": "image",
@@ -868,6 +833,15 @@
                                 "visible": "$bgVisible",
                                 "controls": [
                                     {
+                                        "hover_text@common.hover_text": {
+                                            "layer": 29,
+                                            "property_bag": {
+                                                "#hover_text": ""
+                                            },
+                                            "visible": "(not $touch)"
+                                        }
+                                    },
+                                    {
                                         "highlight": {
                                             "type": "image",
                                             "size": [
@@ -897,146 +871,124 @@
         ]
     },
     "jeiSkilletAndStoveRecipe": {
-        "type": "stack_grid",
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
-        "offset": [
-            0,
-            0
-        ],
+        "type": "panel",
         "size": [
             "100%+0px",
-            "100%c+0px"
+            "100%c+5px"
         ],
-        "layer": 0,
-        "visible": true,
-        "collection_name": "jeiSkilletAndStoveRecipe",
-        "item_count": 1,
-        "orientation": "vertical",
+        "layer": 1,
+        "property_bag": {
+            "force_update": false
+        },
         "controls": [
             {
-                "itemTemplate": {
-                    "type": "panel",
+                "bg": {
+                    "type": "image",
                     "size": [
-                        "100%+0px",
-                        "100%c+5px"
+                        100.0,
+                        55.0
                     ],
                     "layer": 1,
-                    "property_bag": {
-                        "force_update": false
-                    },
+                    "nineslice_size": [
+                        2.0,
+                        2.0,
+                        2.0,
+                        2.0
+                    ],
+                    "texture": "textures/ui/jeiFarmersDelight/single_recipe_background",
+                    "uv": [
+                        0.0,
+                        0.0
+                    ],
                     "controls": [
                         {
-                            "bg": {
+                            "arrow_bg": {
                                 "type": "image",
                                 "size": [
-                                    100.0,
-                                    55.0
+                                    22.0,
+                                    16.0
                                 ],
                                 "layer": 1,
-                                "nineslice_size": [
-                                    2.0,
-                                    2.0,
-                                    2.0,
-                                    2.0
-                                ],
-                                "texture": "textures/ui/jeiFarmersDelight/single_recipe_background",
-                                "uv": [
-                                    0.0,
-                                    0.0
-                                ],
+                                "texture": "textures/ui/jeiFarmersDelight/recipe_arrow",
                                 "controls": [
                                     {
-                                        "arrow_bg": {
+                                        "arrow": {
                                             "type": "image",
-                                            "size": [
-                                                22.0,
-                                                16.0
-                                            ],
+                                            "$anim_duration": 7,
                                             "layer": 1,
-                                            "texture": "textures/ui/jeiFarmersDelight/recipe_arrow",
-                                            "controls": [
-                                                {
-                                                    "arrow": {
-                                                        "type": "image",
-                                                        "$anim_duration": 7,
-                                                        "layer": 1,
-                                                        "clip_direction": "left",
-                                                        "clip_ratio": "@jei_farmers_delight.jeiArrowClipAnim",
-                                                        "texture": "textures/ui/jeiFarmersDelight/recipe_arrow_filled",
-                                                        "animation_reset_name": "screen_animation_reset"
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "jeiOutputItemRender@jei_farmers_delight.jeiOutputItemRender": {
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                -8,
-                                                0
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "jeiInputItemRender@jei_farmers_delight.jeiInputItemRender": {
-                                            "$bgVisible": true,
-                                            "anchor_from": "left_middle",
-                                            "anchor_to": "left_middle",
-                                            "offset": [
-                                                12,
-                                                -11
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "flame_bg": {
-                                            "type": "image",
-                                            "anchor_from": "left_middle",
-                                            "anchor_to": "left_middle",
-                                            "offset": [
-                                                13.0,
-                                                10.0
-                                            ],
-                                            "size": [
-                                                14.0,
-                                                14.0
-                                            ],
-                                            "layer": 1,
-                                            "texture": "textures/ui/jeiFarmersDelight/flame_empty",
-                                            "controls": [
-                                                {
-                                                    "flame": {
-                                                        "type": "image",
-                                                        "layer": 1,
-                                                        "texture": "textures/ui/jeiFarmersDelight/flame"
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "timer": {
-                                            "type": "label",
-                                            "anchor_from": "bottom_right",
-                                            "anchor_to": "bottom_right",
-                                            "offset": [
-                                                -8.0,
-                                                -4.0
-                                            ],
-                                            "color": [
-                                                0.5843137254901961,
-                                                0.5843137254901961,
-                                                0.5843137254901961
-                                            ],
-                                            "font_type": "default",
-                                            "text": "7 秒",
-                                            "text_alignment": "center"
+                                            "clip_direction": "left",
+                                            "clip_ratio": "@jei_farmers_delight.jeiArrowClipAnim",
+                                            "texture": "textures/ui/jeiFarmersDelight/recipe_arrow_filled",
+                                            "animation_reset_name": "screen_animation_reset"
                                         }
                                     }
                                 ]
+                            }
+                        },
+                        {
+                            "jeiOutputItemRender@jei_farmers_delight.jeiOutputItemRender": {
+                                "anchor_from": "right_middle",
+                                "anchor_to": "right_middle",
+                                "offset": [
+                                    -8,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "jeiInputItemRender@jei_farmers_delight.jeiInputItemRender": {
+                                "$bgVisible": true,
+                                "anchor_from": "left_middle",
+                                "anchor_to": "left_middle",
+                                "offset": [
+                                    12,
+                                    -11
+                                ]
+                            }
+                        },
+                        {
+                            "flame_bg": {
+                                "type": "image",
+                                "anchor_from": "left_middle",
+                                "anchor_to": "left_middle",
+                                "offset": [
+                                    13.0,
+                                    10.0
+                                ],
+                                "size": [
+                                    14.0,
+                                    14.0
+                                ],
+                                "layer": 1,
+                                "texture": "textures/ui/jeiFarmersDelight/flame_empty",
+                                "controls": [
+                                    {
+                                        "flame": {
+                                            "type": "image",
+                                            "layer": 1,
+                                            "texture": "textures/ui/jeiFarmersDelight/flame"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "timer": {
+                                "type": "label",
+                                "anchor_from": "bottom_right",
+                                "anchor_to": "bottom_right",
+                                "offset": [
+                                    -8.0,
+                                    -4.0
+                                ],
+                                "color": [
+                                    0.5843137254901961,
+                                    0.5843137254901961,
+                                    0.5843137254901961
+                                ],
+                                "font_type": "default",
+                                "text": "7 秒",
+                                "text_alignment": "center"
                             }
                         }
                     ]
